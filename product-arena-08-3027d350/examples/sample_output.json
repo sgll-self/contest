@@ -1,0 +1,13 @@
+{
+  "_note": "EXAMPLE output only —示意输出，非正式案例结果。Formal cases are supplied by the platform.",
+  "case_id": "example-demo-001",
+  "answer": "The parser fixes two-column reading-order interleaving: a naive top-to-bottom extraction alternates between the left and right columns and breaks sentences; the skill reads each column fully (left then right) within full-width band separators.",
+  "sources": [
+    {"block_id": "p1_b3", "page": 1, "bbox": [50.4, 210.0, 290.0, 268.0], "role": "body"},
+    {"block_id": "p1_b4", "page": 1, "bbox": [310.0, 210.0, 550.0, 268.0], "role": "body"}
+  ],
+  "status": "success",
+  "uncertainty": "Example assumes a text-layer PDF. Image-only scanned pages would be reported as unreadable (status=partial), not guessed.",
+  "change_log": "Initial example parse; no revisions.",
+  "verification": {"char_recall": 1.0, "marginalia_leak": 0.0, "order_monotonic": 1.0}
+}

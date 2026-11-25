@@ -1,0 +1,174 @@
+{
+ "arm_version": "1.1",
+ "paper": {
+  "title": "sci-pdf-reading-parse: evidence-anchored scientific PDF reading-order parsing (skill)",
+  "challenge_id": "product-arena-08-3027d350",
+  "year": 2026,
+  "target_claims": [
+   "Verbatim text recall = 1.0 on controlled two-column ground truth",
+   "Reading-order concordance = 1.0 (skill) vs 0.893 (naive pure-y baseline)",
+   "Table-cell match = 1.0 after pdfplumber reconstruction",
+   "Line-level column continuity 0.667 (skill) vs 0.077 (naive)"
+  ]
+ },
+ "entrypoint": "src/reproduce.py",
+ "entrypoint_args": [],
+ "environment": {
+  "python_version": "3.12",
+  "dependencies": "scripts/requirements.txt",
+  "extra_packages": [
+   "pymupdf>=1.24",
+   "pdfplumber>=0.11",
+   "matplotlib>=3.8",
+   "reportlab>=4.0"
+  ],
+  "gpu_required": false,
+  "estimated_runtime_minutes": 0.1
+ },
+ "execution": {
+  "log_path": "execution/run.log",
+  "exit_code": 0,
+  "ran_at": "2026-11-25T11:31:59+00:00",
+  "ran_by": "agent:qwen4-max",
+  "wall_time_s": 3.68,
+  "artifacts": [
+   {
+    "id": "metrics_json",
+    "path": "execution/results/metrics.json",
+    "type": "metric",
+    "format": "json",
+    "checksum_sha256": "68067ebfb926029bcac32cd90ec2efe439ac2a9dc2b6ad9d7aaadcdc05417a96"
+   },
+   {
+    "id": "gt_parsed",
+    "path": "execution/results/gt_parsed.json",
+    "type": "data",
+    "format": "json",
+    "checksum_sha256": "a1bf052debee6e23711897994c0b8fe94148bd3ce77373196b9dc7ecc4aaa697"
+   },
+   {
+    "id": "real_parsed",
+    "path": "execution/results/real_parsed.json",
+    "type": "data",
+    "format": "json",
+    "checksum_sha256": "b2ed0112bc264638def86c2ce8310be70af93e39a5a31d31656cf5bdd549ad61"
+   },
+   {
+    "id": "fig_order",
+    "path": "execution/results/fig_order.png",
+    "type": "figure",
+    "format": "png",
+    "checksum_sha256": "5ad7ae207c0eeebf0f7ec2f623b7f0eaf57f0dbc7760c6743131159f5a741a48"
+   },
+   {
+    "id": "fig_recall",
+    "path": "execution/results/fig_recall.png",
+    "type": "figure",
+    "format": "png",
+    "checksum_sha256": "5b161bfe7da5b7a88737791abc14a101631d6c2c21c1be9c4a7ac5df652fd8ae"
+   },
+   {
+    "id": "fig_layout",
+    "path": "execution/results/fig_layout.png",
+    "type": "figure",
+    "format": "png",
+    "checksum_sha256": "e3448cf4d66386a702fb62c2c326c8de4bff490f0f6c091c955f43ffdfe8f6f6"
+   },
+   {
+    "id": "run_log",
+    "path": "execution/run.log",
+    "type": "log",
+    "format": "txt",
+    "checksum_sha256": "90f6cc91708d54607442f778e27f3490b2c2ac83a33e035eb80d036954db2794"
+   }
+  ]
+ },
+ "expected_outputs": [
+  {
+   "name": "text_recall",
+   "type": "metric",
+   "produced_by": [
+    "metrics_json"
+   ],
+   "comparison_method": "exact_match"
+  },
+  {
+   "name": "reading_order_concordance",
+   "type": "metric",
+   "produced_by": [
+    "metrics_json",
+    "fig_order"
+   ],
+   "comparison_method": "relative_error",
+   "tolerance": 0.05
+  },
+  {
+   "name": "table_cell_match",
+   "type": "metric",
+   "produced_by": [
+    "metrics_json",
+    "gt_parsed"
+   ],
+   "comparison_method": "exact_match"
+  },
+  {
+   "name": "marginalia_leak",
+   "type": "metric",
+   "produced_by": [
+    "metrics_json"
+   ],
+   "comparison_method": "numeric_tolerance",
+   "tolerance": 0.01
+  },
+  {
+   "name": "order_gain_vs_baseline",
+   "type": "metric",
+   "produced_by": [
+    "metrics_json",
+    "fig_order"
+   ],
+   "comparison_method": "custom"
+  }
+ ],
+ "characterization": {
+  "path": "characterization.json"
+ },
+ "trace": {
+  "files": [
+   "trace/trace.jsonl"
+  ],
+  "step_count": 10
+ },
+ "skills_used": [
+  {
+   "skill_id": "sci-pdf-reading-parse",
+   "version": "1.0"
+  }
+ ],
+ "data_sources": [
+  {
+   "name": "controlled-ground-truth (self-generated)",
+   "path": "execution/work/gt.pdf"
+  },
+  {
+   "name": "arXiv 1512.03385 (He et al., Deep Residual Learning)",
+   "uri": "https://arxiv.org/pdf/1512.03385",
+   "checksum": "1e0651b6810ecba34a3dbc5b5b0209226f889004607c1f203540a48d64e5a93a"
+  }
+ ],
+ "provenance": {
+  "created_by": "agent",
+  "platform": "bohrium-playground",
+  "toolchain": "DeepSeek Harness + PyMuPDF + pdfplumber"
+ },
+ "handoff": {
+  "status": "partial",
+  "next_suggestion": "Platform runs the skill on its 3 fixed cases; this bundle is the skill + demonstration evidence.",
+  "modality_notes": {
+   "execution": "Controlled ground-truth + real-paper demonstration run.",
+   "skills": "SKILL.md + scripts are the submitted skill.",
+   "characterization": "Numerical fidelity deviations vs ground truth.",
+   "trace": "Typed-step trace of the demonstration run."
+  }
+ }
+}

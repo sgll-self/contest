@@ -1,0 +1,7 @@
+# sci-pdf-reading-parse runtime dependencies
+# Parser core + table fidelity. Pinned to versions used in the demonstration run.
+pymupdf>=1.24
+pdfplumber>=0.11
+# Demonstration / figures only (src/reproduce.py); not required to run the skill parser:
+matplotlib>=3.8
+reportlab>=4.0

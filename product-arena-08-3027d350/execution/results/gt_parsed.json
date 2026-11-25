@@ -1,0 +1,352 @@
+{
+ "schema": "sci-pdf-reading-parse/parsed/v1",
+ "case_id": "controlled-gt",
+ "source": "gt.pdf",
+ "pages": [
+  {
+   "page": 1,
+   "width": 612.0,
+   "height": 792.0,
+   "column_bounds": [
+    250.75,
+    370.04
+   ],
+   "n_blocks": 15,
+   "n_tables": 1
+  }
+ ],
+ "blocks": [
+  {
+   "id": "p1_b0",
+   "page": 1,
+   "bbox": [
+    235.52,
+    20.2,
+    376.48,
+    31.19
+   ],
+   "text": "Journal of Reproducible Parsing · Vol. 1",
+   "role": "header",
+   "column": 1,
+   "reading_order": 0,
+   "font_size": 8.0,
+   "n_chars": 40,
+   "flags": []
+  },
+  {
+   "id": "p1_b2",
+   "page": 1,
+   "bbox": [
+    43.46,
+    48.75,
+    568.55,
+    69.4
+   ],
+   "text": "Evidence-Anchored Reading Order for Two-Column Scientific Documents",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 1,
+   "font_size": 15.0,
+   "n_chars": 67,
+   "flags": []
+  },
+  {
+   "id": "p1_b3",
+   "page": 1,
+   "bbox": [
+    54.51,
+    79.25,
+    557.49,
+    92.99
+   ],
+   "text": "We present a deterministic parser that recovers the true reading order of two-column scientific pages and anchors",
+   "role": "body",
+   "column": -1,
+   "reading_order": 2,
+   "font_size": 10.0,
+   "n_chars": 113,
+   "flags": []
+  },
+  {
+   "id": "p1_b5",
+   "page": 1,
+   "bbox": [
+    50.4,
+    130.45,
+    287.74,
+    180.19
+   ],
+   "text": "L1 Introduction. Scientific documents frequently use a\ntwo-column layout. A naive top-to-bottom text\nextraction interleaves the columns and produces\nbroken sentences.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 3,
+   "font_size": 10.0,
+   "n_chars": 166,
+   "flags": []
+  },
+  {
+   "id": "p1_b7",
+   "page": 1,
+   "bbox": [
+    50.4,
+    213.25,
+    294.4,
+    262.99
+   ],
+   "text": "L2 Method. We cluster text blocks by horizontal\nposition, treat full-width blocks as band separators, and\norder each column from top to bottom before moving\nright.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 4,
+   "font_size": 10.0,
+   "n_chars": 163,
+   "flags": []
+  },
+  {
+   "id": "p1_b9",
+   "page": 1,
+   "bbox": [
+    50.4,
+    296.05,
+    290.52,
+    333.79
+   ],
+   "text": "L3 Anchoring. Every emitted block keeps its page\nnumber and bounding box so that any downstream\nanswer can be traced back to the exact source region.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 5,
+   "font_size": 10.0,
+   "n_chars": 149,
+   "flags": []
+  },
+  {
+   "id": "p1_b4",
+   "page": 1,
+   "bbox": [
+    215.95,
+    92.25,
+    396.05,
+    105.99
+   ],
+   "text": "every block to a page and bounding box.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 6,
+   "font_size": 10.0,
+   "n_chars": 39,
+   "flags": []
+  },
+  {
+   "id": "p1_b6",
+   "page": 1,
+   "bbox": [
+    316.8,
+    130.45,
+    551.35,
+    180.19
+   ],
+   "text": "R1 Evaluation. On a controlled document with known\nground truth we measure character recall and\nreading-order concordance against the intended\nsequence.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 7,
+   "font_size": 10.0,
+   "n_chars": 152,
+   "flags": []
+  },
+  {
+   "id": "p1_b8",
+   "page": 1,
+   "bbox": [
+    316.8,
+    213.25,
+    560.22,
+    250.99
+   ],
+   "text": "R2 Results. The parser recovers essentially all body\ncharacters and preserves the column-major reading\norder, while a naive y-sort interleaves the two columns.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 8,
+   "font_size": 10.0,
+   "n_chars": 159,
+   "flags": []
+  },
+  {
+   "id": "p1_b10",
+   "page": 1,
+   "bbox": [
+    316.8,
+    296.05,
+    558.01,
+    333.79
+   ],
+   "text": "R3 Limitations. Image-only scanned pages have no\ntext layer and require OCR, which is outside the scope\nof this text-layer parser and is reported as unreadable.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 9,
+   "font_size": 10.0,
+   "n_chars": 160,
+   "flags": []
+  },
+  {
+   "id": "p1_b11",
+   "page": 1,
+   "bbox": [
+    50.4,
+    389.7,
+    299.35,
+    403.47
+   ],
+   "text": "Table 1. Parsing quality on the controlled document.",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 10,
+   "font_size": 10.0,
+   "n_chars": 52,
+   "flags": []
+  },
+  {
+   "id": "p1_b12",
+   "page": 1,
+   "bbox": [
+    54.4,
+    413.73,
+    336.6,
+    426.09
+   ],
+   "text": "Method\nRecall\nOrder",
+   "role": "body",
+   "column": 0,
+   "reading_order": 11,
+   "font_size": 9.0,
+   "n_chars": 19,
+   "flags": []
+  },
+  {
+   "id": "p1_b13",
+   "page": 1,
+   "bbox": [
+    54.4,
+    429.73,
+    331.11,
+    442.09
+   ],
+   "text": "Naive y-sort\n0.99\n0.52",
+   "role": "body",
+   "column": 0,
+   "reading_order": 12,
+   "font_size": 9.0,
+   "n_chars": 22,
+   "flags": []
+  },
+  {
+   "id": "p1_b14",
+   "page": 1,
+   "bbox": [
+    54.4,
+    445.73,
+    331.11,
+    458.09
+   ],
+   "text": "Skill parser\n1.00\n1.00",
+   "role": "body",
+   "column": 0,
+   "reading_order": 13,
+   "font_size": 9.0,
+   "n_chars": 22,
+   "flags": []
+  },
+  {
+   "id": "p1_b1",
+   "page": 1,
+   "bbox": [
+    301.55,
+    758.2,
+    310.45,
+    769.19
+   ],
+   "text": "42",
+   "role": "footer",
+   "column": 1,
+   "reading_order": 14,
+   "font_size": 8.0,
+   "n_chars": 2,
+   "flags": []
+  }
+ ],
+ "tables": [
+  {
+   "id": "p1_t0",
+   "page": 1,
+   "bbox": [
+    50.4,
+    412.4,
+    381.6,
+    460.4
+   ],
+   "n_rows": 3,
+   "n_cols": 3,
+   "cells": [
+    {
+     "row": 0,
+     "col": 0,
+     "text": "Method"
+    },
+    {
+     "row": 0,
+     "col": 1,
+     "text": "Recall"
+    },
+    {
+     "row": 0,
+     "col": 2,
+     "text": "Order"
+    },
+    {
+     "row": 1,
+     "col": 0,
+     "text": "Naive y-sort"
+    },
+    {
+     "row": 1,
+     "col": 1,
+     "text": "0.99"
+    },
+    {
+     "row": 1,
+     "col": 2,
+     "text": "0.52"
+    },
+    {
+     "row": 2,
+     "col": 0,
+     "text": "Skill parser"
+    },
+    {
+     "row": 2,
+     "col": 1,
+     "text": "1.00"
+    },
+    {
+     "row": 2,
+     "col": 2,
+     "text": "1.00"
+    }
+   ],
+   "markdown": "| Method | Recall | Order |\n| --- | --- | --- |\n| Naive y-sort | 0.99 | 0.52 |\n| Skill parser | 1.00 | 1.00 |",
+   "extractor": "pdfplumber"
+  }
+ ],
+ "stats": {
+  "n_pages": 1,
+  "n_blocks": 15,
+  "n_tables": 1,
+  "n_body_chars": 1164,
+  "n_total_chars": 1325,
+  "roles": {
+   "caption": 1,
+   "footer": 1,
+   "heading": 1,
+   "header": 1,
+   "body": 11
+  }
+ }
+}

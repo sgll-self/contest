@@ -1,0 +1,6712 @@
+{
+ "schema": "sci-pdf-reading-parse/parsed/v1",
+ "case_id": "real-demo",
+ "source": "real_paper.pdf",
+ "pages": [
+  {
+   "page": 1,
+   "width": 612.0,
+   "height": 792.0,
+   "column_bounds": [
+    240.25,
+    464.42
+   ],
+   "n_blocks": 29,
+   "n_tables": 1
+  },
+  {
+   "page": 2,
+   "width": 612.0,
+   "height": 792.0,
+   "column_bounds": [
+    258.19,
+    362.3
+   ],
+   "n_blocks": 21,
+   "n_tables": 0
+  },
+  {
+   "page": 3,
+   "width": 612.0,
+   "height": 792.0,
+   "column_bounds": [
+    251.26,
+    334.76
+   ],
+   "n_blocks": 23,
+   "n_tables": 0
+  },
+  {
+   "page": 4,
+   "width": 612.0,
+   "height": 792.0,
+   "column_bounds": [
+    133.24,
+    332.9
+   ],
+   "n_blocks": 120,
+   "n_tables": 0
+  },
+  {
+   "page": 5,
+   "width": 612.0,
+   "height": 792.0,
+   "column_bounds": [
+    127.77
+   ],
+   "n_blocks": 126,
+   "n_tables": 4
+  },
+  {
+   "page": 6,
+   "width": 612.0,
+   "height": 792.0,
+   "column_bounds": [
+    263.66,
+    396.82
+   ],
+   "n_blocks": 37,
+   "n_tables": 2
+  }
+ ],
+ "blocks": [
+  {
+   "id": "p1_b0",
+   "page": 1,
+   "bbox": [
+    153.45,
+    105.92,
+    441.78,
+    120.27
+   ],
+   "text": "Deep Residual Learning for Image Recognition",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 0,
+   "font_size": 14.35,
+   "n_chars": 44,
+   "flags": []
+  },
+  {
+   "id": "p1_b1",
+   "page": 1,
+   "bbox": [
+    136.39,
+    152.39,
+    458.83,
+    202.1
+   ],
+   "text": "Kaiming He\nXiangyu Zhang\nShaoqing Ren\nJian Sun\nMicrosoft Research\n{kahe, v-xiangz, v-shren, jiansun}@microsoft.com",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 1,
+   "font_size": 11.07,
+   "n_chars": 114,
+   "flags": []
+  },
+  {
+   "id": "p1_b32",
+   "page": 1,
+   "bbox": [
+    10.94,
+    208.94,
+    37.62,
+    560.0
+   ],
+   "text": "arXiv:1512.03385v1 [cs.CV] 10 Dec 2015",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 2,
+   "font_size": 20.0,
+   "n_chars": 38,
+   "flags": []
+  },
+  {
+   "id": "p1_b10",
+   "page": 1,
+   "bbox": [
+    316.26,
+    224.89,
+    319.6,
+    228.23
+   ],
+   "text": "20",
+   "role": "body",
+   "column": 1,
+   "reading_order": 3,
+   "font_size": 3.34,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p1_b17",
+   "page": 1,
+   "bbox": [
+    438.09,
+    224.89,
+    441.43,
+    228.23
+   ],
+   "text": "20",
+   "role": "body",
+   "column": 1,
+   "reading_order": 4,
+   "font_size": 3.34,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p1_b2",
+   "page": 1,
+   "bbox": [
+    145.99,
+    225.25,
+    190.48,
+    237.2
+   ],
+   "text": "Abstract",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 5,
+   "font_size": 11.96,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p1_b3",
+   "page": 1,
+   "bbox": [
+    50.11,
+    246.05,
+    286.37,
+    423.38
+   ],
+   "text": "Deeper neural networks are more difﬁcult to train. We\npresent a residual learning framework to ease the training\nof networks that are substantially deeper than those used\npreviously. We explicitly reformulate the layers as learn-\ning residual functions with reference to the layer inputs, in-\nstead of learning unreferenced functions. We provide com-\nprehensive empirical evidence showing that these residual\nnetworks are easier to optimize, and can gain accuracy from\nconsiderably increased depth. On the ImageNet dataset we\nevaluate residual nets with a depth of up to 152 layers—8×\ndeeper than VGG nets [41] but still having lower complex-\nity. An ensemble of these residual nets achieves 3.57% error\non the ImageNet test set. This result won the 1st place on the\nILSVRC 2015 classiﬁcation task. We also present analysis\non CIFAR-10 with 100 and 1000 layers.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 6,
+   "font_size": 9.96,
+   "n_chars": 861,
+   "flags": []
+  },
+  {
+   "id": "p1_b12",
+   "page": 1,
+   "bbox": [
+    308.98,
+    235.53,
+    315.53,
+    282.12
+   ],
+   "text": "training error (%)",
+   "role": "body",
+   "column": 1,
+   "reading_order": 7,
+   "font_size": 6.55,
+   "n_chars": 18,
+   "flags": []
+  },
+  {
+   "id": "p1_b19",
+   "page": 1,
+   "bbox": [
+    430.81,
+    241.3,
+    437.36,
+    276.51
+   ],
+   "text": "test error (%)",
+   "role": "body",
+   "column": 1,
+   "reading_order": 8,
+   "font_size": 6.55,
+   "n_chars": 14,
+   "flags": []
+  },
+  {
+   "id": "p1_b9",
+   "page": 1,
+   "bbox": [
+    316.26,
+    257.37,
+    319.6,
+    260.71
+   ],
+   "text": "10",
+   "role": "body",
+   "column": 1,
+   "reading_order": 9,
+   "font_size": 3.34,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p1_b16",
+   "page": 1,
+   "bbox": [
+    438.09,
+    257.37,
+    441.43,
+    260.71
+   ],
+   "text": "10",
+   "role": "body",
+   "column": 1,
+   "reading_order": 10,
+   "font_size": 3.34,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p1_b22",
+   "page": 1,
+   "bbox": [
+    400.26,
+    263.25,
+    422.19,
+    269.84
+   ],
+   "text": "56-layer",
+   "role": "body",
+   "column": 1,
+   "reading_order": 11,
+   "font_size": 6.58,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p1_b23",
+   "page": 1,
+   "bbox": [
+    400.26,
+    278.7,
+    422.19,
+    285.28
+   ],
+   "text": "20-layer",
+   "role": "body",
+   "column": 1,
+   "reading_order": 12,
+   "font_size": 6.58,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p1_b8",
+   "page": 1,
+   "bbox": [
+    317.05,
+    289.93,
+    416.59,
+    295.47
+   ],
+   "text": "0\n1\n2\n3\n4\n5\n6\n0",
+   "role": "body",
+   "column": 1,
+   "reading_order": 13,
+   "font_size": 3.34,
+   "n_chars": 15,
+   "flags": []
+  },
+  {
+   "id": "p1_b11",
+   "page": 1,
+   "bbox": [
+    357.87,
+    295.64,
+    383.92,
+    302.2
+   ],
+   "text": "iter. (1e4)",
+   "role": "body",
+   "column": 1,
+   "reading_order": 14,
+   "font_size": 6.55,
+   "n_chars": 11,
+   "flags": []
+  },
+  {
+   "id": "p1_b24",
+   "page": 1,
+   "bbox": [
+    521.65,
+    240.43,
+    543.58,
+    247.02
+   ],
+   "text": "56-layer",
+   "role": "body",
+   "column": 2,
+   "reading_order": 15,
+   "font_size": 6.58,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p1_b25",
+   "page": 1,
+   "bbox": [
+    521.65,
+    252.37,
+    543.58,
+    258.95
+   ],
+   "text": "20-layer",
+   "role": "body",
+   "column": 2,
+   "reading_order": 16,
+   "font_size": 6.58,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p1_b15",
+   "page": 1,
+   "bbox": [
+    439.76,
+    289.93,
+    538.42,
+    295.47
+   ],
+   "text": "0\n1\n2\n3\n4\n5\n6\n0",
+   "role": "body",
+   "column": 2,
+   "reading_order": 17,
+   "font_size": 3.34,
+   "n_chars": 15,
+   "flags": []
+  },
+  {
+   "id": "p1_b18",
+   "page": 1,
+   "bbox": [
+    479.69,
+    295.64,
+    505.75,
+    302.2
+   ],
+   "text": "iter. (1e4)",
+   "role": "body",
+   "column": 2,
+   "reading_order": 18,
+   "font_size": 6.55,
+   "n_chars": 11,
+   "flags": []
+  },
+  {
+   "id": "p1_b26",
+   "page": 1,
+   "bbox": [
+    308.86,
+    304.89,
+    545.11,
+    346.73
+   ],
+   "text": "Figure 1. Training error (left) and test error (right) on CIFAR-10\nwith 20-layer and 56-layer “plain” networks. The deeper network\nhas higher training error, and thus test error. Similar phenomena\non ImageNet is presented in Fig. 4.",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 19,
+   "font_size": 8.97,
+   "n_chars": 232,
+   "flags": []
+  },
+  {
+   "id": "p1_b27",
+   "page": 1,
+   "bbox": [
+    308.86,
+    362.81,
+    472.51,
+    372.77
+   ],
+   "text": "greatly beneﬁted from very deep models.",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 20,
+   "font_size": 9.96,
+   "n_chars": 39,
+   "flags": []
+  },
+  {
+   "id": "p1_b4",
+   "page": 1,
+   "bbox": [
+    50.11,
+    425.8,
+    286.37,
+    519.45
+   ],
+   "text": "The depth of representations is of central importance\nfor many visual recognition tasks. Solely due to our ex-\ntremely deep representations, we obtain a 28% relative im-\nprovement on the COCO object detection dataset. Deep\nresidual nets are foundations of our submissions to ILSVRC\n& COCO 2015 competitions1, where we also won the 1st\nplaces on the tasks of ImageNet detection, ImageNet local-\nization, COCO detection, and COCO segmentation.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 21,
+   "font_size": 9.92,
+   "n_chars": 441,
+   "flags": []
+  },
+  {
+   "id": "p1_b28",
+   "page": 1,
+   "bbox": [
+    308.86,
+    376.55,
+    545.12,
+    494.28
+   ],
+   "text": "Driven by the signiﬁcance of depth, a question arises: Is\nlearning better networks as easy as stacking more layers?\nAn obstacle to answering this question was the notorious\nproblem of vanishing/exploding gradients [1, 9], which\nhamper convergence from the beginning.\nThis problem,\nhowever, has been largely addressed by normalized initial-\nization [23, 9, 37, 13] and intermediate normalization layers\n[16], which enable networks with tens of layers to start con-\nverging for stochastic gradient descent (SGD) with back-\npropagation [22].",
+   "role": "body",
+   "column": 1,
+   "reading_order": 22,
+   "font_size": 9.96,
+   "n_chars": 538,
+   "flags": []
+  },
+  {
+   "id": "p1_b29",
+   "page": 1,
+   "bbox": [
+    308.86,
+    498.24,
+    545.12,
+    591.89
+   ],
+   "text": "When deeper networks are able to start converging, a\ndegradation problem has been exposed: with the network\ndepth increasing, accuracy gets saturated (which might be\nunsurprising) and then degrades rapidly.\nUnexpectedly,\nsuch degradation is not caused by overﬁtting, and adding\nmore layers to a suitably deep model leads to higher train-\ning error, as reported in [11, 42] and thoroughly veriﬁed by\nour experiments. Fig. 1 shows a typical example.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 23,
+   "font_size": 9.96,
+   "n_chars": 447,
+   "flags": []
+  },
+  {
+   "id": "p1_b5",
+   "page": 1,
+   "bbox": [
+    50.11,
+    535.23,
+    126.95,
+    547.18
+   ],
+   "text": "1. Introduction",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 24,
+   "font_size": 11.96,
+   "n_chars": 15,
+   "flags": []
+  },
+  {
+   "id": "p1_b6",
+   "page": 1,
+   "bbox": [
+    50.11,
+    556.2,
+    286.37,
+    685.72
+   ],
+   "text": "Deep convolutional neural networks [22, 21] have led\nto a series of breakthroughs for image classiﬁcation [21,\n50, 40]. Deep networks naturally integrate low/mid/high-\nlevel features [50] and classiﬁers in an end-to-end multi-\nlayer fashion, and the “levels” of features can be enriched\nby the number of stacked layers (depth). Recent evidence\n[41, 44] reveals that network depth is of crucial importance,\nand the leading results [41, 44, 13, 16] on the challenging\nImageNet dataset [36] all exploit “very deep” [41] models,\nwith a depth of sixteen [41] to thirty [16]. Many other non-\ntrivial visual recognition tasks [8, 12, 7, 32, 27] have also",
+   "role": "body",
+   "column": 0,
+   "reading_order": 25,
+   "font_size": 9.96,
+   "n_chars": 647,
+   "flags": []
+  },
+  {
+   "id": "p1_b7",
+   "page": 1,
+   "bbox": [
+    50.11,
+    695.68,
+    286.36,
+    712.83
+   ],
+   "text": "1http://image-net.org/challenges/LSVRC/2015/\nand\nhttp://mscoco.org/dataset/#detections-challenge2015.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 26,
+   "font_size": 7.25,
+   "n_chars": 101,
+   "flags": []
+  },
+  {
+   "id": "p1_b30",
+   "page": 1,
+   "bbox": [
+    308.86,
+    595.85,
+    545.12,
+    713.41
+   ],
+   "text": "The degradation (of training accuracy) indicates that not\nall systems are similarly easy to optimize. Let us consider a\nshallower architecture and its deeper counterpart that adds\nmore layers onto it. There exists a solution by construction\nto the deeper model: the added layers are identity mapping,\nand the other layers are copied from the learned shallower\nmodel. The existence of this constructed solution indicates\nthat a deeper model should produce no higher training error\nthan its shallower counterpart. But experiments show that\nour current solvers on hand are unable to ﬁnd solutions that",
+   "role": "body",
+   "column": 1,
+   "reading_order": 27,
+   "font_size": 9.96,
+   "n_chars": 598,
+   "flags": []
+  },
+  {
+   "id": "p1_b31",
+   "page": 1,
+   "bbox": [
+    295.12,
+    733.33,
+    300.1,
+    743.29
+   ],
+   "text": "1",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 28,
+   "font_size": 9.96,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p2_b5",
+   "page": 2,
+   "bbox": [
+    142.92,
+    78.4,
+    148.52,
+    87.65
+   ],
+   "text": "x",
+   "role": "body",
+   "column": 0,
+   "reading_order": 29,
+   "font_size": 9.25,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p2_b1",
+   "page": 2,
+   "bbox": [
+    137.35,
+    95.47,
+    173.63,
+    102.77
+   ],
+   "text": "weight layer",
+   "role": "body",
+   "column": 0,
+   "reading_order": 30,
+   "font_size": 7.3,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p2_b3",
+   "page": 2,
+   "bbox": [
+    159.13,
+    106.32,
+    172.22,
+    114.49
+   ],
+   "text": "relu",
+   "role": "body",
+   "column": 0,
+   "reading_order": 31,
+   "font_size": 8.17,
+   "n_chars": 4,
+   "flags": []
+  },
+  {
+   "id": "p2_b6",
+   "page": 2,
+   "bbox": [
+    98.28,
+    106.78,
+    220.91,
+    122.82
+   ],
+   "text": "F(x)\nx",
+   "role": "body",
+   "column": 0,
+   "reading_order": 32,
+   "font_size": 9.25,
+   "n_chars": 6,
+   "flags": []
+  },
+  {
+   "id": "p2_b2",
+   "page": 2,
+   "bbox": [
+    137.35,
+    119.98,
+    173.63,
+    127.28
+   ],
+   "text": "weight layer",
+   "role": "body",
+   "column": 0,
+   "reading_order": 33,
+   "font_size": 7.3,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p2_b0",
+   "page": 2,
+   "bbox": [
+    205.97,
+    123.64,
+    231.58,
+    131.81
+   ],
+   "text": "identity",
+   "role": "body",
+   "column": 0,
+   "reading_order": 34,
+   "font_size": 8.17,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p2_b4",
+   "page": 2,
+   "bbox": [
+    106.92,
+    139.8,
+    172.22,
+    155.84
+   ],
+   "text": "relu\nF(x)\u0001+\u0001x",
+   "role": "body",
+   "column": 0,
+   "reading_order": 35,
+   "font_size": 9.13,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p2_b14",
+   "page": 2,
+   "bbox": [
+    308.86,
+    74.23,
+    545.11,
+    180.01
+   ],
+   "text": "ImageNet test set, and won the 1st place in the ILSVRC\n2015 classiﬁcation competition. The extremely deep rep-\nresentations also have excellent generalization performance\non other recognition tasks, and lead us to further win the\n1st places on: ImageNet detection, ImageNet localization,\nCOCO detection, and COCO segmentation in ILSVRC &\nCOCO 2015 competitions. This strong evidence shows that\nthe residual learning principle is generic, and we expect that\nit is applicable in other vision and non-vision problems.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 36,
+   "font_size": 9.96,
+   "n_chars": 514,
+   "flags": []
+  },
+  {
+   "id": "p2_b7",
+   "page": 2,
+   "bbox": [
+    86.62,
+    158.15,
+    249.86,
+    167.12
+   ],
+   "text": "Figure 2. Residual learning: a building block.",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 37,
+   "font_size": 8.97,
+   "n_chars": 46,
+   "flags": []
+  },
+  {
+   "id": "p2_b8",
+   "page": 2,
+   "bbox": [
+    50.11,
+    182.15,
+    286.37,
+    204.07
+   ],
+   "text": "are comparably good or better than the constructed solution\n(or unable to do so in feasible time).",
+   "role": "body",
+   "column": 0,
+   "reading_order": 38,
+   "font_size": 9.96,
+   "n_chars": 98,
+   "flags": []
+  },
+  {
+   "id": "p2_b15",
+   "page": 2,
+   "bbox": [
+    308.86,
+    195.07,
+    391.97,
+    207.03
+   ],
+   "text": "2. Related Work",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 39,
+   "font_size": 11.96,
+   "n_chars": 15,
+   "flags": []
+  },
+  {
+   "id": "p2_b9",
+   "page": 2,
+   "bbox": [
+    50.11,
+    207.51,
+    286.37,
+    360.93
+   ],
+   "text": "In this paper, we address the degradation problem by\nintroducing a deep residual learning framework.\nIn-\nstead of hoping each few stacked layers directly ﬁt a\ndesired underlying mapping, we explicitly let these lay-\ners ﬁt a residual mapping. Formally, denoting the desired\nunderlying mapping as H(x), we let the stacked nonlinear\nlayers ﬁt another mapping of F(x) := H(x)−x. The orig-\ninal mapping is recast into F(x)+x. We hypothesize that it\nis easier to optimize the residual mapping than to optimize\nthe original, unreferenced mapping. To the extreme, if an\nidentity mapping were optimal, it would be easier to push\nthe residual to zero than to ﬁt an identity mapping by a stack\nof nonlinear layers.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 40,
+   "font_size": 9.96,
+   "n_chars": 704,
+   "flags": []
+  },
+  {
+   "id": "p2_b10",
+   "page": 2,
+   "bbox": [
+    50.11,
+    364.2,
+    286.37,
+    493.88
+   ],
+   "text": "The formulation of F(x)+x can be realized by feedfor-\nward neural networks with “shortcut connections” (Fig. 2).\nShortcut connections [2, 34, 49] are those skipping one or\nmore layers. In our case, the shortcut connections simply\nperform identity mapping, and their outputs are added to\nthe outputs of the stacked layers (Fig. 2). Identity short-\ncut connections add neither extra parameter nor computa-\ntional complexity. The entire network can still be trained\nend-to-end by SGD with backpropagation, and can be eas-\nily implemented using common libraries (e.g., Caffe [19])\nwithout modifying the solvers.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 41,
+   "font_size": 9.96,
+   "n_chars": 607,
+   "flags": []
+  },
+  {
+   "id": "p2_b11",
+   "page": 2,
+   "bbox": [
+    50.11,
+    497.32,
+    286.37,
+    590.97
+   ],
+   "text": "We present comprehensive experiments on ImageNet\n[36] to show the degradation problem and evaluate our\nmethod. We show that: 1) Our extremely deep residual nets\nare easy to optimize, but the counterpart “plain” nets (that\nsimply stack layers) exhibit higher training error when the\ndepth increases; 2) Our deep residual nets can easily enjoy\naccuracy gains from greatly increased depth, producing re-\nsults substantially better than previous networks.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 42,
+   "font_size": 9.96,
+   "n_chars": 451,
+   "flags": []
+  },
+  {
+   "id": "p2_b12",
+   "page": 2,
+   "bbox": [
+    50.11,
+    594.4,
+    286.37,
+    652.19
+   ],
+   "text": "Similar phenomena are also shown on the CIFAR-10 set\n[20], suggesting that the optimization difﬁculties and the\neffects of our method are not just akin to a particular dataset.\nWe present successfully trained models on this dataset with\nover 100 layers, and explore models with over 1000 layers.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 43,
+   "font_size": 9.96,
+   "n_chars": 295,
+   "flags": []
+  },
+  {
+   "id": "p2_b13",
+   "page": 2,
+   "bbox": [
+    50.11,
+    655.62,
+    286.37,
+    713.41
+   ],
+   "text": "On the ImageNet classiﬁcation dataset [36], we obtain\nexcellent results by extremely deep residual nets. Our 152-\nlayer residual net is the deepest network ever presented on\nImageNet, while still having lower complexity than VGG\nnets [41].\nOur ensemble has 3.57% top-5 error on the",
+   "role": "body",
+   "column": 0,
+   "reading_order": 44,
+   "font_size": 9.96,
+   "n_chars": 281,
+   "flags": []
+  },
+  {
+   "id": "p2_b20",
+   "page": 2,
+   "bbox": [
+    295.12,
+    733.33,
+    300.1,
+    743.29
+   ],
+   "text": "2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 45,
+   "font_size": 9.96,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p2_b16",
+   "page": 2,
+   "bbox": [
+    308.86,
+    216.44,
+    545.12,
+    310.18
+   ],
+   "text": "Residual Representations. In image recognition, VLAD\n[18] is a representation that encodes by the residual vectors\nwith respect to a dictionary, and Fisher Vector [30] can be\nformulated as a probabilistic version [18] of VLAD. Both\nof them are powerful shallow representations for image re-\ntrieval and classiﬁcation [4, 48]. For vector quantization,\nencoding residual vectors [17] is shown to be more effec-\ntive than encoding original vectors.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 46,
+   "font_size": 9.96,
+   "n_chars": 445,
+   "flags": []
+  },
+  {
+   "id": "p2_b17",
+   "page": 2,
+   "bbox": [
+    308.86,
+    313.08,
+    545.12,
+    454.55
+   ],
+   "text": "In low-level vision and computer graphics, for solv-\ning Partial Differential Equations (PDEs), the widely used\nMultigrid method [3] reformulates the system as subprob-\nlems at multiple scales, where each subproblem is respon-\nsible for the residual solution between a coarser and a ﬁner\nscale. An alternative to Multigrid is hierarchical basis pre-\nconditioning [45, 46], which relies on variables that repre-\nsent residual vectors between two scales. It has been shown\n[3, 45, 46] that these solvers converge much faster than stan-\ndard solvers that are unaware of the residual nature of the\nsolutions. These methods suggest that a good reformulation\nor preconditioning can simplify the optimization.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 47,
+   "font_size": 9.96,
+   "n_chars": 702,
+   "flags": []
+  },
+  {
+   "id": "p2_b18",
+   "page": 2,
+   "bbox": [
+    308.86,
+    463.34,
+    545.12,
+    592.94
+   ],
+   "text": "Shortcut Connections. Practices and theories that lead to\nshortcut connections [2, 34, 49] have been studied for a long\ntime. An early practice of training multi-layer perceptrons\n(MLPs) is to add a linear layer connected from the network\ninput to the output [34, 49]. In [44, 24], a few interme-\ndiate layers are directly connected to auxiliary classiﬁers\nfor addressing vanishing/exploding gradients. The papers\nof [39, 38, 31, 47] propose methods for centering layer re-\nsponses, gradients, and propagated errors, implemented by\nshortcut connections. In [44], an “inception” layer is com-\nposed of a shortcut branch and a few deeper branches.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 48,
+   "font_size": 9.96,
+   "n_chars": 645,
+   "flags": []
+  },
+  {
+   "id": "p2_b19",
+   "page": 2,
+   "bbox": [
+    308.86,
+    595.85,
+    545.12,
+    713.41
+   ],
+   "text": "Concurrent with our work, “highway networks” [42, 43]\npresent shortcut connections with gating functions [15].\nThese gates are data-dependent and have parameters, in\ncontrast to our identity shortcuts that are parameter-free.\nWhen a gated shortcut is “closed” (approaching zero), the\nlayers in highway networks represent non-residual func-\ntions.\nOn the contrary, our formulation always learns\nresidual functions; our identity shortcuts are never closed,\nand all information is always passed through, with addi-\ntional residual functions to be learned. In addition, high-",
+   "role": "body",
+   "column": 2,
+   "reading_order": 49,
+   "font_size": 9.96,
+   "n_chars": 571,
+   "flags": []
+  },
+  {
+   "id": "p3_b0",
+   "page": 3,
+   "bbox": [
+    50.11,
+    74.41,
+    286.37,
+    96.33
+   ],
+   "text": "way networks have not demonstrated accuracy gains with\nextremely increased depth (e.g., over 100 layers).",
+   "role": "body",
+   "column": 0,
+   "reading_order": 50,
+   "font_size": 9.96,
+   "n_chars": 105,
+   "flags": []
+  },
+  {
+   "id": "p3_b11",
+   "page": 3,
+   "bbox": [
+    308.86,
+    74.41,
+    545.12,
+    120.32
+   ],
+   "text": "ReLU [29] and the biases are omitted for simplifying no-\ntations. The operation F + x is performed by a shortcut\nconnection and element-wise addition. We adopt the sec-\nond nonlinearity after the addition (i.e., σ(y), see Fig. 2).",
+   "role": "body",
+   "column": 2,
+   "reading_order": 51,
+   "font_size": 9.96,
+   "n_chars": 230,
+   "flags": []
+  },
+  {
+   "id": "p3_b1",
+   "page": 3,
+   "bbox": [
+    50.11,
+    108.96,
+    185.43,
+    120.92
+   ],
+   "text": "3. Deep Residual Learning",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 52,
+   "font_size": 11.96,
+   "n_chars": 25,
+   "flags": []
+  },
+  {
+   "id": "p3_b2",
+   "page": 3,
+   "bbox": [
+    50.11,
+    128.76,
+    155.9,
+    139.72
+   ],
+   "text": "3.1. Residual Learning",
+   "role": "body",
+   "column": 0,
+   "reading_order": 53,
+   "font_size": 10.96,
+   "n_chars": 22,
+   "flags": []
+  },
+  {
+   "id": "p3_b3",
+   "page": 3,
+   "bbox": [
+    50.11,
+    147.49,
+    286.37,
+    313.03
+   ],
+   "text": "Let us consider H(x) as an underlying mapping to be\nﬁt by a few stacked layers (not necessarily the entire net),\nwith x denoting the inputs to the ﬁrst of these layers. If one\nhypothesizes that multiple nonlinear layers can asymptoti-\ncally approximate complicated functions2, then it is equiv-\nalent to hypothesize that they can asymptotically approxi-\nmate the residual functions, i.e., H(x) −x (assuming that\nthe input and output are of the same dimensions).\nSo\nrather than expect stacked layers to approximate H(x), we\nexplicitly let these layers approximate a residual function\nF(x) := H(x) −x. The original function thus becomes\nF(x)+x. Although both forms should be able to asymptot-\nically approximate the desired functions (as hypothesized),\nthe ease of learning might be different.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 54,
+   "font_size": 9.95,
+   "n_chars": 791,
+   "flags": []
+  },
+  {
+   "id": "p3_b4",
+   "page": 3,
+   "bbox": [
+    50.11,
+    315.13,
+    286.37,
+    444.64
+   ],
+   "text": "This reformulation is motivated by the counterintuitive\nphenomena about the degradation problem (Fig. 1, left). As\nwe discussed in the introduction, if the added layers can\nbe constructed as identity mappings, a deeper model should\nhave training error no greater than its shallower counter-\npart.\nThe degradation problem suggests that the solvers\nmight have difﬁculties in approximating identity mappings\nby multiple nonlinear layers. With the residual learning re-\nformulation, if identity mappings are optimal, the solvers\nmay simply drive the weights of the multiple nonlinear lay-\ners toward zero to approach identity mappings.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 55,
+   "font_size": 9.96,
+   "n_chars": 631,
+   "flags": []
+  },
+  {
+   "id": "p3_b5",
+   "page": 3,
+   "bbox": [
+    50.11,
+    446.74,
+    286.37,
+    552.34
+   ],
+   "text": "In real cases, it is unlikely that identity mappings are op-\ntimal, but our reformulation may help to precondition the\nproblem. If the optimal function is closer to an identity\nmapping than to a zero mapping, it should be easier for the\nsolver to ﬁnd the perturbations with reference to an identity\nmapping, than to learn the function as a new one. We show\nby experiments (Fig. 7) that the learned residual functions in\ngeneral have small responses, suggesting that identity map-\npings provide reasonable preconditioning.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 56,
+   "font_size": 9.96,
+   "n_chars": 521,
+   "flags": []
+  },
+  {
+   "id": "p3_b6",
+   "page": 3,
+   "bbox": [
+    50.11,
+    561.76,
+    213.9,
+    572.72
+   ],
+   "text": "3.2. Identity Mapping by Shortcuts",
+   "role": "body",
+   "column": 0,
+   "reading_order": 57,
+   "font_size": 10.96,
+   "n_chars": 34,
+   "flags": []
+  },
+  {
+   "id": "p3_b7",
+   "page": 3,
+   "bbox": [
+    50.11,
+    580.66,
+    286.36,
+    614.53
+   ],
+   "text": "We adopt residual learning to every few stacked layers.\nA building block is shown in Fig. 2. Formally, in this paper\nwe consider a building block deﬁned as:",
+   "role": "body",
+   "column": 0,
+   "reading_order": 58,
+   "font_size": 9.96,
+   "n_chars": 156,
+   "flags": []
+  },
+  {
+   "id": "p3_b8",
+   "page": 3,
+   "bbox": [
+    123.47,
+    626.46,
+    286.36,
+    643.81
+   ],
+   "text": "y = F(x, {Wi}) + x.\n(1)",
+   "role": "equation",
+   "column": 0,
+   "reading_order": 59,
+   "font_size": 9.75,
+   "n_chars": 23,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p3_b9",
+   "page": 3,
+   "bbox": [
+    50.11,
+    648.82,
+    286.37,
+    701.8
+   ],
+   "text": "Here x and y are the input and output vectors of the lay-\ners considered.\nThe function F(x, {Wi}) represents the\nresidual mapping to be learned. For the example in Fig. 2\nthat has two layers, F = W2σ(W1x) in which σ denotes",
+   "role": "body",
+   "column": 0,
+   "reading_order": 60,
+   "font_size": 9.87,
+   "n_chars": 223,
+   "flags": []
+  },
+  {
+   "id": "p3_b10",
+   "page": 3,
+   "bbox": [
+    60.97,
+    703.65,
+    257.76,
+    712.93
+   ],
+   "text": "2This hypothesis, however, is still an open question. See [28].",
+   "role": "body",
+   "column": 0,
+   "reading_order": 61,
+   "font_size": 7.47,
+   "n_chars": 63,
+   "flags": []
+  },
+  {
+   "id": "p3_b22",
+   "page": 3,
+   "bbox": [
+    295.12,
+    733.33,
+    300.1,
+    743.3
+   ],
+   "text": "3",
+   "role": "body",
+   "column": 1,
+   "reading_order": 62,
+   "font_size": 9.96,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p3_b12",
+   "page": 3,
+   "bbox": [
+    308.86,
+    122.47,
+    545.12,
+    204.16
+   ],
+   "text": "The shortcut connections in Eqn.(1) introduce neither ex-\ntra parameter nor computation complexity. This is not only\nattractive in practice but also important in our comparisons\nbetween plain and residual networks. We can fairly com-\npare plain/residual networks that simultaneously have the\nsame number of parameters, depth, width, and computa-\ntional cost (except for the negligible element-wise addition).",
+   "role": "body",
+   "column": 2,
+   "reading_order": 63,
+   "font_size": 9.96,
+   "n_chars": 408,
+   "flags": []
+  },
+  {
+   "id": "p3_b13",
+   "page": 3,
+   "bbox": [
+    308.86,
+    206.23,
+    545.11,
+    252.23
+   ],
+   "text": "The dimensions of x and F must be equal in Eqn.(1).\nIf this is not the case (e.g., when changing the input/output\nchannels), we can perform a linear projection Ws by the\nshortcut connections to match the dimensions:",
+   "role": "body",
+   "column": 2,
+   "reading_order": 64,
+   "font_size": 9.9,
+   "n_chars": 215,
+   "flags": []
+  },
+  {
+   "id": "p3_b14",
+   "page": 3,
+   "bbox": [
+    375.38,
+    264.43,
+    545.11,
+    281.78
+   ],
+   "text": "y = F(x, {Wi}) + Wsx.\n(2)",
+   "role": "equation",
+   "column": 2,
+   "reading_order": 65,
+   "font_size": 9.59,
+   "n_chars": 25,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p3_b15",
+   "page": 3,
+   "bbox": [
+    308.86,
+    286.84,
+    545.11,
+    334.39
+   ],
+   "text": "We can also use a square matrix Ws in Eqn.(1). But we will\nshow by experiments that the identity mapping is sufﬁcient\nfor addressing the degradation problem and is economical,\nand thus Ws is only used when matching dimensions.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 66,
+   "font_size": 9.5,
+   "n_chars": 226,
+   "flags": []
+  },
+  {
+   "id": "p3_b16",
+   "page": 3,
+   "bbox": [
+    308.86,
+    334.96,
+    545.11,
+    393.52
+   ],
+   "text": "The form of the residual function F is ﬂexible. Exper-\niments in this paper involve a function F that has two or\nthree layers (Fig. 5), while more layers are possible. But if\nF has only a single layer, Eqn.(1) is similar to a linear layer:\ny = W1x + x, for which we have not observed advantages.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 67,
+   "font_size": 9.91,
+   "n_chars": 295,
+   "flags": []
+  },
+  {
+   "id": "p3_b17",
+   "page": 3,
+   "bbox": [
+    308.86,
+    395.15,
+    545.11,
+    452.93
+   ],
+   "text": "We also note that although the above notations are about\nfully-connected layers for simplicity, they are applicable to\nconvolutional layers. The function F(x, {Wi}) can repre-\nsent multiple convolutional layers. The element-wise addi-\ntion is performed on two feature maps, channel by channel.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 68,
+   "font_size": 9.85,
+   "n_chars": 293,
+   "flags": []
+  },
+  {
+   "id": "p3_b18",
+   "page": 3,
+   "bbox": [
+    308.86,
+    462.76,
+    434.95,
+    473.72
+   ],
+   "text": "3.3. Network Architectures",
+   "role": "body",
+   "column": 2,
+   "reading_order": 69,
+   "font_size": 10.96,
+   "n_chars": 26,
+   "flags": []
+  },
+  {
+   "id": "p3_b19",
+   "page": 3,
+   "bbox": [
+    308.86,
+    481.79,
+    545.11,
+    515.66
+   ],
+   "text": "We have tested various plain/residual nets, and have ob-\nserved consistent phenomena. To provide instances for dis-\ncussion, we describe two models for ImageNet as follows.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 70,
+   "font_size": 9.96,
+   "n_chars": 172,
+   "flags": []
+  },
+  {
+   "id": "p3_b20",
+   "page": 3,
+   "bbox": [
+    308.86,
+    523.78,
+    545.11,
+    665.35
+   ],
+   "text": "Plain Network. Our plain baselines (Fig. 3, middle) are\nmainly inspired by the philosophy of VGG nets [41] (Fig. 3,\nleft). The convolutional layers mostly have 3×3 ﬁlters and\nfollow two simple design rules: (i) for the same output\nfeature map size, the layers have the same number of ﬁl-\nters; and (ii) if the feature map size is halved, the num-\nber of ﬁlters is doubled so as to preserve the time com-\nplexity per layer. We perform downsampling directly by\nconvolutional layers that have a stride of 2. The network\nends with a global average pooling layer and a 1000-way\nfully-connected layer with softmax. The total number of\nweighted layers is 34 in Fig. 3 (middle).",
+   "role": "body",
+   "column": 2,
+   "reading_order": 71,
+   "font_size": 9.96,
+   "n_chars": 670,
+   "flags": []
+  },
+  {
+   "id": "p3_b21",
+   "page": 3,
+   "bbox": [
+    308.86,
+    667.4,
+    545.12,
+    713.41
+   ],
+   "text": "It is worth noticing that our model has fewer ﬁlters and\nlower complexity than VGG nets [41] (Fig. 3, left). Our 34-\nlayer baseline has 3.6 billion FLOPs (multiply-adds), which\nis only 18% of VGG-19 (19.6 billion FLOPs).",
+   "role": "body",
+   "column": 2,
+   "reading_order": 72,
+   "font_size": 9.96,
+   "n_chars": 220,
+   "flags": []
+  },
+  {
+   "id": "p4_b110",
+   "page": 4,
+   "bbox": [
+    308.86,
+    74.32,
+    545.12,
+    227.83
+   ],
+   "text": "Residual Network. Based on the above plain network, we\ninsert shortcut connections (Fig. 3, right) which turn the\nnetwork into its counterpart residual version. The identity\nshortcuts (Eqn.(1)) can be directly used when the input and\noutput are of the same dimensions (solid line shortcuts in\nFig. 3). When the dimensions increase (dotted line shortcuts\nin Fig. 3), we consider two options: (A) The shortcut still\nperforms identity mapping, with extra zero entries padded\nfor increasing dimensions. This option introduces no extra\nparameter; (B) The projection shortcut in Eqn.(2) is used to\nmatch dimensions (done by 1×1 convolutions). For both\noptions, when the shortcuts go across feature maps of two\nsizes, they are performed with a stride of 2.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 73,
+   "font_size": 9.96,
+   "n_chars": 749,
+   "flags": []
+  },
+  {
+   "id": "p4_b71",
+   "page": 4,
+   "bbox": [
+    85.88,
+    77.54,
+    190.25,
+    85.38
+   ],
+   "text": "VGG-19\n34-layer plain",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 74,
+   "font_size": 7.85,
+   "n_chars": 21,
+   "flags": []
+  },
+  {
+   "id": "p4_b108",
+   "page": 4,
+   "bbox": [
+    212.4,
+    77.54,
+    265.34,
+    96.28
+   ],
+   "text": "image\n34-layer residual",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 75,
+   "font_size": 6.38,
+   "n_chars": 23,
+   "flags": []
+  },
+  {
+   "id": "p4_b61",
+   "page": 4,
+   "bbox": [
+    92.09,
+    91.36,
+    104.16,
+    96.28
+   ],
+   "text": "image",
+   "role": "body",
+   "column": 0,
+   "reading_order": 76,
+   "font_size": 4.92,
+   "n_chars": 5,
+   "flags": []
+  },
+  {
+   "id": "p4_b63",
+   "page": 4,
+   "bbox": [
+    50.85,
+    101.08,
+    68.06,
+    111.86
+   ],
+   "text": "output \nsize: 224",
+   "role": "body",
+   "column": 0,
+   "reading_order": 77,
+   "font_size": 4.92,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p4_b38",
+   "page": 4,
+   "bbox": [
+    85.41,
+    104.01,
+    110.24,
+    108.93
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 0,
+   "reading_order": 78,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b39",
+   "page": 4,
+   "bbox": [
+    85.41,
+    116.66,
+    110.24,
+    121.58
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 0,
+   "reading_order": 79,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b40",
+   "page": 4,
+   "bbox": [
+    90.1,
+    129.43,
+    105.67,
+    134.35
+   ],
+   "text": "pool, /2",
+   "role": "body",
+   "column": 0,
+   "reading_order": 80,
+   "font_size": 4.92,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p4_b62",
+   "page": 4,
+   "bbox": [
+    50.85,
+    133.65,
+    68.06,
+    144.43
+   ],
+   "text": "output \nsize: 112",
+   "role": "body",
+   "column": 0,
+   "reading_order": 81,
+   "font_size": 4.92,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p4_b41",
+   "page": 4,
+   "bbox": [
+    84.24,
+    142.08,
+    111.53,
+    147.0
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 0,
+   "reading_order": 82,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b42",
+   "page": 4,
+   "bbox": [
+    84.24,
+    154.74,
+    111.53,
+    159.66
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 0,
+   "reading_order": 83,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b43",
+   "page": 4,
+   "bbox": [
+    90.1,
+    167.39,
+    105.67,
+    172.31
+   ],
+   "text": "pool, /2",
+   "role": "body",
+   "column": 0,
+   "reading_order": 84,
+   "font_size": 4.92,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p4_b64",
+   "page": 4,
+   "bbox": [
+    52.14,
+    171.37,
+    67.37,
+    182.15
+   ],
+   "text": "output \nsize: 56",
+   "role": "body",
+   "column": 0,
+   "reading_order": 85,
+   "font_size": 4.92,
+   "n_chars": 16,
+   "flags": []
+  },
+  {
+   "id": "p4_b44",
+   "page": 4,
+   "bbox": [
+    84.36,
+    180.16,
+    111.64,
+    185.08
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 0,
+   "reading_order": 86,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b45",
+   "page": 4,
+   "bbox": [
+    84.36,
+    192.81,
+    111.64,
+    197.73
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 0,
+   "reading_order": 87,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b46",
+   "page": 4,
+   "bbox": [
+    84.24,
+    205.46,
+    111.53,
+    210.38
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 0,
+   "reading_order": 88,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b47",
+   "page": 4,
+   "bbox": [
+    84.24,
+    218.11,
+    111.53,
+    223.03
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 0,
+   "reading_order": 89,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b36",
+   "page": 4,
+   "bbox": [
+    162.26,
+    91.36,
+    174.33,
+    96.28
+   ],
+   "text": "image",
+   "role": "body",
+   "column": 1,
+   "reading_order": 90,
+   "font_size": 4.92,
+   "n_chars": 5,
+   "flags": []
+  },
+  {
+   "id": "p4_b0",
+   "page": 4,
+   "bbox": [
+    152.89,
+    154.74,
+    184.39,
+    159.66
+   ],
+   "text": "7x7 conv, 64, /2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 91,
+   "font_size": 4.92,
+   "n_chars": 16,
+   "flags": []
+  },
+  {
+   "id": "p4_b72",
+   "page": 4,
+   "bbox": [
+    223.06,
+    154.74,
+    254.56,
+    159.66
+   ],
+   "text": "7x7 conv, 64, /2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 92,
+   "font_size": 4.92,
+   "n_chars": 16,
+   "flags": []
+  },
+  {
+   "id": "p4_b1",
+   "page": 4,
+   "bbox": [
+    160.86,
+    167.39,
+    176.43,
+    172.31
+   ],
+   "text": "pool, /2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 93,
+   "font_size": 4.92,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p4_b73",
+   "page": 4,
+   "bbox": [
+    231.03,
+    167.39,
+    246.6,
+    172.31
+   ],
+   "text": "pool, /2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 94,
+   "font_size": 4.92,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p4_b2",
+   "page": 4,
+   "bbox": [
+    156.29,
+    180.16,
+    181.11,
+    185.08
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 95,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b74",
+   "page": 4,
+   "bbox": [
+    226.22,
+    180.16,
+    251.05,
+    185.08
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 96,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b3",
+   "page": 4,
+   "bbox": [
+    156.29,
+    192.81,
+    181.11,
+    197.73
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 97,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b75",
+   "page": 4,
+   "bbox": [
+    226.22,
+    192.81,
+    251.05,
+    197.73
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 98,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b4",
+   "page": 4,
+   "bbox": [
+    156.29,
+    205.46,
+    181.11,
+    210.38
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 99,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b76",
+   "page": 4,
+   "bbox": [
+    226.22,
+    205.46,
+    251.05,
+    210.38
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 100,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b5",
+   "page": 4,
+   "bbox": [
+    156.29,
+    218.11,
+    181.11,
+    223.03
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 101,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b77",
+   "page": 4,
+   "bbox": [
+    226.22,
+    218.11,
+    251.05,
+    223.03
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 102,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b6",
+   "page": 4,
+   "bbox": [
+    156.4,
+    230.88,
+    181.23,
+    235.8
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 103,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b78",
+   "page": 4,
+   "bbox": [
+    226.11,
+    230.88,
+    250.93,
+    235.8
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 104,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b111",
+   "page": 4,
+   "bbox": [
+    308.86,
+    236.14,
+    402.92,
+    247.1
+   ],
+   "text": "3.4. Implementation",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 105,
+   "font_size": 10.96,
+   "n_chars": 19,
+   "flags": []
+  },
+  {
+   "id": "p4_b48",
+   "page": 4,
+   "bbox": [
+    90.21,
+    256.19,
+    105.79,
+    261.11
+   ],
+   "text": "pool, /2",
+   "role": "body",
+   "column": 0,
+   "reading_order": 106,
+   "font_size": 4.92,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p4_b65",
+   "page": 4,
+   "bbox": [
+    52.14,
+    260.29,
+    67.37,
+    271.07
+   ],
+   "text": "output \nsize: 28",
+   "role": "body",
+   "column": 0,
+   "reading_order": 107,
+   "font_size": 4.92,
+   "n_chars": 16,
+   "flags": []
+  },
+  {
+   "id": "p4_b49",
+   "page": 4,
+   "bbox": [
+    84.36,
+    268.84,
+    111.64,
+    273.76
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 0,
+   "reading_order": 108,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b50",
+   "page": 4,
+   "bbox": [
+    84.47,
+    281.49,
+    111.76,
+    286.41
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 0,
+   "reading_order": 109,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b37",
+   "page": 4,
+   "bbox": [
+    84.36,
+    294.26,
+    111.64,
+    299.18
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 0,
+   "reading_order": 110,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b51",
+   "page": 4,
+   "bbox": [
+    84.36,
+    306.91,
+    111.64,
+    311.83
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 0,
+   "reading_order": 111,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b66",
+   "page": 4,
+   "bbox": [
+    52.14,
+    354.71,
+    67.37,
+    365.49
+   ],
+   "text": "output \nsize: 14",
+   "role": "body",
+   "column": 0,
+   "reading_order": 112,
+   "font_size": 4.92,
+   "n_chars": 16,
+   "flags": []
+  },
+  {
+   "id": "p4_b52",
+   "page": 4,
+   "bbox": [
+    90.1,
+    357.64,
+    105.67,
+    362.56
+   ],
+   "text": "pool, /2",
+   "role": "body",
+   "column": 0,
+   "reading_order": 113,
+   "font_size": 4.92,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p4_b53",
+   "page": 4,
+   "bbox": [
+    84.24,
+    370.29,
+    111.53,
+    375.21
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 0,
+   "reading_order": 114,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b54",
+   "page": 4,
+   "bbox": [
+    84.36,
+    382.94,
+    111.64,
+    387.86
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 0,
+   "reading_order": 115,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b55",
+   "page": 4,
+   "bbox": [
+    84.36,
+    395.71,
+    111.64,
+    400.63
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 0,
+   "reading_order": 116,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b56",
+   "page": 4,
+   "bbox": [
+    84.24,
+    408.36,
+    111.53,
+    413.28
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 0,
+   "reading_order": 117,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b7",
+   "page": 4,
+   "bbox": [
+    156.4,
+    243.54,
+    181.23,
+    248.46
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 118,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b79",
+   "page": 4,
+   "bbox": [
+    226.11,
+    243.54,
+    250.93,
+    248.46
+   ],
+   "text": "3x3 conv, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 119,
+   "font_size": 4.92,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p4_b8",
+   "page": 4,
+   "bbox": [
+    151.72,
+    256.19,
+    185.67,
+    261.11
+   ],
+   "text": "3x3 conv, 128, /2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 120,
+   "font_size": 4.92,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p4_b80",
+   "page": 4,
+   "bbox": [
+    221.66,
+    256.19,
+    255.61,
+    261.11
+   ],
+   "text": "3x3 conv, 128, /2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 121,
+   "font_size": 4.92,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p4_b9",
+   "page": 4,
+   "bbox": [
+    155.12,
+    268.84,
+    182.4,
+    273.76
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 122,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b81",
+   "page": 4,
+   "bbox": [
+    225.05,
+    268.84,
+    252.34,
+    273.76
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 123,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b10",
+   "page": 4,
+   "bbox": [
+    155.23,
+    281.49,
+    182.52,
+    286.41
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 124,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b82",
+   "page": 4,
+   "bbox": [
+    224.94,
+    281.49,
+    252.22,
+    286.41
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 125,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b11",
+   "page": 4,
+   "bbox": [
+    155.23,
+    294.26,
+    182.52,
+    299.18
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 126,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b83",
+   "page": 4,
+   "bbox": [
+    224.94,
+    294.26,
+    252.22,
+    299.18
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 127,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b12",
+   "page": 4,
+   "bbox": [
+    155.23,
+    306.91,
+    182.52,
+    311.83
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 128,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b84",
+   "page": 4,
+   "bbox": [
+    224.94,
+    306.91,
+    252.22,
+    311.83
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 129,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b13",
+   "page": 4,
+   "bbox": [
+    155.23,
+    319.56,
+    182.52,
+    324.48
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 130,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b85",
+   "page": 4,
+   "bbox": [
+    224.94,
+    319.56,
+    252.22,
+    324.48
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 131,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b14",
+   "page": 4,
+   "bbox": [
+    155.35,
+    332.22,
+    182.63,
+    337.14
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 132,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b86",
+   "page": 4,
+   "bbox": [
+    224.82,
+    332.22,
+    252.1,
+    337.14
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 133,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b15",
+   "page": 4,
+   "bbox": [
+    155.35,
+    344.99,
+    182.63,
+    349.91
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 134,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b87",
+   "page": 4,
+   "bbox": [
+    224.82,
+    344.99,
+    252.1,
+    349.91
+   ],
+   "text": "3x3 conv, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 135,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b16",
+   "page": 4,
+   "bbox": [
+    151.84,
+    357.64,
+    185.79,
+    362.56
+   ],
+   "text": "3x3 conv, 256, /2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 136,
+   "font_size": 4.92,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p4_b88",
+   "page": 4,
+   "bbox": [
+    221.54,
+    357.64,
+    255.49,
+    362.56
+   ],
+   "text": "3x3 conv, 256, /2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 137,
+   "font_size": 4.92,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p4_b17",
+   "page": 4,
+   "bbox": [
+    155.23,
+    370.29,
+    182.52,
+    375.21
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 138,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b89",
+   "page": 4,
+   "bbox": [
+    224.94,
+    370.29,
+    252.22,
+    375.21
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 139,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b18",
+   "page": 4,
+   "bbox": [
+    155.12,
+    382.94,
+    182.4,
+    387.86
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 140,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b90",
+   "page": 4,
+   "bbox": [
+    225.05,
+    382.94,
+    252.34,
+    387.86
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 141,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b19",
+   "page": 4,
+   "bbox": [
+    155.12,
+    395.71,
+    182.4,
+    400.63
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 142,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b91",
+   "page": 4,
+   "bbox": [
+    225.05,
+    395.71,
+    252.34,
+    400.63
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 143,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b20",
+   "page": 4,
+   "bbox": [
+    155.12,
+    408.36,
+    182.4,
+    413.28
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 144,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b92",
+   "page": 4,
+   "bbox": [
+    225.05,
+    408.36,
+    252.34,
+    413.28
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 145,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b21",
+   "page": 4,
+   "bbox": [
+    155.12,
+    421.02,
+    182.4,
+    425.94
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 146,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b93",
+   "page": 4,
+   "bbox": [
+    225.05,
+    421.02,
+    252.34,
+    425.94
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 147,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b22",
+   "page": 4,
+   "bbox": [
+    155.23,
+    433.67,
+    182.52,
+    438.59
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 148,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b94",
+   "page": 4,
+   "bbox": [
+    224.94,
+    433.67,
+    252.22,
+    438.59
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 149,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b23",
+   "page": 4,
+   "bbox": [
+    155.23,
+    446.44,
+    182.52,
+    451.36
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 150,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b95",
+   "page": 4,
+   "bbox": [
+    224.94,
+    446.44,
+    252.22,
+    451.36
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 151,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b24",
+   "page": 4,
+   "bbox": [
+    155.12,
+    459.09,
+    182.4,
+    464.01
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 152,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b96",
+   "page": 4,
+   "bbox": [
+    225.05,
+    459.09,
+    252.34,
+    464.01
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 153,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b25",
+   "page": 4,
+   "bbox": [
+    155.12,
+    471.74,
+    182.4,
+    476.66
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 154,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b97",
+   "page": 4,
+   "bbox": [
+    225.05,
+    471.74,
+    252.34,
+    476.66
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 155,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b26",
+   "page": 4,
+   "bbox": [
+    155.23,
+    484.39,
+    182.52,
+    489.31
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 156,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b98",
+   "page": 4,
+   "bbox": [
+    224.94,
+    484.39,
+    252.22,
+    489.31
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 157,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b112",
+   "page": 4,
+   "bbox": [
+    308.86,
+    254.93,
+    545.12,
+    420.31
+   ],
+   "text": "Our implementation for ImageNet follows the practice\nin [21, 41]. The image is resized with its shorter side ran-\ndomly sampled in [256, 480] for scale augmentation [41].\nA 224×224 crop is randomly sampled from an image or its\nhorizontal ﬂip, with the per-pixel mean subtracted [21]. The\nstandard color augmentation in [21] is used. We adopt batch\nnormalization (BN) [16] right after each convolution and\nbefore activation, following [16]. We initialize the weights\nas in [13] and train all plain/residual nets from scratch. We\nuse SGD with a mini-batch size of 256. The learning rate\nstarts from 0.1 and is divided by 10 when the error plateaus,\nand the models are trained for up to 60 × 104 iterations. We\nuse a weight decay of 0.0001 and a momentum of 0.9. We\ndo not use dropout [14], following the practice in [16].",
+   "role": "body",
+   "column": 2,
+   "reading_order": 158,
+   "font_size": 9.94,
+   "n_chars": 819,
+   "flags": []
+  },
+  {
+   "id": "p4_b113",
+   "page": 4,
+   "bbox": [
+    308.86,
+    422.3,
+    545.12,
+    487.24
+   ],
+   "text": "In testing, for comparison studies we adopt the standard\n10-crop testing [21]. For best results, we adopt the fully-\nconvolutional form as in [41, 13], and average the scores\nat multiple scales (images are resized such that the shorter\nside is in {224, 256, 384, 480, 640}).",
+   "role": "body",
+   "column": 2,
+   "reading_order": 159,
+   "font_size": 9.96,
+   "n_chars": 274,
+   "flags": []
+  },
+  {
+   "id": "p4_b114",
+   "page": 4,
+   "bbox": [
+    308.86,
+    491.61,
+    385.9,
+    503.57
+   ],
+   "text": "4. Experiments",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 160,
+   "font_size": 11.96,
+   "n_chars": 14,
+   "flags": []
+  },
+  {
+   "id": "p4_b67",
+   "page": 4,
+   "bbox": [
+    52.73,
+    506.89,
+    67.37,
+    511.81
+   ],
+   "text": "output",
+   "role": "body",
+   "column": 0,
+   "reading_order": 161,
+   "font_size": 4.92,
+   "n_chars": 6,
+   "flags": []
+  },
+  {
+   "id": "p4_b57",
+   "page": 4,
+   "bbox": [
+    90.21,
+    509.81,
+    105.79,
+    514.73
+   ],
+   "text": "pool, /2",
+   "role": "body",
+   "column": 0,
+   "reading_order": 162,
+   "font_size": 4.92,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p4_b27",
+   "page": 4,
+   "bbox": [
+    155.23,
+    497.05,
+    182.52,
+    501.97
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 163,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b99",
+   "page": 4,
+   "bbox": [
+    224.94,
+    497.05,
+    252.22,
+    501.97
+   ],
+   "text": "3x3 conv, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 164,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b28",
+   "page": 4,
+   "bbox": [
+    151.84,
+    509.81,
+    185.79,
+    514.73
+   ],
+   "text": "3x3 conv, 512, /2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 165,
+   "font_size": 4.92,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p4_b100",
+   "page": 4,
+   "bbox": [
+    221.54,
+    509.81,
+    255.49,
+    514.73
+   ],
+   "text": "3x3 conv, 512, /2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 166,
+   "font_size": 4.92,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p4_b115",
+   "page": 4,
+   "bbox": [
+    308.86,
+    511.31,
+    439.14,
+    522.27
+   ],
+   "text": "4.1. ImageNet Classiﬁcation",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 167,
+   "font_size": 10.96,
+   "n_chars": 27,
+   "flags": []
+  },
+  {
+   "id": "p4_b68",
+   "page": 4,
+   "bbox": [
+    53.31,
+    512.74,
+    65.6,
+    517.66
+   ],
+   "text": "size: 7",
+   "role": "body",
+   "column": 0,
+   "reading_order": 168,
+   "font_size": 4.92,
+   "n_chars": 7,
+   "flags": []
+  },
+  {
+   "id": "p4_b69",
+   "page": 4,
+   "bbox": [
+    52.73,
+    582.92,
+    67.37,
+    587.84
+   ],
+   "text": "output",
+   "role": "body",
+   "column": 0,
+   "reading_order": 169,
+   "font_size": 4.92,
+   "n_chars": 6,
+   "flags": []
+  },
+  {
+   "id": "p4_b58",
+   "page": 4,
+   "bbox": [
+    90.92,
+    585.84,
+    105.44,
+    590.76
+   ],
+   "text": "fc 4096",
+   "role": "body",
+   "column": 0,
+   "reading_order": 170,
+   "font_size": 4.92,
+   "n_chars": 7,
+   "flags": []
+  },
+  {
+   "id": "p4_b70",
+   "page": 4,
+   "bbox": [
+    53.31,
+    588.77,
+    65.6,
+    593.69
+   ],
+   "text": "size: 1",
+   "role": "body",
+   "column": 0,
+   "reading_order": 171,
+   "font_size": 4.92,
+   "n_chars": 7,
+   "flags": []
+  },
+  {
+   "id": "p4_b59",
+   "page": 4,
+   "bbox": [
+    90.92,
+    598.5,
+    105.44,
+    603.42
+   ],
+   "text": "fc 4096",
+   "role": "body",
+   "column": 0,
+   "reading_order": 172,
+   "font_size": 4.92,
+   "n_chars": 7,
+   "flags": []
+  },
+  {
+   "id": "p4_b60",
+   "page": 4,
+   "bbox": [
+    90.57,
+    611.27,
+    105.09,
+    616.19
+   ],
+   "text": "fc 1000",
+   "role": "body",
+   "column": 0,
+   "reading_order": 173,
+   "font_size": 4.92,
+   "n_chars": 7,
+   "flags": []
+  },
+  {
+   "id": "p4_b29",
+   "page": 4,
+   "bbox": [
+    155.23,
+    522.47,
+    182.52,
+    527.39
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 174,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b101",
+   "page": 4,
+   "bbox": [
+    224.94,
+    522.47,
+    252.22,
+    527.39
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 175,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b30",
+   "page": 4,
+   "bbox": [
+    155.35,
+    535.12,
+    182.63,
+    540.04
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 176,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b102",
+   "page": 4,
+   "bbox": [
+    224.82,
+    535.12,
+    252.1,
+    540.04
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 177,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b31",
+   "page": 4,
+   "bbox": [
+    155.35,
+    547.77,
+    182.63,
+    552.69
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 178,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b103",
+   "page": 4,
+   "bbox": [
+    224.82,
+    547.77,
+    252.1,
+    552.69
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 179,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b32",
+   "page": 4,
+   "bbox": [
+    155.23,
+    560.54,
+    182.52,
+    565.46
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 180,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b104",
+   "page": 4,
+   "bbox": [
+    224.94,
+    560.54,
+    252.22,
+    565.46
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 181,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b33",
+   "page": 4,
+   "bbox": [
+    155.23,
+    573.19,
+    182.52,
+    578.11
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 182,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b105",
+   "page": 4,
+   "bbox": [
+    224.94,
+    573.19,
+    252.22,
+    578.11
+   ],
+   "text": "3x3 conv, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 183,
+   "font_size": 4.92,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p4_b34",
+   "page": 4,
+   "bbox": [
+    160.27,
+    585.84,
+    177.15,
+    590.76
+   ],
+   "text": "avg pool",
+   "role": "body",
+   "column": 1,
+   "reading_order": 184,
+   "font_size": 4.92,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p4_b106",
+   "page": 4,
+   "bbox": [
+    230.09,
+    585.84,
+    246.85,
+    590.76
+   ],
+   "text": "avg pool",
+   "role": "body",
+   "column": 1,
+   "reading_order": 185,
+   "font_size": 4.92,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p4_b35",
+   "page": 4,
+   "bbox": [
+    160.97,
+    598.5,
+    175.61,
+    603.42
+   ],
+   "text": "fc 1000",
+   "role": "body",
+   "column": 1,
+   "reading_order": 186,
+   "font_size": 4.92,
+   "n_chars": 7,
+   "flags": []
+  },
+  {
+   "id": "p4_b107",
+   "page": 4,
+   "bbox": [
+    231.5,
+    598.5,
+    246.02,
+    603.42
+   ],
+   "text": "fc 1000",
+   "role": "body",
+   "column": 1,
+   "reading_order": 187,
+   "font_size": 4.92,
+   "n_chars": 7,
+   "flags": []
+  },
+  {
+   "id": "p4_b116",
+   "page": 4,
+   "bbox": [
+    308.86,
+    530.09,
+    545.12,
+    599.83
+   ],
+   "text": "We evaluate our method on the ImageNet 2012 classiﬁ-\ncation dataset [36] that consists of 1000 classes. The models\nare trained on the 1.28 million training images, and evalu-\nated on the 50k validation images. We also obtain a ﬁnal\nresult on the 100k test images, reported by the test server.\nWe evaluate both top-1 and top-5 error rates.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 188,
+   "font_size": 9.96,
+   "n_chars": 338,
+   "flags": []
+  },
+  {
+   "id": "p4_b117",
+   "page": 4,
+   "bbox": [
+    308.86,
+    607.71,
+    545.12,
+    653.63
+   ],
+   "text": "Plain Networks. We ﬁrst evaluate 18-layer and 34-layer\nplain nets. The 34-layer plain net is in Fig. 3 (middle). The\n18-layer plain net is of a similar form. See Table 1 for de-\ntailed architectures.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 189,
+   "font_size": 9.96,
+   "n_chars": 199,
+   "flags": []
+  },
+  {
+   "id": "p4_b109",
+   "page": 4,
+   "bbox": [
+    50.11,
+    632.83,
+    286.37,
+    696.68
+   ],
+   "text": "Figure 3. Example network architectures for ImageNet. Left: the\nVGG-19 model [41] (19.6 billion FLOPs) as a reference. Mid-\ndle: a plain network with 34 parameter layers (3.6 billion FLOPs).\nRight: a residual network with 34 parameter layers (3.6 billion\nFLOPs). The dotted shortcuts increase dimensions. Table 1 shows\nmore details and other variants.",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 190,
+   "font_size": 8.97,
+   "n_chars": 351,
+   "flags": []
+  },
+  {
+   "id": "p4_b118",
+   "page": 4,
+   "bbox": [
+    308.86,
+    655.62,
+    545.12,
+    713.41
+   ],
+   "text": "The results in Table 2 show that the deeper 34-layer plain\nnet has higher validation error than the shallower 18-layer\nplain net. To reveal the reasons, in Fig. 4 (left) we com-\npare their training/validation errors during the training pro-\ncedure. We have observed the degradation problem - the",
+   "role": "body",
+   "column": 2,
+   "reading_order": 191,
+   "font_size": 9.96,
+   "n_chars": 295,
+   "flags": []
+  },
+  {
+   "id": "p4_b119",
+   "page": 4,
+   "bbox": [
+    295.12,
+    733.33,
+    300.1,
+    743.29
+   ],
+   "text": "4",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 192,
+   "font_size": 9.96,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b0",
+   "page": 5,
+   "bbox": [
+    127.91,
+    73.33,
+    452.58,
+    93.23
+   ],
+   "text": "layer name output size\n18-layer\n34-layer\n50-layer\n101-layer\n152-layer\nconv1\n112×112\n7×7, 64, stride 2",
+   "role": "body",
+   "column": 1,
+   "reading_order": 193,
+   "font_size": 6.46,
+   "n_chars": 101,
+   "flags": []
+  },
+  {
+   "id": "p5_b2",
+   "page": 5,
+   "bbox": [
+    194.53,
+    90.8,
+    360.01,
+    109.73
+   ],
+   "text": "3×3 max pool, stride 2\n\u0014",
+   "role": "body",
+   "column": 1,
+   "reading_order": 194,
+   "font_size": 6.46,
+   "n_chars": 24,
+   "flags": []
+  },
+  {
+   "id": "p5_b10",
+   "page": 5,
+   "bbox": [
+    297.97,
+    99.39,
+    302.28,
+    105.86
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 195,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b13",
+   "page": 5,
+   "bbox": [
+    333.16,
+    99.39,
+    337.48,
+    105.86
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 196,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b15",
+   "page": 5,
+   "bbox": [
+    356.33,
+    99.39,
+    360.65,
+    105.86
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 197,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b18",
+   "page": 5,
+   "bbox": [
+    391.53,
+    99.39,
+    395.84,
+    105.86
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 198,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b20",
+   "page": 5,
+   "bbox": [
+    416.31,
+    99.39,
+    420.62,
+    105.86
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 199,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b23",
+   "page": 5,
+   "bbox": [
+    451.51,
+    99.39,
+    455.82,
+    105.86
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 200,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b12",
+   "page": 5,
+   "bbox": [
+    305.51,
+    99.98,
+    329.93,
+    126.97
+   ],
+   "text": "1×1, 64\n3×3, 64\n1×1, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 201,
+   "font_size": 6.46,
+   "n_chars": 24,
+   "flags": []
+  },
+  {
+   "id": "p5_b17",
+   "page": 5,
+   "bbox": [
+    363.88,
+    99.98,
+    388.3,
+    126.97
+   ],
+   "text": "1×1, 64\n3×3, 64\n1×1, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 202,
+   "font_size": 6.46,
+   "n_chars": 24,
+   "flags": []
+  },
+  {
+   "id": "p5_b22",
+   "page": 5,
+   "bbox": [
+    423.85,
+    99.98,
+    448.27,
+    126.97
+   ],
+   "text": "1×1, 64\n3×3, 64\n1×1, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 203,
+   "font_size": 6.46,
+   "n_chars": 24,
+   "flags": []
+  },
+  {
+   "id": "p5_b4",
+   "page": 5,
+   "bbox": [
+    225.59,
+    103.27,
+    229.01,
+    109.73
+   ],
+   "text": "\u0015",
+   "role": "body",
+   "column": 1,
+   "reading_order": 204,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b6",
+   "page": 5,
+   "bbox": [
+    246.25,
+    103.27,
+    249.66,
+    109.73
+   ],
+   "text": "\u0014",
+   "role": "body",
+   "column": 1,
+   "reading_order": 205,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b8",
+   "page": 5,
+   "bbox": [
+    277.31,
+    103.27,
+    280.73,
+    109.73
+   ],
+   "text": "\u0015",
+   "role": "body",
+   "column": 1,
+   "reading_order": 206,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b1",
+   "page": 5,
+   "bbox": [
+    131.63,
+    103.45,
+    183.66,
+    114.66
+   ],
+   "text": "conv2 x\n56×56",
+   "role": "body",
+   "column": 1,
+   "reading_order": 207,
+   "font_size": 6.46,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p5_b3",
+   "page": 5,
+   "bbox": [
+    201.17,
+    103.93,
+    222.36,
+    123.03
+   ],
+   "text": "3×3, 64\n3×3, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 208,
+   "font_size": 6.46,
+   "n_chars": 15,
+   "flags": []
+  },
+  {
+   "id": "p5_b7",
+   "page": 5,
+   "bbox": [
+    252.89,
+    103.93,
+    274.08,
+    123.03
+   ],
+   "text": "3×3, 64\n3×3, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 209,
+   "font_size": 6.46,
+   "n_chars": 15,
+   "flags": []
+  },
+  {
+   "id": "p5_b5",
+   "page": 5,
+   "bbox": [
+    229.01,
+    107.78,
+    237.27,
+    118.99
+   ],
+   "text": "×2",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 210,
+   "font_size": 6.46,
+   "n_chars": 2,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b9",
+   "page": 5,
+   "bbox": [
+    280.73,
+    107.78,
+    288.99,
+    118.99
+   ],
+   "text": "×3",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 211,
+   "font_size": 6.46,
+   "n_chars": 2,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b14",
+   "page": 5,
+   "bbox": [
+    333.16,
+    107.78,
+    345.73,
+    118.99
+   ],
+   "text": "×3",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 212,
+   "font_size": 6.46,
+   "n_chars": 3,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b19",
+   "page": 5,
+   "bbox": [
+    391.53,
+    107.78,
+    404.1,
+    118.99
+   ],
+   "text": "×3",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 213,
+   "font_size": 6.46,
+   "n_chars": 3,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b24",
+   "page": 5,
+   "bbox": [
+    451.51,
+    107.78,
+    464.08,
+    118.99
+   ],
+   "text": "×3",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 214,
+   "font_size": 6.46,
+   "n_chars": 3,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b11",
+   "page": 5,
+   "bbox": [
+    297.97,
+    111.03,
+    302.28,
+    117.49
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 215,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b16",
+   "page": 5,
+   "bbox": [
+    356.33,
+    111.03,
+    360.65,
+    117.49
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 216,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b21",
+   "page": 5,
+   "bbox": [
+    416.31,
+    111.03,
+    420.62,
+    117.49
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 217,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b33",
+   "page": 5,
+   "bbox": [
+    297.97,
+    125.25,
+    302.28,
+    131.71
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 218,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b36",
+   "page": 5,
+   "bbox": [
+    333.16,
+    125.25,
+    337.48,
+    131.71
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 219,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b38",
+   "page": 5,
+   "bbox": [
+    356.33,
+    125.25,
+    360.65,
+    131.71
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 220,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b41",
+   "page": 5,
+   "bbox": [
+    391.53,
+    125.25,
+    395.84,
+    131.71
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 221,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b43",
+   "page": 5,
+   "bbox": [
+    416.31,
+    125.25,
+    420.62,
+    131.71
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 222,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b46",
+   "page": 5,
+   "bbox": [
+    451.51,
+    125.25,
+    455.82,
+    131.71
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 223,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b35",
+   "page": 5,
+   "bbox": [
+    305.51,
+    125.84,
+    329.93,
+    152.83
+   ],
+   "text": "1×1, 128\n3×3, 128\n1×1, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 224,
+   "font_size": 6.46,
+   "n_chars": 26,
+   "flags": []
+  },
+  {
+   "id": "p5_b40",
+   "page": 5,
+   "bbox": [
+    363.88,
+    125.84,
+    388.3,
+    152.83
+   ],
+   "text": "1×1, 128\n3×3, 128\n1×1, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 225,
+   "font_size": 6.46,
+   "n_chars": 26,
+   "flags": []
+  },
+  {
+   "id": "p5_b45",
+   "page": 5,
+   "bbox": [
+    423.85,
+    125.84,
+    448.27,
+    152.83
+   ],
+   "text": "1×1, 128\n3×3, 128\n1×1, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 226,
+   "font_size": 6.46,
+   "n_chars": 26,
+   "flags": []
+  },
+  {
+   "id": "p5_b25",
+   "page": 5,
+   "bbox": [
+    131.63,
+    129.13,
+    196.33,
+    144.79
+   ],
+   "text": "conv3 x\n28×28\n\u0014",
+   "role": "body",
+   "column": 1,
+   "reading_order": 227,
+   "font_size": 6.46,
+   "n_chars": 15,
+   "flags": []
+  },
+  {
+   "id": "p5_b27",
+   "page": 5,
+   "bbox": [
+    227.21,
+    129.13,
+    230.62,
+    135.59
+   ],
+   "text": "\u0015",
+   "role": "body",
+   "column": 1,
+   "reading_order": 228,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b29",
+   "page": 5,
+   "bbox": [
+    244.63,
+    129.13,
+    248.05,
+    135.59
+   ],
+   "text": "\u0014",
+   "role": "body",
+   "column": 1,
+   "reading_order": 229,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b31",
+   "page": 5,
+   "bbox": [
+    278.93,
+    129.13,
+    282.34,
+    135.59
+   ],
+   "text": "\u0015",
+   "role": "body",
+   "column": 1,
+   "reading_order": 230,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b26",
+   "page": 5,
+   "bbox": [
+    199.56,
+    129.78,
+    223.98,
+    148.88
+   ],
+   "text": "3×3, 128\n3×3, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 231,
+   "font_size": 6.46,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p5_b30",
+   "page": 5,
+   "bbox": [
+    251.28,
+    129.78,
+    275.7,
+    148.88
+   ],
+   "text": "3×3, 128\n3×3, 128",
+   "role": "body",
+   "column": 1,
+   "reading_order": 232,
+   "font_size": 6.46,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p5_b28",
+   "page": 5,
+   "bbox": [
+    230.62,
+    133.64,
+    238.88,
+    144.85
+   ],
+   "text": "×2",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 233,
+   "font_size": 6.46,
+   "n_chars": 2,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b32",
+   "page": 5,
+   "bbox": [
+    282.34,
+    133.64,
+    290.6,
+    144.85
+   ],
+   "text": "×4",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 234,
+   "font_size": 6.46,
+   "n_chars": 2,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b37",
+   "page": 5,
+   "bbox": [
+    333.16,
+    133.64,
+    345.73,
+    144.85
+   ],
+   "text": "×4",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 235,
+   "font_size": 6.46,
+   "n_chars": 3,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b42",
+   "page": 5,
+   "bbox": [
+    391.53,
+    133.64,
+    404.1,
+    144.85
+   ],
+   "text": "×4",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 236,
+   "font_size": 6.46,
+   "n_chars": 3,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b47",
+   "page": 5,
+   "bbox": [
+    451.51,
+    133.64,
+    464.08,
+    144.85
+   ],
+   "text": "×8",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 237,
+   "font_size": 6.46,
+   "n_chars": 3,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b34",
+   "page": 5,
+   "bbox": [
+    297.97,
+    136.88,
+    302.28,
+    143.35
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 238,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b39",
+   "page": 5,
+   "bbox": [
+    356.33,
+    136.88,
+    360.65,
+    143.35
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 239,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b44",
+   "page": 5,
+   "bbox": [
+    416.31,
+    136.88,
+    420.62,
+    143.35
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 240,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b56",
+   "page": 5,
+   "bbox": [
+    296.36,
+    151.1,
+    300.67,
+    157.57
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 241,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b59",
+   "page": 5,
+   "bbox": [
+    334.78,
+    151.1,
+    339.09,
+    157.57
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 242,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b61",
+   "page": 5,
+   "bbox": [
+    353.1,
+    151.1,
+    357.41,
+    157.57
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 243,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b64",
+   "page": 5,
+   "bbox": [
+    391.53,
+    151.1,
+    395.84,
+    157.57
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 244,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b66",
+   "page": 5,
+   "bbox": [
+    413.08,
+    151.1,
+    417.39,
+    157.57
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 245,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b69",
+   "page": 5,
+   "bbox": [
+    451.51,
+    151.1,
+    455.82,
+    157.57
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 246,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b58",
+   "page": 5,
+   "bbox": [
+    303.9,
+    151.7,
+    331.55,
+    178.68
+   ],
+   "text": "1×1, 256\n3×3, 256\n1×1, 1024",
+   "role": "body",
+   "column": 1,
+   "reading_order": 247,
+   "font_size": 6.46,
+   "n_chars": 27,
+   "flags": []
+  },
+  {
+   "id": "p5_b63",
+   "page": 5,
+   "bbox": [
+    360.64,
+    151.7,
+    388.3,
+    178.68
+   ],
+   "text": "1×1, 256\n3×3, 256\n1×1, 1024",
+   "role": "body",
+   "column": 1,
+   "reading_order": 248,
+   "font_size": 6.46,
+   "n_chars": 27,
+   "flags": []
+  },
+  {
+   "id": "p5_b68",
+   "page": 5,
+   "bbox": [
+    420.62,
+    151.7,
+    448.27,
+    178.68
+   ],
+   "text": "1×1, 256\n3×3, 256\n1×1, 1024",
+   "role": "body",
+   "column": 1,
+   "reading_order": 249,
+   "font_size": 6.46,
+   "n_chars": 27,
+   "flags": []
+  },
+  {
+   "id": "p5_b48",
+   "page": 5,
+   "bbox": [
+    131.63,
+    154.98,
+    196.33,
+    170.64
+   ],
+   "text": "conv4 x\n14×14\n\u0014",
+   "role": "body",
+   "column": 1,
+   "reading_order": 250,
+   "font_size": 6.46,
+   "n_chars": 15,
+   "flags": []
+  },
+  {
+   "id": "p5_b50",
+   "page": 5,
+   "bbox": [
+    227.21,
+    154.98,
+    230.62,
+    161.45
+   ],
+   "text": "\u0015",
+   "role": "body",
+   "column": 1,
+   "reading_order": 251,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b52",
+   "page": 5,
+   "bbox": [
+    244.63,
+    154.98,
+    248.05,
+    161.45
+   ],
+   "text": "\u0014",
+   "role": "body",
+   "column": 1,
+   "reading_order": 252,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b54",
+   "page": 5,
+   "bbox": [
+    278.93,
+    154.98,
+    282.34,
+    161.45
+   ],
+   "text": "\u0015",
+   "role": "body",
+   "column": 1,
+   "reading_order": 253,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b49",
+   "page": 5,
+   "bbox": [
+    199.56,
+    155.64,
+    223.98,
+    174.74
+   ],
+   "text": "3×3, 256\n3×3, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 254,
+   "font_size": 6.46,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p5_b53",
+   "page": 5,
+   "bbox": [
+    251.28,
+    155.64,
+    275.7,
+    174.74
+   ],
+   "text": "3×3, 256\n3×3, 256",
+   "role": "body",
+   "column": 1,
+   "reading_order": 255,
+   "font_size": 6.46,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p5_b51",
+   "page": 5,
+   "bbox": [
+    230.62,
+    159.49,
+    238.88,
+    170.71
+   ],
+   "text": "×2",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 256,
+   "font_size": 6.46,
+   "n_chars": 2,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b55",
+   "page": 5,
+   "bbox": [
+    282.34,
+    159.49,
+    290.6,
+    170.71
+   ],
+   "text": "×6",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 257,
+   "font_size": 6.46,
+   "n_chars": 2,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b60",
+   "page": 5,
+   "bbox": [
+    334.78,
+    159.49,
+    347.35,
+    170.71
+   ],
+   "text": "×6",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 258,
+   "font_size": 6.46,
+   "n_chars": 3,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b65",
+   "page": 5,
+   "bbox": [
+    391.53,
+    159.49,
+    407.33,
+    170.71
+   ],
+   "text": "×23",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 259,
+   "font_size": 6.46,
+   "n_chars": 4,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b70",
+   "page": 5,
+   "bbox": [
+    451.51,
+    159.49,
+    467.31,
+    170.71
+   ],
+   "text": "×36",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 260,
+   "font_size": 6.46,
+   "n_chars": 4,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b57",
+   "page": 5,
+   "bbox": [
+    296.36,
+    162.74,
+    300.67,
+    169.2
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 261,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b62",
+   "page": 5,
+   "bbox": [
+    353.1,
+    162.74,
+    357.41,
+    169.2
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 262,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b67",
+   "page": 5,
+   "bbox": [
+    413.08,
+    162.74,
+    417.39,
+    169.2
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 263,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b79",
+   "page": 5,
+   "bbox": [
+    296.36,
+    176.96,
+    300.67,
+    183.42
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 264,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b82",
+   "page": 5,
+   "bbox": [
+    334.78,
+    176.96,
+    339.09,
+    183.42
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 265,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b84",
+   "page": 5,
+   "bbox": [
+    354.72,
+    176.96,
+    359.03,
+    183.42
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 266,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b87",
+   "page": 5,
+   "bbox": [
+    393.14,
+    176.96,
+    397.46,
+    183.42
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 267,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b89",
+   "page": 5,
+   "bbox": [
+    414.7,
+    176.96,
+    419.01,
+    183.42
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 268,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b92",
+   "page": 5,
+   "bbox": [
+    453.12,
+    176.96,
+    457.43,
+    183.42
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 269,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b81",
+   "page": 5,
+   "bbox": [
+    303.9,
+    177.55,
+    331.55,
+    204.54
+   ],
+   "text": "1×1, 512\n3×3, 512\n1×1, 2048",
+   "role": "body",
+   "column": 1,
+   "reading_order": 270,
+   "font_size": 6.46,
+   "n_chars": 27,
+   "flags": []
+  },
+  {
+   "id": "p5_b86",
+   "page": 5,
+   "bbox": [
+    362.26,
+    177.55,
+    389.91,
+    204.54
+   ],
+   "text": "1×1, 512\n3×3, 512\n1×1, 2048",
+   "role": "body",
+   "column": 1,
+   "reading_order": 271,
+   "font_size": 6.46,
+   "n_chars": 27,
+   "flags": []
+  },
+  {
+   "id": "p5_b91",
+   "page": 5,
+   "bbox": [
+    422.24,
+    177.55,
+    449.89,
+    204.54
+   ],
+   "text": "1×1, 512\n3×3, 512\n1×1, 2048",
+   "role": "body",
+   "column": 1,
+   "reading_order": 272,
+   "font_size": 6.46,
+   "n_chars": 27,
+   "flags": []
+  },
+  {
+   "id": "p5_b71",
+   "page": 5,
+   "bbox": [
+    131.63,
+    180.84,
+    196.33,
+    196.5
+   ],
+   "text": "conv5 x\n7×7\n\u0014",
+   "role": "body",
+   "column": 1,
+   "reading_order": 273,
+   "font_size": 6.46,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p5_b73",
+   "page": 5,
+   "bbox": [
+    227.21,
+    180.84,
+    230.62,
+    187.3
+   ],
+   "text": "\u0015",
+   "role": "body",
+   "column": 1,
+   "reading_order": 274,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b75",
+   "page": 5,
+   "bbox": [
+    244.63,
+    180.84,
+    248.05,
+    187.3
+   ],
+   "text": "\u0014",
+   "role": "body",
+   "column": 1,
+   "reading_order": 275,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b77",
+   "page": 5,
+   "bbox": [
+    278.93,
+    180.84,
+    282.34,
+    187.3
+   ],
+   "text": "\u0015",
+   "role": "body",
+   "column": 1,
+   "reading_order": 276,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b72",
+   "page": 5,
+   "bbox": [
+    199.56,
+    181.5,
+    223.98,
+    200.6
+   ],
+   "text": "3×3, 512\n3×3, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 277,
+   "font_size": 6.46,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p5_b76",
+   "page": 5,
+   "bbox": [
+    251.28,
+    181.5,
+    275.7,
+    200.6
+   ],
+   "text": "3×3, 512\n3×3, 512",
+   "role": "body",
+   "column": 1,
+   "reading_order": 278,
+   "font_size": 6.46,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p5_b74",
+   "page": 5,
+   "bbox": [
+    230.62,
+    185.35,
+    238.88,
+    196.56
+   ],
+   "text": "×2",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 279,
+   "font_size": 6.46,
+   "n_chars": 2,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b78",
+   "page": 5,
+   "bbox": [
+    282.34,
+    185.35,
+    290.6,
+    196.56
+   ],
+   "text": "×3",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 280,
+   "font_size": 6.46,
+   "n_chars": 2,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b83",
+   "page": 5,
+   "bbox": [
+    334.78,
+    185.35,
+    347.35,
+    196.56
+   ],
+   "text": "×3",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 281,
+   "font_size": 6.46,
+   "n_chars": 3,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b88",
+   "page": 5,
+   "bbox": [
+    393.14,
+    185.35,
+    405.71,
+    196.56
+   ],
+   "text": "×3",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 282,
+   "font_size": 6.46,
+   "n_chars": 3,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b93",
+   "page": 5,
+   "bbox": [
+    453.12,
+    185.35,
+    465.69,
+    196.56
+   ],
+   "text": "×3",
+   "role": "equation",
+   "column": 1,
+   "reading_order": 283,
+   "font_size": 6.46,
+   "n_chars": 3,
+   "flags": [
+    "math"
+   ]
+  },
+  {
+   "id": "p5_b80",
+   "page": 5,
+   "bbox": [
+    296.36,
+    188.6,
+    300.67,
+    195.06
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 284,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b85",
+   "page": 5,
+   "bbox": [
+    354.72,
+    188.6,
+    359.03,
+    195.06
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 285,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b90",
+   "page": 5,
+   "bbox": [
+    414.7,
+    188.6,
+    419.01,
+    195.06
+   ],
+   "text": "",
+   "role": "body",
+   "column": 1,
+   "reading_order": 286,
+   "font_size": 6.46,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p5_b94",
+   "page": 5,
+   "bbox": [
+    149.19,
+    202.76,
+    452.73,
+    222.77
+   ],
+   "text": "1×1\naverage pool, 1000-d fc, softmax\nFLOPs\n1.8×109\n3.6×109\n3.8×109\n7.6×109\n11.3×109",
+   "role": "body",
+   "column": 1,
+   "reading_order": 287,
+   "font_size": 6.08,
+   "n_chars": 83,
+   "flags": []
+  },
+  {
+   "id": "p5_b95",
+   "page": 5,
+   "bbox": [
+    50.11,
+    224.67,
+    545.11,
+    244.6
+   ],
+   "text": "Table 1. Architectures for ImageNet. Building blocks are shown in brackets (see also Fig. 5), with the numbers of blocks stacked. Down-\nsampling is performed by conv3 1, conv4 1, and conv5 1 with a stride of 2.",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 288,
+   "font_size": 8.97,
+   "n_chars": 210,
+   "flags": []
+  },
+  {
+   "id": "p5_b100",
+   "page": 5,
+   "bbox": [
+    94.45,
+    258.6,
+    101.36,
+    265.51
+   ],
+   "text": "60",
+   "role": "body",
+   "column": 0,
+   "reading_order": 289,
+   "font_size": 6.9,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p5_b99",
+   "page": 5,
+   "bbox": [
+    94.45,
+    286.43,
+    101.36,
+    293.33
+   ],
+   "text": "50",
+   "role": "body",
+   "column": 0,
+   "reading_order": 290,
+   "font_size": 6.9,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p5_b102",
+   "page": 5,
+   "bbox": [
+    86.04,
+    300.87,
+    92.95,
+    326.44
+   ],
+   "text": "error (%)",
+   "role": "body",
+   "column": 0,
+   "reading_order": 291,
+   "font_size": 6.9,
+   "n_chars": 9,
+   "flags": []
+  },
+  {
+   "id": "p5_b98",
+   "page": 5,
+   "bbox": [
+    94.45,
+    314.57,
+    101.36,
+    321.47
+   ],
+   "text": "40",
+   "role": "body",
+   "column": 0,
+   "reading_order": 292,
+   "font_size": 6.9,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p5_b110",
+   "page": 5,
+   "bbox": [
+    318.46,
+    258.6,
+    325.37,
+    265.51
+   ],
+   "text": "60",
+   "role": "body",
+   "column": 1,
+   "reading_order": 293,
+   "font_size": 6.9,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p5_b109",
+   "page": 5,
+   "bbox": [
+    318.46,
+    286.43,
+    325.37,
+    293.33
+   ],
+   "text": "50",
+   "role": "body",
+   "column": 1,
+   "reading_order": 294,
+   "font_size": 6.9,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p5_b112",
+   "page": 5,
+   "bbox": [
+    310.05,
+    300.87,
+    316.95,
+    326.44
+   ],
+   "text": "error (%)",
+   "role": "body",
+   "column": 1,
+   "reading_order": 295,
+   "font_size": 6.9,
+   "n_chars": 9,
+   "flags": []
+  },
+  {
+   "id": "p5_b108",
+   "page": 5,
+   "bbox": [
+    318.46,
+    314.57,
+    325.37,
+    321.47
+   ],
+   "text": "40",
+   "role": "body",
+   "column": 1,
+   "reading_order": 296,
+   "font_size": 6.9,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p5_b117",
+   "page": 5,
+   "bbox": [
+    253.07,
+    322.98,
+    501.88,
+    338.23
+   ],
+   "text": "34-layer\n18-layer",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 297,
+   "font_size": 7.86,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p5_b97",
+   "page": 5,
+   "bbox": [
+    94.45,
+    342.39,
+    101.36,
+    349.29
+   ],
+   "text": "30",
+   "role": "body",
+   "column": 0,
+   "reading_order": 298,
+   "font_size": 6.9,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p5_b107",
+   "page": 5,
+   "bbox": [
+    318.46,
+    342.39,
+    325.37,
+    349.29
+   ],
+   "text": "30",
+   "role": "body",
+   "column": 1,
+   "reading_order": 299,
+   "font_size": 6.9,
+   "n_chars": 2,
+   "flags": []
+  },
+  {
+   "id": "p5_b116",
+   "page": 5,
+   "bbox": [
+    253.07,
+    347.97,
+    279.29,
+    355.83
+   ],
+   "text": "18-layer",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 300,
+   "font_size": 7.86,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p5_b105",
+   "page": 5,
+   "bbox": [
+    115.83,
+    353.14,
+    142.65,
+    371.1
+   ],
+   "text": "plain-18\nplain-34",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 301,
+   "font_size": 8.05,
+   "n_chars": 17,
+   "flags": []
+  },
+  {
+   "id": "p5_b115",
+   "page": 5,
+   "bbox": [
+    339.84,
+    353.14,
+    374.03,
+    371.1
+   ],
+   "text": "ResNet-18\nResNet-34",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 302,
+   "font_size": 8.05,
+   "n_chars": 19,
+   "flags": []
+  },
+  {
+   "id": "p5_b118",
+   "page": 5,
+   "bbox": [
+    475.65,
+    362.75,
+    501.88,
+    370.61
+   ],
+   "text": "34-layer",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 303,
+   "font_size": 7.86,
+   "n_chars": 8,
+   "flags": []
+  },
+  {
+   "id": "p5_b96",
+   "page": 5,
+   "bbox": [
+    94.45,
+    370.53,
+    271.61,
+    381.99
+   ],
+   "text": "0\n10\n20\n30\n40\n50\n20",
+   "role": "body",
+   "column": 1,
+   "reading_order": 304,
+   "font_size": 6.9,
+   "n_chars": 19,
+   "flags": []
+  },
+  {
+   "id": "p5_b106",
+   "page": 5,
+   "bbox": [
+    318.46,
+    370.53,
+    495.61,
+    381.99
+   ],
+   "text": "0\n10\n20\n30\n40\n50\n20",
+   "role": "body",
+   "column": 1,
+   "reading_order": 305,
+   "font_size": 6.9,
+   "n_chars": 19,
+   "flags": []
+  },
+  {
+   "id": "p5_b101",
+   "page": 5,
+   "bbox": [
+    179.81,
+    382.0,
+    206.79,
+    388.91
+   ],
+   "text": "iter. (1e4)",
+   "role": "body",
+   "column": 1,
+   "reading_order": 306,
+   "font_size": 6.9,
+   "n_chars": 11,
+   "flags": []
+  },
+  {
+   "id": "p5_b111",
+   "page": 5,
+   "bbox": [
+    403.82,
+    382.0,
+    430.8,
+    388.91
+   ],
+   "text": "iter. (1e4)",
+   "role": "body",
+   "column": 1,
+   "reading_order": 307,
+   "font_size": 6.9,
+   "n_chars": 11,
+   "flags": []
+  },
+  {
+   "id": "p5_b119",
+   "page": 5,
+   "bbox": [
+    50.11,
+    392.29,
+    545.12,
+    423.26
+   ],
+   "text": "Figure 4. Training on ImageNet. Thin curves denote training error, and bold curves denote validation error of the center crops. Left: plain\nnetworks of 18 and 34 layers. Right: ResNets of 18 and 34 layers. In this plot, the residual networks have no extra parameter compared to\ntheir plain counterparts.",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 308,
+   "font_size": 8.97,
+   "n_chars": 303,
+   "flags": []
+  },
+  {
+   "id": "p5_b124",
+   "page": 5,
+   "bbox": [
+    308.86,
+    444.01,
+    545.11,
+    467.28
+   ],
+   "text": "reducing of the training error3. The reason for such opti-\nmization difﬁculties will be studied in the future.",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 309,
+   "font_size": 9.83,
+   "n_chars": 110,
+   "flags": []
+  },
+  {
+   "id": "p5_b120",
+   "page": 5,
+   "bbox": [
+    101.47,
+    444.99,
+    235.01,
+    478.47
+   ],
+   "text": "plain\nResNet\n18 layers\n27.94\n27.88\n34 layers\n28.54\n25.03",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 310,
+   "font_size": 8.97,
+   "n_chars": 56,
+   "flags": []
+  },
+  {
+   "id": "p5_b125",
+   "page": 5,
+   "bbox": [
+    308.86,
+    475.16,
+    545.12,
+    568.9
+   ],
+   "text": "Residual Networks. Next we evaluate 18-layer and 34-\nlayer residual nets (ResNets). The baseline architectures\nare the same as the above plain nets, expect that a shortcut\nconnection is added to each pair of 3×3 ﬁlters as in Fig. 3\n(right). In the ﬁrst comparison (Table 2 and Fig. 4 right),\nwe use identity mapping for all shortcuts and zero-padding\nfor increasing dimensions (option A). So they have no extra\nparameter compared to the plain counterparts.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 311,
+   "font_size": 9.96,
+   "n_chars": 456,
+   "flags": []
+  },
+  {
+   "id": "p5_b121",
+   "page": 5,
+   "bbox": [
+    50.11,
+    485.61,
+    286.36,
+    516.49
+   ],
+   "text": "Table 2. Top-1 error (%, 10-crop testing) on ImageNet validation.\nHere the ResNets have no extra parameter compared to their plain\ncounterparts. Fig. 4 shows the training procedures.",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 312,
+   "font_size": 8.97,
+   "n_chars": 182,
+   "flags": []
+  },
+  {
+   "id": "p5_b122",
+   "page": 5,
+   "bbox": [
+    50.11,
+    544.71,
+    286.37,
+    590.71
+   ],
+   "text": "34-layer plain net has higher training error throughout the\nwhole training procedure, even though the solution space\nof the 18-layer plain network is a subspace of that of the\n34-layer one.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 313,
+   "font_size": 9.96,
+   "n_chars": 189,
+   "flags": []
+  },
+  {
+   "id": "p5_b126",
+   "page": 5,
+   "bbox": [
+    308.86,
+    570.89,
+    545.12,
+    664.54
+   ],
+   "text": "We have three major observations from Table 2 and\nFig. 4. First, the situation is reversed with residual learn-\ning – the 34-layer ResNet is better than the 18-layer ResNet\n(by 2.8%). More importantly, the 34-layer ResNet exhibits\nconsiderably lower training error and is generalizable to the\nvalidation data. This indicates that the degradation problem\nis well addressed in this setting and we manage to obtain\naccuracy gains from increased depth.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 314,
+   "font_size": 9.96,
+   "n_chars": 448,
+   "flags": []
+  },
+  {
+   "id": "p5_b123",
+   "page": 5,
+   "bbox": [
+    50.11,
+    595.67,
+    286.37,
+    713.41
+   ],
+   "text": "We argue that this optimization difﬁculty is unlikely to\nbe caused by vanishing gradients. These plain networks are\ntrained with BN [16], which ensures forward propagated\nsignals to have non-zero variances. We also verify that the\nbackward propagated gradients exhibit healthy norms with\nBN. So neither forward nor backward signals vanish. In\nfact, the 34-layer plain net is still able to achieve compet-\nitive accuracy (Table 3), suggesting that the solver works\nto some extent. We conjecture that the deep plain nets may\nhave exponentially low convergence rates, which impact the",
+   "role": "body",
+   "column": 1,
+   "reading_order": 315,
+   "font_size": 9.96,
+   "n_chars": 581,
+   "flags": []
+  },
+  {
+   "id": "p5_b127",
+   "page": 5,
+   "bbox": [
+    320.82,
+    666.53,
+    545.12,
+    676.5
+   ],
+   "text": "Second, compared to its plain counterpart, the 34-layer",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 316,
+   "font_size": 9.96,
+   "n_chars": 55,
+   "flags": []
+  },
+  {
+   "id": "p5_b128",
+   "page": 5,
+   "bbox": [
+    308.86,
+    684.72,
+    545.11,
+    712.93
+   ],
+   "text": "3We have experimented with more training iterations (3×) and still ob-\nserved the degradation problem, suggesting that this problem cannot be\nfeasibly addressed by simply using more iterations.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 317,
+   "font_size": 7.89,
+   "n_chars": 193,
+   "flags": []
+  },
+  {
+   "id": "p5_b129",
+   "page": 5,
+   "bbox": [
+    295.12,
+    733.33,
+    300.1,
+    743.3
+   ],
+   "text": "5",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 318,
+   "font_size": 9.96,
+   "n_chars": 1,
+   "flags": []
+  },
+  {
+   "id": "p6_b0",
+   "page": 6,
+   "bbox": [
+    96.43,
+    74.79,
+    240.04,
+    82.76
+   ],
+   "text": "model\ntop-1 err.\ntop-5 err.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 319,
+   "font_size": 7.97,
+   "n_chars": 27,
+   "flags": []
+  },
+  {
+   "id": "p6_b1",
+   "page": 6,
+   "bbox": [
+    96.43,
+    86.49,
+    233.28,
+    95.46
+   ],
+   "text": "VGG-16 [41]\n28.07\n9.33",
+   "role": "body",
+   "column": 0,
+   "reading_order": 320,
+   "font_size": 8.63,
+   "n_chars": 22,
+   "flags": []
+  },
+  {
+   "id": "p6_b2",
+   "page": 6,
+   "bbox": [
+    96.43,
+    98.54,
+    233.28,
+    107.51
+   ],
+   "text": "GoogLeNet [44]\n-\n9.15",
+   "role": "body",
+   "column": 0,
+   "reading_order": 321,
+   "font_size": 8.63,
+   "n_chars": 21,
+   "flags": []
+  },
+  {
+   "id": "p6_b3",
+   "page": 6,
+   "bbox": [
+    96.43,
+    110.6,
+    233.28,
+    119.57
+   ],
+   "text": "PReLU-net [13]\n24.27\n7.38",
+   "role": "body",
+   "column": 0,
+   "reading_order": 322,
+   "font_size": 8.63,
+   "n_chars": 25,
+   "flags": []
+  },
+  {
+   "id": "p6_b4",
+   "page": 6,
+   "bbox": [
+    96.43,
+    125.44,
+    235.52,
+    134.41
+   ],
+   "text": "plain-34\n28.54\n10.02",
+   "role": "body",
+   "column": 0,
+   "reading_order": 323,
+   "font_size": 8.63,
+   "n_chars": 20,
+   "flags": []
+  },
+  {
+   "id": "p6_b5",
+   "page": 6,
+   "bbox": [
+    96.43,
+    137.5,
+    233.28,
+    146.47
+   ],
+   "text": "ResNet-34 A\n25.03\n7.76",
+   "role": "body",
+   "column": 0,
+   "reading_order": 324,
+   "font_size": 8.63,
+   "n_chars": 22,
+   "flags": []
+  },
+  {
+   "id": "p6_b6",
+   "page": 6,
+   "bbox": [
+    96.43,
+    149.55,
+    233.28,
+    158.52
+   ],
+   "text": "ResNet-34 B\n24.52\n7.46",
+   "role": "body",
+   "column": 0,
+   "reading_order": 325,
+   "font_size": 8.63,
+   "n_chars": 22,
+   "flags": []
+  },
+  {
+   "id": "p6_b24",
+   "page": 6,
+   "bbox": [
+    350.21,
+    89.22,
+    367.96,
+    95.27
+   ],
+   "text": "3x3, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 326,
+   "font_size": 6.04,
+   "n_chars": 7,
+   "flags": []
+  },
+  {
+   "id": "p6_b27",
+   "page": 6,
+   "bbox": [
+    362.29,
+    97.92,
+    371.03,
+    103.38
+   ],
+   "text": "relu",
+   "role": "body",
+   "column": 1,
+   "reading_order": 327,
+   "font_size": 5.46,
+   "n_chars": 4,
+   "flags": []
+  },
+  {
+   "id": "p6_b25",
+   "page": 6,
+   "bbox": [
+    350.21,
+    111.36,
+    367.96,
+    117.4
+   ],
+   "text": "3x3, 64",
+   "role": "body",
+   "column": 1,
+   "reading_order": 328,
+   "font_size": 6.04,
+   "n_chars": 7,
+   "flags": []
+  },
+  {
+   "id": "p6_b26",
+   "page": 6,
+   "bbox": [
+    362.29,
+    134.83,
+    371.03,
+    140.29
+   ],
+   "text": "relu",
+   "role": "body",
+   "column": 1,
+   "reading_order": 329,
+   "font_size": 5.46,
+   "n_chars": 4,
+   "flags": []
+  },
+  {
+   "id": "p6_b28",
+   "page": 6,
+   "bbox": [
+    365.13,
+    72.0,
+    496.69,
+    77.46
+   ],
+   "text": "64-d\n256-d",
+   "role": "body",
+   "column": 2,
+   "reading_order": 330,
+   "font_size": 5.46,
+   "n_chars": 10,
+   "flags": []
+  },
+  {
+   "id": "p6_b21",
+   "page": 6,
+   "bbox": [
+    470.33,
+    87.26,
+    491.16,
+    99.3
+   ],
+   "text": "1x1, 64\nrelu",
+   "role": "body",
+   "column": 2,
+   "reading_order": 331,
+   "font_size": 5.75,
+   "n_chars": 12,
+   "flags": []
+  },
+  {
+   "id": "p6_b20",
+   "page": 6,
+   "bbox": [
+    470.33,
+    101.6,
+    488.09,
+    107.64
+   ],
+   "text": "3x3, 64",
+   "role": "body",
+   "column": 2,
+   "reading_order": 332,
+   "font_size": 6.04,
+   "n_chars": 7,
+   "flags": []
+  },
+  {
+   "id": "p6_b22",
+   "page": 6,
+   "bbox": [
+    468.8,
+    108.26,
+    491.16,
+    121.99
+   ],
+   "text": "1x1, 256\nrelu",
+   "role": "body",
+   "column": 2,
+   "reading_order": 333,
+   "font_size": 5.75,
+   "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p6_b23",
+   "page": 6,
+   "bbox": [
+    482.42,
+    134.83,
+    491.16,
+    140.29
+   ],
+   "text": "relu",
+   "role": "body",
+   "column": 2,
+   "reading_order": 334,
+   "font_size": 5.46,
+   "n_chars": 4,
+   "flags": []
+  },
+  {
+   "id": "p6_b29",
+   "page": 6,
+   "bbox": [
+    308.86,
+    156.78,
+    545.11,
+    187.99
+   ],
+   "text": "Figure 5. A deeper residual function F for ImageNet. Left: a\nbuilding block (on 56×56 feature maps) as in Fig. 3 for ResNet-\n34. Right: a “bottleneck” building block for ResNet-50/101/152.",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 335,
+   "font_size": 8.97,
+   "n_chars": 188,
+   "flags": []
+  },
+  {
+   "id": "p6_b7",
+   "page": 6,
+   "bbox": [
+    96.43,
+    161.61,
+    233.28,
+    170.58
+   ],
+   "text": "ResNet-34 C\n24.19\n7.40",
+   "role": "body",
+   "column": 0,
+   "reading_order": 336,
+   "font_size": 8.63,
+   "n_chars": 22,
+   "flags": []
+  },
+  {
+   "id": "p6_b8",
+   "page": 6,
+   "bbox": [
+    96.43,
+    174.06,
+    233.28,
+    183.03
+   ],
+   "text": "ResNet-50\n22.85\n6.71",
+   "role": "body",
+   "column": 0,
+   "reading_order": 337,
+   "font_size": 8.63,
+   "n_chars": 20,
+   "flags": []
+  },
+  {
+   "id": "p6_b9",
+   "page": 6,
+   "bbox": [
+    96.43,
+    186.12,
+    233.28,
+    195.08
+   ],
+   "text": "ResNet-101\n21.75\n6.05",
+   "role": "body",
+   "column": 0,
+   "reading_order": 338,
+   "font_size": 8.63,
+   "n_chars": 21,
+   "flags": []
+  },
+  {
+   "id": "p6_b10",
+   "page": 6,
+   "bbox": [
+    96.43,
+    198.09,
+    233.28,
+    207.06
+   ],
+   "text": "ResNet-152\n21.43\n5.71",
+   "role": "body",
+   "column": 0,
+   "reading_order": 339,
+   "font_size": 8.63,
+   "n_chars": 21,
+   "flags": []
+  },
+  {
+   "id": "p6_b30",
+   "page": 6,
+   "bbox": [
+    308.86,
+    205.54,
+    545.12,
+    287.23
+   ],
+   "text": "parameter-free, identity shortcuts help with training. Next\nwe investigate projection shortcuts (Eqn.(2)). In Table 3 we\ncompare three options: (A) zero-padding shortcuts are used\nfor increasing dimensions, and all shortcuts are parameter-\nfree (the same as Table 2 and Fig. 4 right); (B) projec-\ntion shortcuts are used for increasing dimensions, and other\nshortcuts are identity; and (C) all shortcuts are projections.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 340,
+   "font_size": 9.96,
+   "n_chars": 420,
+   "flags": []
+  },
+  {
+   "id": "p6_b11",
+   "page": 6,
+   "bbox": [
+    50.11,
+    214.26,
+    286.37,
+    245.23
+   ],
+   "text": "Table 3. Error rates (%, 10-crop testing) on ImageNet validation.\nVGG-16 is based on our test. ResNet-50/101/152 are of option B\nthat only uses projections for increasing dimensions.",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 341,
+   "font_size": 8.97,
+   "n_chars": 182,
+   "flags": []
+  },
+  {
+   "id": "p6_b12",
+   "page": 6,
+   "bbox": [
+    67.1,
+    257.66,
+    269.37,
+    278.32
+   ],
+   "text": "method\ntop-1 err.\ntop-5 err.\nVGG [41] (ILSVRC’14)\n-\n8.43†",
+   "role": "body",
+   "column": 0,
+   "reading_order": 342,
+   "font_size": 8.11,
+   "n_chars": 57,
+   "flags": []
+  },
+  {
+   "id": "p6_b13",
+   "page": 6,
+   "bbox": [
+    67.1,
+    281.41,
+    262.61,
+    387.61
+   ],
+   "text": "GoogLeNet [44] (ILSVRC’14)\n-\n7.89\nVGG [41] (v5)\n24.4\n7.1\nPReLU-net [13]\n21.59\n5.71\nBN-inception [16]\n21.99\n5.81\nResNet-34 B\n21.84\n5.71\nResNet-34 C\n21.53\n5.60\nResNet-50\n20.74\n5.25\nResNet-101\n19.87\n4.60\nResNet-152\n19.38\n4.49",
+   "role": "body",
+   "column": 0,
+   "reading_order": 343,
+   "font_size": 8.93,
+   "n_chars": 222,
+   "flags": []
+  },
+  {
+   "id": "p6_b31",
+   "page": 6,
+   "bbox": [
+    308.86,
+    289.93,
+    545.12,
+    431.4
+   ],
+   "text": "Table 3 shows that all three options are considerably bet-\nter than the plain counterpart. B is slightly better than A. We\nargue that this is because the zero-padded dimensions in A\nindeed have no residual learning. C is marginally better than\nB, and we attribute this to the extra parameters introduced\nby many (thirteen) projection shortcuts. But the small dif-\nferences among A/B/C indicate that projection shortcuts are\nnot essential for addressing the degradation problem. So we\ndo not use option C in the rest of this paper, to reduce mem-\nory/time complexity and model sizes. Identity shortcuts are\nparticularly important for not increasing the complexity of\nthe bottleneck architectures that are introduced below.",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 344,
+   "font_size": 9.96,
+   "n_chars": 721,
+   "flags": []
+  },
+  {
+   "id": "p6_b14",
+   "page": 6,
+   "bbox": [
+    50.11,
+    395.24,
+    286.36,
+    415.24
+   ],
+   "text": "Table 4. Error rates (%) of single-model results on the ImageNet\nvalidation set (except † reported on the test set).",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 345,
+   "font_size": 8.22,
+   "n_chars": 116,
+   "flags": []
+  },
+  {
+   "id": "p6_b15",
+   "page": 6,
+   "bbox": [
+    72.77,
+    427.93,
+    263.7,
+    510.42
+   ],
+   "text": "method\ntop-5 err. (test)\nVGG [41] (ILSVRC’14)\n7.32\nGoogLeNet [44] (ILSVRC’14)\n6.66\nVGG [41] (v5)\n6.8\nPReLU-net [13]\n4.94\nBN-inception [16]\n4.82\nResNet (ILSVRC’15)\n3.57",
+   "role": "body",
+   "column": 0,
+   "reading_order": 346,
+   "font_size": 8.86,
+   "n_chars": 167,
+   "flags": []
+  },
+  {
+   "id": "p6_b32",
+   "page": 6,
+   "bbox": [
+    308.86,
+    439.99,
+    545.12,
+    557.64
+   ],
+   "text": "Deeper Bottleneck Architectures. Next we describe our\ndeeper nets for ImageNet. Because of concerns on the train-\ning time that we can afford, we modify the building block\nas a bottleneck design4. For each residual function F, we\nuse a stack of 3 layers instead of 2 (Fig. 5). The three layers\nare 1×1, 3×3, and 1×1 convolutions, where the 1×1 layers\nare responsible for reducing and then increasing (restoring)\ndimensions, leaving the 3×3 layer a bottleneck with smaller\ninput/output dimensions. Fig. 5 shows an example, where\nboth designs have similar time complexity.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 347,
+   "font_size": 9.93,
+   "n_chars": 570,
+   "flags": []
+  },
+  {
+   "id": "p6_b16",
+   "page": 6,
+   "bbox": [
+    50.11,
+    518.06,
+    286.36,
+    538.07
+   ],
+   "text": "Table 5. Error rates (%) of ensembles. The top-5 error is on the\ntest set of ImageNet and reported by the test server.",
+   "role": "caption",
+   "column": -1,
+   "reading_order": 348,
+   "font_size": 8.97,
+   "n_chars": 118,
+   "flags": []
+  },
+  {
+   "id": "p6_b17",
+   "page": 6,
+   "bbox": [
+    50.11,
+    563.07,
+    286.37,
+    608.9
+   ],
+   "text": "ResNet reduces the top-1 error by 3.5% (Table 2), resulting\nfrom the successfully reduced training error (Fig. 4 right vs.\nleft). This comparison veriﬁes the effectiveness of residual\nlearning on extremely deep systems.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 349,
+   "font_size": 9.96,
+   "n_chars": 219,
+   "flags": []
+  },
+  {
+   "id": "p6_b18",
+   "page": 6,
+   "bbox": [
+    50.11,
+    612.33,
+    286.37,
+    694.03
+   ],
+   "text": "Last, we also note that the 18-layer plain/residual nets\nare comparably accurate (Table 2), but the 18-layer ResNet\nconverges faster (Fig. 4 right vs. left). When the net is “not\noverly deep” (18 layers here), the current SGD solver is still\nable to ﬁnd good solutions to the plain net. In this case, the\nResNet eases the optimization by providing faster conver-\ngence at the early stage.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 350,
+   "font_size": 9.96,
+   "n_chars": 388,
+   "flags": []
+  },
+  {
+   "id": "p6_b33",
+   "page": 6,
+   "bbox": [
+    308.86,
+    560.34,
+    545.12,
+    642.03
+   ],
+   "text": "The parameter-free identity shortcuts are particularly im-\nportant for the bottleneck architectures. If the identity short-\ncut in Fig. 5 (right) is replaced with projection, one can\nshow that the time complexity and model size are doubled,\nas the shortcut is connected to the two high-dimensional\nends. So identity shortcuts lead to more efﬁcient models\nfor the bottleneck designs.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 351,
+   "font_size": 9.96,
+   "n_chars": 382,
+   "flags": []
+  },
+  {
+   "id": "p6_b34",
+   "page": 6,
+   "bbox": [
+    320.82,
+    644.65,
+    545.11,
+    654.7
+   ],
+   "text": "50-layer ResNet: We replace each 2-layer block in the",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 352,
+   "font_size": 9.96,
+   "n_chars": 53,
+   "flags": []
+  },
+  {
+   "id": "p6_b35",
+   "page": 6,
+   "bbox": [
+    308.86,
+    665.8,
+    545.11,
+    712.93
+   ],
+   "text": "4Deeper non-bottleneck ResNets (e.g., Fig. 5 left) also gain accuracy\nfrom increased depth (as shown on CIFAR-10), but are not as economical\nas the bottleneck ResNets. So the usage of bottleneck designs is mainly due\nto practical considerations. We further note that the degradation problem\nof plain nets is also witnessed for the bottleneck designs.",
+   "role": "body",
+   "column": 2,
+   "reading_order": 353,
+   "font_size": 7.93,
+   "n_chars": 350,
+   "flags": []
+  },
+  {
+   "id": "p6_b19",
+   "page": 6,
+   "bbox": [
+    50.11,
+    703.35,
+    286.36,
+    713.41
+   ],
+   "text": "Identity vs. Projection Shortcuts. We have shown that",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 354,
+   "font_size": 9.96,
+   "n_chars": 53,
+   "flags": []
+  },
+  {
+   "id": "p6_b36",
+   "page": 6,
+   "bbox": [
+    295.12,
+    733.33,
+    300.1,
+    743.3
+   ],
+   "text": "6",
+   "role": "heading",
+   "column": -1,
+   "reading_order": 355,
+   "font_size": 9.96,
+   "n_chars": 1,
+   "flags": []
+  }
+ ],
+ "tables": [
+  {
+   "id": "p1_t0",
+   "page": 1,
+   "bbox": [
+    308.86,
+    225.6,
+    544.34,
+    302.4
+   ],
+   "n_rows": 1,
+   "n_cols": 5,
+   "cells": [
+    {
+     "row": 0,
+     "col": 0,
+     "text": "20\n)%(\nrorre\n10\ngniniart 56-layer\n20-layer\n0 0 1 2 3 4 5 6\niter. (1e4)"
+    },
+    {
+     "row": 0,
+     "col": 1,
+     "text": "56-layer\n20-layer"
+    },
+    {
+     "row": 0,
+     "col": 2,
+     "text": ")%(\nrorre\ntset"
+    },
+    {
+     "row": 0,
+     "col": 3,
+     "text": "20\n56-layer\n20-layer\n10\n00 1 2 3 4 5 6\niter. (1e4)"
+    },
+    {
+     "row": 0,
+     "col": 4,
+     "text": "56-layer\n20-layer"
+    }
+   ],
+   "markdown": "| 20\n)%(\nrorre\n10\ngniniart 56-layer\n20-layer\n0 0 1 2 3 4 5 6\niter. (1e4) | 56-layer\n20-layer | )%(\nrorre\ntset | 20\n56-layer\n20-layer\n10\n00 1 2 3 4 5 6\niter. (1e4) | 56-layer\n20-layer |\n| --- | --- | --- | --- | --- |",
+   "extractor": "pdfplumber"
+  },
+  {
+   "id": "p5_t0",
+   "page": 5,
+   "bbox": [
+    158.52,
+    72.13,
+    411.01,
+    219.25
+   ],
+   "n_rows": 9,
+   "n_cols": 5,
+   "cells": [
+    {
+     "row": 0,
+     "col": 0,
+     "text": "outputsize"
+    },
+    {
+     "row": 0,
+     "col": 1,
+     "text": "18-layer"
+    },
+    {
+     "row": 0,
+     "col": 2,
+     "text": "34-layer"
+    },
+    {
+     "row": 0,
+     "col": 3,
+     "text": "50-layer"
+    },
+    {
+     "row": 0,
+     "col": 4,
+     "text": "101-layer"
+    },
+    {
+     "row": 1,
+     "col": 0,
+     "text": "112 112"
+    },
+    {
+     "row": 1,
+     "col": 1,
+     "text": ""
+    },
+    {
+     "row": 1,
+     "col": 2,
+     "text": ""
+    },
+    {
+     "row": 1,
+     "col": 3,
+     "text": ""
+    },
+    {
+     "row": 1,
+     "col": 4,
+     "text": ""
+    },
+    {
+     "row": 2,
+     "col": 0,
+     "text": "×\n56 56\n×"
+    },
+    {
+     "row": 2,
+     "col": 1,
+     "text": ""
+    },
+    {
+     "row": 2,
+     "col": 2,
+     "text": ""
+    },
+    {
+     "row": 2,
+     "col": 3,
+     "text": ""
+    },
+    {
+     "row": 2,
+     "col": 4,
+     "text": ""
+    },
+    {
+     "row": 3,
+     "col": 0,
+     "text": ""
+    },
+    {
+     "row": 3,
+     "col": 1,
+     "text": "(cid:20) 3 3,64 (cid:21)\n× 2\n3 3,64 ×\n×"
+    },
+    {
+     "row": 3,
+     "col": 2,
+     "text": "(cid:20) 3 3,64 (cid:21)\n× 3\n3 3,64 ×\n×"
+    },
+    {
+     "row": 3,
+     "col": 3,
+     "text": "× 1 1,64 \n 3 × 3,64  3\n× ×\n1 1,256\n×"
+    },
+    {
+     "row": 3,
+     "col": 4,
+     "text": " 1 1,64 \n 3 × 3,64  3\n× ×\n1 1,256\n×"
+    },
+    {
+     "row": 4,
+     "col": 0,
+     "text": "28 28\n×"
+    },
+    {
+     "row": 4,
+     "col": 1,
+     "text": "(cid:20) 3 3,128 (cid:21)\n× 2\n3 3,128 ×\n×"
+    },
+    {
+     "row": 4,
+     "col": 2,
+     "text": "(cid:20) 3 3,128 (cid:21)\n× 4\n3 3,128 ×\n×"
+    },
+    {
+     "row": 4,
+     "col": 3,
+     "text": " 1 1,128 \n 3 × 3,128  4\n× ×\n1 1,512\n×"
+    },
+    {
+     "row": 4,
+     "col": 4,
+     "text": " 1 1,128 \n 3 × 3,128  4\n× ×\n1 1,512\n×"
+    },
+    {
+     "row": 5,
+     "col": 0,
+     "text": "14 14\n×"
+    },
+    {
+     "row": 5,
+     "col": 1,
+     "text": "(cid:20) 3 3,256 (cid:21)\n× 2\n3 3,256 ×\n×"
+    },
+    {
+     "row": 5,
+     "col": 2,
+     "text": "(cid:20) 3 3,256 (cid:21)\n× 6\n3 3,256 ×\n×"
+    },
+    {
+     "row": 5,
+     "col": 3,
+     "text": " 1 1,256 \n 3 × 3,256  6\n× ×\n1 1,1024\n×"
+    },
+    {
+     "row": 5,
+     "col": 4,
+     "text": " 1 1,256 \n 3 × 3,256  23\n× ×\n1 1,1024\n×"
+    },
+    {
+     "row": 6,
+     "col": 0,
+     "text": "7 7\n×"
+    },
+    {
+     "row": 6,
+     "col": 1,
+     "text": "(cid:20) 3 3,512 (cid:21)\n× 2\n3 3,512 ×\n×"
+    },
+    {
+     "row": 6,
+     "col": 2,
+     "text": "(cid:20) 3 3,512 (cid:21)\n× 3\n3 3,512 ×\n×"
+    },
+    {
+     "row": 6,
+     "col": 3,
+     "text": " 1 1,512 \n 3 × 3,512  3\n× ×\n1 1,2048\n×"
+    },
+    {
+     "row": 6,
+     "col": 4,
+     "text": " 1 1,512 \n 3 × 3,512  3\n× ×\n1 1,2048\n×"
+    },
+    {
+     "row": 7,
+     "col": 0,
+     "text": "1 1"
+    },
+    {
+     "row": 7,
+     "col": 1,
+     "text": ""
+    },
+    {
+     "row": 7,
+     "col": 2,
+     "text": ""
+    },
+    {
+     "row": 7,
+     "col": 3,
+     "text": ""
+    },
+    {
+     "row": 7,
+     "col": 4,
+     "text": ""
+    },
+    {
+     "row": 8,
+     "col": 0,
+     "text": ""
+    },
+    {
+     "row": 8,
+     "col": 1,
+     "text": "1.8 109"
+    },
+    {
+     "row": 8,
+     "col": 2,
+     "text": "3.6 109"
+    },
+    {
+     "row": 8,
+     "col": 3,
+     "text": "3.8 109"
+    },
+    {
+     "row": 8,
+     "col": 4,
+     "text": "7.6 109"
+    }
+   ],
+   "markdown": "| outputsize | 18-layer | 34-layer | 50-layer | 101-layer |\n| --- | --- | --- | --- | --- |\n| 112 112 |  |  |  |  |\n| ×\n56 56\n× |  |  |  |  |\n|  | (cid:20) 3 3,64 (cid:21)\n× 2\n3 3,64 ×\n× | (cid:20) 3 3,64 (cid:21)\n× 3\n3 3,64 ×\n× | × 1 1,64 \n 3 × 3,64  3\n× ×\n1 1,256\n× |  1 1,64 \n 3 × 3,64  3\n× ×\n1 1,256\n× |\n| 28 28\n× | (cid:20) 3 3,128 (cid:21)\n× 2\n3 3,128 ×\n× | (cid:20) 3 3,128 (cid:21)\n× 4\n3 3,128 ×\n× |  1 1,128 \n 3 × 3,128  4\n× ×\n1 1,512\n× |  1 1,128 \n 3 × 3,128  4\n× ×\n1 1,512\n× |\n| 14 14\n× | (cid:20) 3 3,256 (cid:21)\n× 2\n3 3,256 ×\n× | (cid:20) 3 3,256 (cid:21)\n× 6\n3 3,256 ×\n× |  1 1,256 \n 3 × 3,256  6\n× ×\n1 1,1024\n× |  1 1,256 \n 3 × 3,256  23\n× ×\n1 1,1024\n× |\n| 7 7\n× | (cid:20) 3 3,512 (cid:21)\n× 2\n3 3,512 ×\n× | (cid:20) 3 3,512 (cid:21)\n× 3\n3 3,512 ×\n× |  1 1,512 \n 3 × 3,512  3\n× ×\n1 1,2048\n× |  1 1,512 \n 3 × 3,512  3\n× ×\n1 1,2048\n× |\n| 1 1 |  |  |  |  |\n|  | 1.8 109 | 3.6 109 | 3.8 109 | 7.6 109 |",
+   "extractor": "pdfplumber"
+  },
+  {
+   "id": "p5_t1",
+   "page": 5,
+   "bbox": [
+    84.76,
+    252.94,
+    509.47,
+    389.63
+   ],
+   "n_rows": 5,
+   "n_cols": 4,
+   "cells": [
+    {
+     "row": 0,
+     "col": 0,
+     "text": "60\n50\n)%(\n40 rorre\n34-layer\n30\n18-layer\nplain-18\nplain-34\n20\n0 10 20 30 40 50\niter. (1e4)"
+    },
+    {
+     "row": 0,
+     "col": 1,
+     "text": ""
+    },
+    {
+     "row": 0,
+     "col": 2,
+     "text": "60\n50\n)%(\n40 rorre\n18-layer\n30\nResNet-18\nResNet-34 34-layer\n20\n0 10 20 30 40 50\niter. (1e4)"
+    },
+    {
+     "row": 0,
+     "col": 3,
+     "text": ""
+    },
+    {
+     "row": 1,
+     "col": 0,
+     "text": ""
+    },
+    {
+     "row": 1,
+     "col": 1,
+     "text": ""
+    },
+    {
+     "row": 1,
+     "col": 2,
+     "text": ""
+    },
+    {
+     "row": 1,
+     "col": 3,
+     "text": ""
+    },
+    {
+     "row": 2,
+     "col": 0,
+     "text": ""
+    },
+    {
+     "row": 2,
+     "col": 1,
+     "text": ""
+    },
+    {
+     "row": 2,
+     "col": 2,
+     "text": ""
+    },
+    {
+     "row": 2,
+     "col": 3,
+     "text": ""
+    },
+    {
+     "row": 3,
+     "col": 0,
+     "text": ""
+    },
+    {
+     "row": 3,
+     "col": 1,
+     "text": ""
+    },
+    {
+     "row": 3,
+     "col": 2,
+     "text": ""
+    },
+    {
+     "row": 3,
+     "col": 3,
+     "text": "18-layer"
+    },
+    {
+     "row": 4,
+     "col": 0,
+     "text": ""
+    },
+    {
+     "row": 4,
+     "col": 1,
+     "text": ""
+    },
+    {
+     "row": 4,
+     "col": 2,
+     "text": ""
+    },
+    {
+     "row": 4,
+     "col": 3,
+     "text": "ResNet-18\nResNet-34 34-layer"
+    }
+   ],
+   "markdown": "| 60\n50\n)%(\n40 rorre\n34-layer\n30\n18-layer\nplain-18\nplain-34\n20\n0 10 20 30 40 50\niter. (1e4) |  | 60\n50\n)%(\n40 rorre\n18-layer\n30\nResNet-18\nResNet-34 34-layer\n20\n0 10 20 30 40 50\niter. (1e4) |  |\n| --- | --- | --- | --- |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  | 18-layer |\n|  |  |  | ResNet-18\nResNet-34 34-layer |",
+   "extractor": "pdfplumber"
+  },
+  {
+   "id": "p5_t2",
+   "page": 5,
+   "bbox": [
+    102.96,
+    252.94,
+    284.98,
+    372.57
+   ],
+   "n_rows": 5,
+   "n_cols": 1,
+   "cells": [
+    {
+     "row": 0,
+     "col": 0,
+     "text": ""
+    },
+    {
+     "row": 1,
+     "col": 0,
+     "text": ""
+    },
+    {
+     "row": 2,
+     "col": 0,
+     "text": ""
+    },
+    {
+     "row": 3,
+     "col": 0,
+     "text": "34-layer"
+    },
+    {
+     "row": 4,
+     "col": 0,
+     "text": "18-layer\nplain-18\nplain-34"
+    }
+   ],
+   "markdown": "|  |\n| --- |\n|  |\n|  |\n| 34-layer |\n| 18-layer\nplain-18\nplain-34 |",
+   "extractor": "pdfplumber"
+  },
+  {
+   "id": "p5_t3",
+   "page": 5,
+   "bbox": [
+    143.33,
+    443.15,
+    200.78,
+    480.12
+   ],
+   "n_rows": 2,
+   "n_cols": 1,
+   "cells": [
+    {
+     "row": 0,
+     "col": 0,
+     "text": "plain"
+    },
+    {
+     "row": 1,
+     "col": 0,
+     "text": "27.94\n28.54"
+    }
+   ],
+   "markdown": "| plain |\n| --- |\n| 27.94\n28.54 |",
+   "extractor": "pdfplumber"
+  },
+  {
+   "id": "p6_t0",
+   "page": 6,
+   "bbox": [
+    334.93,
+    72.07,
+    534.59,
+    142.98
+   ],
+   "n_rows": 1,
+   "n_cols": 3,
+   "cells": [
+    {
+     "row": 0,
+     "col": 0,
+     "text": "64-d\n3x3, 64\nrelu\n3x3, 64\nrelu"
+    },
+    {
+     "row": 0,
+     "col": 1,
+     "text": ""
+    },
+    {
+     "row": 0,
+     "col": 2,
+     "text": "256-d\n1x1, 64\nrelu\n3x3, 64\nrelu\n1x1, 256\nrelu"
+    }
+   ],
+   "markdown": "| 64-d\n3x3, 64\nrelu\n3x3, 64\nrelu |  | 256-d\n1x1, 64\nrelu\n3x3, 64\nrelu\n1x1, 256\nrelu |\n| --- | --- | --- |",
+   "extractor": "pdfplumber"
+  },
+  {
+   "id": "p6_t1",
+   "page": 6,
+   "bbox": [
+    334.93,
+    85.71,
+    383.11,
+    122.39
+   ],
+   "n_rows": 3,
+   "n_cols": 1,
+   "cells": [
+    {
+     "row": 0,
+     "col": 0,
+     "text": "3x3, 64"
+    },
+    {
+     "row": 1,
+     "col": 0,
+     "text": ""
+    },
+    {
+     "row": 2,
+     "col": 0,
+     "text": "3x3, 64"
+    }
+   ],
+   "markdown": "| 3x3, 64 |\n| --- |\n|  |\n| 3x3, 64 |",
+   "extractor": "pdfplumber"
+  }
+ ],
+ "stats": {
+  "n_pages": 6,
+  "n_blocks": 356,
+  "n_tables": 7,
+  "n_body_chars": 24213,
+  "n_total_chars": 27766,
+  "roles": {
+   "caption": 11,
+   "equation": 22,
+   "body": 296,
+   "heading": 27
+  }
+ }
+}

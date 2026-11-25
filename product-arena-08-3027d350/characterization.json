@@ -1,0 +1,108 @@
+{
+ "deviations_from_paper": [
+  {
+   "target": "text_recall",
+   "metric": "exact_match",
+   "actual_value": 1.0,
+   "reference_value": 1.0,
+   "score": 1.0,
+   "evidence_artifact": "metrics_json",
+   "explanation": "Fraction of controlled ground-truth body characters recovered verbatim (4-gram recall)."
+  },
+  {
+   "target": "reading_order_concordance",
+   "metric": "relative_error",
+   "tolerance": 0.05,
+   "actual_value": 1.0,
+   "reference_value": 1.0,
+   "score": 1.0,
+   "evidence_artifact": "fig_order",
+   "explanation": "Pairwise concordance of emitted order vs intended column-major order over 28 GT pairs."
+  },
+  {
+   "target": "table_cell_match",
+   "metric": "exact_match",
+   "actual_value": 1.0,
+   "reference_value": 1.0,
+   "score": 1.0,
+   "evidence_artifact": "gt_parsed",
+   "explanation": "Fraction of 3x3 table cells matching ground truth after pdfplumber reconstruction."
+  },
+  {
+   "target": "marginalia_leak",
+   "metric": "absolute_error",
+   "tolerance": 0.01,
+   "actual_value": 0.0,
+   "reference_value": 0.0,
+   "score": 1.0,
+   "evidence_artifact": "metrics_json",
+   "explanation": "Running header must not leak into body reading text (0 = excluded correctly)."
+  },
+  {
+   "target": "order_gain_vs_baseline",
+   "metric": "physical_consistency",
+   "actual_value": {
+    "skill_column_continuity": 0.6667,
+    "naive_column_continuity": 0.0769,
+    "skill_concordance": 1.0,
+    "naive_concordance": 0.8929
+   },
+   "reference_value": {
+    "rule": "skill strictly improves column continuity and concordance over naive"
+   },
+   "score": 1.0,
+   "verifier_script": "scripts/verify_gain.py",
+   "evidence_artifact": "metrics_json",
+   "explanation": "Domain-rule check: skill column continuity 0.667 > naive 0.077; concordance 1.0 >= 0.893."
+  }
+ ],
+ "envelope": [
+  {
+   "param": "n_pages",
+   "min": 1,
+   "max": 6,
+   "unit": "pages",
+   "tested": true
+  },
+  {
+   "param": "n_columns",
+   "min": 1,
+   "max": 2,
+   "unit": "columns",
+   "tested": true
+  },
+  {
+   "param": "text_layer",
+   "min": 1,
+   "max": 1,
+   "unit": "present(1)/absent(0)",
+   "tested": true
+  }
+ ],
+ "failure_modes": [
+  {
+   "condition": "image-only scanned page (no text layer)",
+   "symptom": "page yields 0 text blocks; flagged unreadable_pages, requires OCR (out of scope)",
+   "evidence_trace": "trace/trace.jsonl"
+  },
+  {
+   "condition": "image-based table or garbled embedded font",
+   "symptom": "table finder returns no/partial cells; reported in notes, not guessed",
+   "evidence_artifact": "real_parsed"
+  },
+  {
+   "condition": "encrypted PDF without empty-password access",
+   "symptom": "parse fails; result.json status=failed with encryption noted",
+   "evidence_trace": "trace/trace.jsonl"
+  }
+ ],
+ "sensitivity": [
+  {
+   "param": "column_split_gap_threshold",
+   "range": "0.04..0.10 of page width",
+   "outcome_metric": "reading_order_concordance",
+   "outcome_range": "1.0 on tested 2-col docs",
+   "evidence_trace": "trace/trace.jsonl"
+  }
+ ]
+}

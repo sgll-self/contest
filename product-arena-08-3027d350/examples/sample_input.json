@@ -1,0 +1,14 @@
+{
+  "_note": "EXAMPLE input only — illustrates the interface, NOT a formal platform case.",
+  "case_id": "example-demo-001",
+  "pdf_path": "examples/sample.pdf",
+  "task": "Read the paper and answer: what reading-order problem does the parser fix? Cite the source location.",
+  "output_contract": {
+    "case_id": "string",
+    "answer": "string",
+    "sources": [{"block_id": "string", "page": "int", "bbox": "[x0,y0,x1,y1]"}],
+    "status": "success|partial|failed|unjudgeable",
+    "uncertainty": "string",
+    "change_log": "string"
+  }
+}
