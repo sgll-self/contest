@@ -24,7 +24,7 @@ scripts/verify_gain.py       受控指标增益规则复核
 scripts/requirements.txt     运行依赖
 src/reproduce.py             受控真值、真实论文和异常输入复现入口
 examples/                    明确标注 EXAMPLE 的接口示例
-execution/run.log            本次实际运行的 UTF-8 日志
+execution/run.txt            本次实际运行的 UTF-8 日志（以 .txt 收录，.log 不是允许的 Skill 资源）
 execution/results/*.json     本次实际指标、解析结果、验证和边界测试
 characterization.json        实测范围、指标定义和失败模式
 GITHUB_URL.txt               公开作品链接
@@ -81,7 +81,7 @@ python src/reproduce.py
 - 非空密码加密 PDF：空口令认证失败，给出明确错误，命令行退出码为 2。
 - 本次受控页解析约 0.04 秒，真实论文前六页解析约 1.03 秒，包含复现、验证和图形的总运行时间为 4.64 秒。缓存真实论文可避免重复下载，布局图复用已解析结果，不再重复解析受控文档。
 
-所有数值见 `execution/results/metrics.json`，完整输出见 `execution/run.log`。
+所有数值见 `execution/results/metrics.json`，完整输出见 `execution/run.txt`。
 
 ## 5. 适用范围与限制
 
