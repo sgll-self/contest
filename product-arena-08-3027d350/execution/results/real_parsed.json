@@ -19,8 +19,8 @@
    "width": 612.0,
    "height": 792.0,
    "column_bounds": [
-    258.19,
-    362.3
+    193.51,
+    322.88
    ],
    "n_blocks": 21,
    "n_tables": 0
@@ -30,10 +30,10 @@
    "width": 612.0,
    "height": 792.0,
    "column_bounds": [
-    251.26,
-    334.76
+    288.41,
+    399.44
    ],
-   "n_blocks": 23,
+   "n_blocks": 22,
    "n_tables": 0
   },
   {
@@ -44,7 +44,7 @@
     133.24,
     332.9
    ],
-   "n_blocks": 120,
+   "n_blocks": 116,
    "n_tables": 0
   },
   {
@@ -54,7 +54,7 @@
    "column_bounds": [
     127.77
    ],
-   "n_blocks": 126,
+   "n_blocks": 112,
    "n_tables": 4
   },
   {
@@ -556,8 +556,8 @@
     743.29
    ],
    "text": "1",
-   "role": "heading",
-   "column": -1,
+   "role": "footer",
+   "column": 1,
    "reading_order": 28,
    "font_size": 9.96,
    "n_chars": 1,
@@ -649,23 +649,6 @@
    "flags": []
   },
   {
-   "id": "p2_b0",
-   "page": 2,
-   "bbox": [
-    205.97,
-    123.64,
-    231.58,
-    131.81
-   ],
-   "text": "identity",
-   "role": "body",
-   "column": 0,
-   "reading_order": 34,
-   "font_size": 8.17,
-   "n_chars": 8,
-   "flags": []
-  },
-  {
    "id": "p2_b4",
    "page": 2,
    "bbox": [
@@ -677,9 +660,26 @@
    "text": "relu\nF(x)\u0001+\u0001x",
    "role": "body",
    "column": 0,
-   "reading_order": 35,
+   "reading_order": 34,
    "font_size": 9.13,
    "n_chars": 13,
+   "flags": []
+  },
+  {
+   "id": "p2_b0",
+   "page": 2,
+   "bbox": [
+    205.97,
+    123.64,
+    231.58,
+    131.81
+   ],
+   "text": "identity",
+   "role": "body",
+   "column": 1,
+   "reading_order": 35,
+   "font_size": 8.17,
+   "n_chars": 8,
    "flags": []
   },
   {
@@ -845,7 +845,7 @@
     743.29
    ],
    "text": "2",
-   "role": "body",
+   "role": "footer",
    "column": 1,
    "reading_order": 45,
    "font_size": 9.96,
@@ -1127,6 +1127,23 @@
    "flags": []
   },
   {
+   "id": "p3_b18",
+   "page": 3,
+   "bbox": [
+    308.86,
+    462.76,
+    434.95,
+    473.72
+   ],
+   "text": "3.3. Network Architectures",
+   "role": "body",
+   "column": 1,
+   "reading_order": 62,
+   "font_size": 10.96,
+   "n_chars": 26,
+   "flags": []
+  },
+  {
    "id": "p3_b22",
    "page": 3,
    "bbox": [
@@ -1136,9 +1153,9 @@
     743.3
    ],
    "text": "3",
-   "role": "body",
+   "role": "footer",
    "column": 1,
-   "reading_order": 62,
+   "reading_order": 63,
    "font_size": 9.96,
    "n_chars": 1,
    "flags": []
@@ -1155,7 +1172,7 @@
    "text": "The shortcut connections in Eqn.(1) introduce neither ex-\ntra parameter nor computation complexity. This is not only\nattractive in practice but also important in our comparisons\nbetween plain and residual networks. We can fairly com-\npare plain/residual networks that simultaneously have the\nsame number of parameters, depth, width, and computa-\ntional cost (except for the negligible element-wise addition).",
    "role": "body",
    "column": 2,
-   "reading_order": 63,
+   "reading_order": 64,
    "font_size": 9.96,
    "n_chars": 408,
    "flags": []
@@ -1172,7 +1189,7 @@
    "text": "The dimensions of x and F must be equal in Eqn.(1).\nIf this is not the case (e.g., when changing the input/output\nchannels), we can perform a linear projection Ws by the\nshortcut connections to match the dimensions:",
    "role": "body",
    "column": 2,
-   "reading_order": 64,
+   "reading_order": 65,
    "font_size": 9.9,
    "n_chars": 215,
    "flags": []
@@ -1189,7 +1206,7 @@
    "text": "y = F(x, {Wi}) + Wsx.\n(2)",
    "role": "equation",
    "column": 2,
-   "reading_order": 65,
+   "reading_order": 66,
    "font_size": 9.59,
    "n_chars": 25,
    "flags": [
@@ -1208,7 +1225,7 @@
    "text": "We can also use a square matrix Ws in Eqn.(1). But we will\nshow by experiments that the identity mapping is sufﬁcient\nfor addressing the degradation problem and is economical,\nand thus Ws is only used when matching dimensions.",
    "role": "body",
    "column": 2,
-   "reading_order": 66,
+   "reading_order": 67,
    "font_size": 9.5,
    "n_chars": 226,
    "flags": []
@@ -1220,49 +1237,17 @@
     308.86,
     334.96,
     545.11,
-    393.52
-   ],
-   "text": "The form of the residual function F is ﬂexible. Exper-\niments in this paper involve a function F that has two or\nthree layers (Fig. 5), while more layers are possible. But if\nF has only a single layer, Eqn.(1) is similar to a linear layer:\ny = W1x + x, for which we have not observed advantages.",
-   "role": "body",
-   "column": 2,
-   "reading_order": 67,
-   "font_size": 9.91,
-   "n_chars": 295,
-   "flags": []
-  },
-  {
-   "id": "p3_b17",
-   "page": 3,
-   "bbox": [
-    308.86,
-    395.15,
-    545.11,
     452.93
    ],
-   "text": "We also note that although the above notations are about\nfully-connected layers for simplicity, they are applicable to\nconvolutional layers. The function F(x, {Wi}) can repre-\nsent multiple convolutional layers. The element-wise addi-\ntion is performed on two feature maps, channel by channel.",
+   "text": "The form of the residual function F is ﬂexible. Exper-\niments in this paper involve a function F that has two or\nthree layers (Fig. 5), while more layers are possible. But if\nF has only a single layer, Eqn.(1) is similar to a linear layer:\ny = W1x + x, for which we have not observed advantages.\nWe also note that although the above notations are about\nfully-connected layers for simplicity, they are applicable to\nconvolutional layers. The function F(x, {Wi}) can repre-\nsent multiple convolutional layers. The element-wise addi-\ntion is performed on two feature maps, channel by channel.",
    "role": "body",
    "column": 2,
    "reading_order": 68,
-   "font_size": 9.85,
-   "n_chars": 293,
-   "flags": []
-  },
-  {
-   "id": "p3_b18",
-   "page": 3,
-   "bbox": [
-    308.86,
-    462.76,
-    434.95,
-    473.72
-   ],
-   "text": "3.3. Network Architectures",
-   "role": "body",
-   "column": 2,
-   "reading_order": 69,
-   "font_size": 10.96,
-   "n_chars": 26,
-   "flags": []
+   "font_size": 9.88,
+   "n_chars": 589,
+   "flags": [
+    "merged:p3_b17"
+   ]
   },
   {
    "id": "p3_b19",
@@ -1276,7 +1261,7 @@
    "text": "We have tested various plain/residual nets, and have ob-\nserved consistent phenomena. To provide instances for dis-\ncussion, we describe two models for ImageNet as follows.",
    "role": "body",
    "column": 2,
-   "reading_order": 70,
+   "reading_order": 69,
    "font_size": 9.96,
    "n_chars": 172,
    "flags": []
@@ -1293,7 +1278,7 @@
    "text": "Plain Network. Our plain baselines (Fig. 3, middle) are\nmainly inspired by the philosophy of VGG nets [41] (Fig. 3,\nleft). The convolutional layers mostly have 3×3 ﬁlters and\nfollow two simple design rules: (i) for the same output\nfeature map size, the layers have the same number of ﬁl-\nters; and (ii) if the feature map size is halved, the num-\nber of ﬁlters is doubled so as to preserve the time com-\nplexity per layer. We perform downsampling directly by\nconvolutional layers that have a stride of 2. The network\nends with a global average pooling layer and a 1000-way\nfully-connected layer with softmax. The total number of\nweighted layers is 34 in Fig. 3 (middle).",
    "role": "body",
    "column": 2,
-   "reading_order": 71,
+   "reading_order": 70,
    "font_size": 9.96,
    "n_chars": 670,
    "flags": []
@@ -1310,7 +1295,7 @@
    "text": "It is worth noticing that our model has fewer ﬁlters and\nlower complexity than VGG nets [41] (Fig. 3, left). Our 34-\nlayer baseline has 3.6 billion FLOPs (multiply-adds), which\nis only 18% of VGG-19 (19.6 billion FLOPs).",
    "role": "body",
    "column": 2,
-   "reading_order": 72,
+   "reading_order": 71,
    "font_size": 9.96,
    "n_chars": 220,
    "flags": []
@@ -1327,7 +1312,7 @@
    "text": "Residual Network. Based on the above plain network, we\ninsert shortcut connections (Fig. 3, right) which turn the\nnetwork into its counterpart residual version. The identity\nshortcuts (Eqn.(1)) can be directly used when the input and\noutput are of the same dimensions (solid line shortcuts in\nFig. 3). When the dimensions increase (dotted line shortcuts\nin Fig. 3), we consider two options: (A) The shortcut still\nperforms identity mapping, with extra zero entries padded\nfor increasing dimensions. This option introduces no extra\nparameter; (B) The projection shortcut in Eqn.(2) is used to\nmatch dimensions (done by 1×1 convolutions). For both\noptions, when the shortcuts go across feature maps of two\nsizes, they are performed with a stride of 2.",
    "role": "body",
    "column": 2,
-   "reading_order": 73,
+   "reading_order": 72,
    "font_size": 9.96,
    "n_chars": 749,
    "flags": []
@@ -1344,7 +1329,7 @@
    "text": "VGG-19\n34-layer plain",
    "role": "heading",
    "column": -1,
-   "reading_order": 74,
+   "reading_order": 73,
    "font_size": 7.85,
    "n_chars": 21,
    "flags": []
@@ -1361,7 +1346,7 @@
    "text": "image\n34-layer residual",
    "role": "heading",
    "column": -1,
-   "reading_order": 75,
+   "reading_order": 74,
    "font_size": 6.38,
    "n_chars": 23,
    "flags": []
@@ -1378,7 +1363,7 @@
    "text": "image",
    "role": "body",
    "column": 0,
-   "reading_order": 76,
+   "reading_order": 75,
    "font_size": 4.92,
    "n_chars": 5,
    "flags": []
@@ -1395,7 +1380,7 @@
    "text": "output \nsize: 224",
    "role": "body",
    "column": 0,
-   "reading_order": 77,
+   "reading_order": 76,
    "font_size": 4.92,
    "n_chars": 17,
    "flags": []
@@ -1412,7 +1397,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 0,
-   "reading_order": 78,
+   "reading_order": 77,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1429,7 +1414,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 0,
-   "reading_order": 79,
+   "reading_order": 78,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1446,7 +1431,7 @@
    "text": "pool, /2",
    "role": "body",
    "column": 0,
-   "reading_order": 80,
+   "reading_order": 79,
    "font_size": 4.92,
    "n_chars": 8,
    "flags": []
@@ -1463,7 +1448,7 @@
    "text": "output \nsize: 112",
    "role": "body",
    "column": 0,
-   "reading_order": 81,
+   "reading_order": 80,
    "font_size": 4.92,
    "n_chars": 17,
    "flags": []
@@ -1480,7 +1465,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 0,
-   "reading_order": 82,
+   "reading_order": 81,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -1497,7 +1482,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 0,
-   "reading_order": 83,
+   "reading_order": 82,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -1514,7 +1499,7 @@
    "text": "pool, /2",
    "role": "body",
    "column": 0,
-   "reading_order": 84,
+   "reading_order": 83,
    "font_size": 4.92,
    "n_chars": 8,
    "flags": []
@@ -1531,7 +1516,7 @@
    "text": "output \nsize: 56",
    "role": "body",
    "column": 0,
-   "reading_order": 85,
+   "reading_order": 84,
    "font_size": 4.92,
    "n_chars": 16,
    "flags": []
@@ -1548,7 +1533,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 0,
-   "reading_order": 86,
+   "reading_order": 85,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -1565,7 +1550,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 0,
-   "reading_order": 87,
+   "reading_order": 86,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -1582,7 +1567,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 0,
-   "reading_order": 88,
+   "reading_order": 87,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -1599,7 +1584,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 0,
-   "reading_order": 89,
+   "reading_order": 88,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -1616,7 +1601,7 @@
    "text": "image",
    "role": "body",
    "column": 1,
-   "reading_order": 90,
+   "reading_order": 89,
    "font_size": 4.92,
    "n_chars": 5,
    "flags": []
@@ -1633,7 +1618,7 @@
    "text": "7x7 conv, 64, /2",
    "role": "body",
    "column": 1,
-   "reading_order": 91,
+   "reading_order": 90,
    "font_size": 4.92,
    "n_chars": 16,
    "flags": []
@@ -1650,7 +1635,7 @@
    "text": "7x7 conv, 64, /2",
    "role": "body",
    "column": 1,
-   "reading_order": 92,
+   "reading_order": 91,
    "font_size": 4.92,
    "n_chars": 16,
    "flags": []
@@ -1667,7 +1652,7 @@
    "text": "pool, /2",
    "role": "body",
    "column": 1,
-   "reading_order": 93,
+   "reading_order": 92,
    "font_size": 4.92,
    "n_chars": 8,
    "flags": []
@@ -1684,7 +1669,7 @@
    "text": "pool, /2",
    "role": "body",
    "column": 1,
-   "reading_order": 94,
+   "reading_order": 93,
    "font_size": 4.92,
    "n_chars": 8,
    "flags": []
@@ -1701,7 +1686,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 95,
+   "reading_order": 94,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1718,7 +1703,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 96,
+   "reading_order": 95,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1735,7 +1720,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 97,
+   "reading_order": 96,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1752,7 +1737,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 98,
+   "reading_order": 97,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1769,7 +1754,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 99,
+   "reading_order": 98,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1786,7 +1771,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 100,
+   "reading_order": 99,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1803,7 +1788,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 101,
+   "reading_order": 100,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1820,7 +1805,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 102,
+   "reading_order": 101,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1837,7 +1822,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 103,
+   "reading_order": 102,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1854,7 +1839,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 104,
+   "reading_order": 103,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -1871,7 +1856,7 @@
    "text": "3.4. Implementation",
    "role": "heading",
    "column": -1,
-   "reading_order": 105,
+   "reading_order": 104,
    "font_size": 10.96,
    "n_chars": 19,
    "flags": []
@@ -1888,7 +1873,7 @@
    "text": "pool, /2",
    "role": "body",
    "column": 0,
-   "reading_order": 106,
+   "reading_order": 105,
    "font_size": 4.92,
    "n_chars": 8,
    "flags": []
@@ -1905,7 +1890,7 @@
    "text": "output \nsize: 28",
    "role": "body",
    "column": 0,
-   "reading_order": 107,
+   "reading_order": 106,
    "font_size": 4.92,
    "n_chars": 16,
    "flags": []
@@ -1922,7 +1907,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 0,
-   "reading_order": 108,
+   "reading_order": 107,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -1939,7 +1924,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 0,
-   "reading_order": 109,
+   "reading_order": 108,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -1956,7 +1941,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 0,
-   "reading_order": 110,
+   "reading_order": 109,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -1973,7 +1958,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 0,
-   "reading_order": 111,
+   "reading_order": 110,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -1990,7 +1975,7 @@
    "text": "output \nsize: 14",
    "role": "body",
    "column": 0,
-   "reading_order": 112,
+   "reading_order": 111,
    "font_size": 4.92,
    "n_chars": 16,
    "flags": []
@@ -2007,7 +1992,7 @@
    "text": "pool, /2",
    "role": "body",
    "column": 0,
-   "reading_order": 113,
+   "reading_order": 112,
    "font_size": 4.92,
    "n_chars": 8,
    "flags": []
@@ -2024,7 +2009,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 0,
-   "reading_order": 114,
+   "reading_order": 113,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2041,7 +2026,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 0,
-   "reading_order": 115,
+   "reading_order": 114,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2058,7 +2043,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 0,
-   "reading_order": 116,
+   "reading_order": 115,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2075,7 +2060,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 0,
-   "reading_order": 117,
+   "reading_order": 116,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2092,7 +2077,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 118,
+   "reading_order": 117,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -2109,7 +2094,7 @@
    "text": "3x3 conv, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 119,
+   "reading_order": 118,
    "font_size": 4.92,
    "n_chars": 12,
    "flags": []
@@ -2126,7 +2111,7 @@
    "text": "3x3 conv, 128, /2",
    "role": "body",
    "column": 1,
-   "reading_order": 120,
+   "reading_order": 119,
    "font_size": 4.92,
    "n_chars": 17,
    "flags": []
@@ -2143,7 +2128,7 @@
    "text": "3x3 conv, 128, /2",
    "role": "body",
    "column": 1,
-   "reading_order": 121,
+   "reading_order": 120,
    "font_size": 4.92,
    "n_chars": 17,
    "flags": []
@@ -2160,7 +2145,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 122,
+   "reading_order": 121,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2177,7 +2162,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 123,
+   "reading_order": 122,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2194,7 +2179,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 124,
+   "reading_order": 123,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2211,7 +2196,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 125,
+   "reading_order": 124,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2228,7 +2213,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 126,
+   "reading_order": 125,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2245,7 +2230,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 127,
+   "reading_order": 126,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2262,7 +2247,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 128,
+   "reading_order": 127,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2279,7 +2264,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 129,
+   "reading_order": 128,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2296,7 +2281,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 130,
+   "reading_order": 129,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2313,7 +2298,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 131,
+   "reading_order": 130,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2330,7 +2315,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 132,
+   "reading_order": 131,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2347,7 +2332,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 133,
+   "reading_order": 132,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2364,7 +2349,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 134,
+   "reading_order": 133,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2381,7 +2366,7 @@
    "text": "3x3 conv, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 135,
+   "reading_order": 134,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2398,7 +2383,7 @@
    "text": "3x3 conv, 256, /2",
    "role": "body",
    "column": 1,
-   "reading_order": 136,
+   "reading_order": 135,
    "font_size": 4.92,
    "n_chars": 17,
    "flags": []
@@ -2415,7 +2400,7 @@
    "text": "3x3 conv, 256, /2",
    "role": "body",
    "column": 1,
-   "reading_order": 137,
+   "reading_order": 136,
    "font_size": 4.92,
    "n_chars": 17,
    "flags": []
@@ -2432,7 +2417,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 138,
+   "reading_order": 137,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2449,7 +2434,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 139,
+   "reading_order": 138,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2466,7 +2451,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 140,
+   "reading_order": 139,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2483,7 +2468,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 141,
+   "reading_order": 140,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2500,7 +2485,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 142,
+   "reading_order": 141,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2517,7 +2502,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 143,
+   "reading_order": 142,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2534,7 +2519,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 144,
+   "reading_order": 143,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2551,7 +2536,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 145,
+   "reading_order": 144,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2568,7 +2553,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 146,
+   "reading_order": 145,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2585,7 +2570,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 147,
+   "reading_order": 146,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2602,7 +2587,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 148,
+   "reading_order": 147,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2619,7 +2604,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 149,
+   "reading_order": 148,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2636,7 +2621,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 150,
+   "reading_order": 149,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2653,7 +2638,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 151,
+   "reading_order": 150,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2670,7 +2655,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 152,
+   "reading_order": 151,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2687,7 +2672,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 153,
+   "reading_order": 152,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2704,7 +2689,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 154,
+   "reading_order": 153,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2721,7 +2706,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 155,
+   "reading_order": 154,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2738,7 +2723,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 156,
+   "reading_order": 155,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2755,7 +2740,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 157,
+   "reading_order": 156,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2767,32 +2752,17 @@
     308.86,
     254.93,
     545.12,
-    420.31
-   ],
-   "text": "Our implementation for ImageNet follows the practice\nin [21, 41]. The image is resized with its shorter side ran-\ndomly sampled in [256, 480] for scale augmentation [41].\nA 224×224 crop is randomly sampled from an image or its\nhorizontal ﬂip, with the per-pixel mean subtracted [21]. The\nstandard color augmentation in [21] is used. We adopt batch\nnormalization (BN) [16] right after each convolution and\nbefore activation, following [16]. We initialize the weights\nas in [13] and train all plain/residual nets from scratch. We\nuse SGD with a mini-batch size of 256. The learning rate\nstarts from 0.1 and is divided by 10 when the error plateaus,\nand the models are trained for up to 60 × 104 iterations. We\nuse a weight decay of 0.0001 and a momentum of 0.9. We\ndo not use dropout [14], following the practice in [16].",
-   "role": "body",
-   "column": 2,
-   "reading_order": 158,
-   "font_size": 9.94,
-   "n_chars": 819,
-   "flags": []
-  },
-  {
-   "id": "p4_b113",
-   "page": 4,
-   "bbox": [
-    308.86,
-    422.3,
-    545.12,
     487.24
    ],
-   "text": "In testing, for comparison studies we adopt the standard\n10-crop testing [21]. For best results, we adopt the fully-\nconvolutional form as in [41, 13], and average the scores\nat multiple scales (images are resized such that the shorter\nside is in {224, 256, 384, 480, 640}).",
+   "text": "Our implementation for ImageNet follows the practice\nin [21, 41]. The image is resized with its shorter side ran-\ndomly sampled in [256, 480] for scale augmentation [41].\nA 224×224 crop is randomly sampled from an image or its\nhorizontal ﬂip, with the per-pixel mean subtracted [21]. The\nstandard color augmentation in [21] is used. We adopt batch\nnormalization (BN) [16] right after each convolution and\nbefore activation, following [16]. We initialize the weights\nas in [13] and train all plain/residual nets from scratch. We\nuse SGD with a mini-batch size of 256. The learning rate\nstarts from 0.1 and is divided by 10 when the error plateaus,\nand the models are trained for up to 60 × 104 iterations. We\nuse a weight decay of 0.0001 and a momentum of 0.9. We\ndo not use dropout [14], following the practice in [16].\nIn testing, for comparison studies we adopt the standard\n10-crop testing [21]. For best results, we adopt the fully-\nconvolutional form as in [41, 13], and average the scores\nat multiple scales (images are resized such that the shorter\nside is in {224, 256, 384, 480, 640}).",
    "role": "body",
    "column": 2,
-   "reading_order": 159,
-   "font_size": 9.96,
-   "n_chars": 274,
-   "flags": []
+   "reading_order": 157,
+   "font_size": 9.95,
+   "n_chars": 1094,
+   "flags": [
+    "merged:p4_b113"
+   ]
   },
   {
    "id": "p4_b114",
@@ -2806,7 +2776,7 @@
    "text": "4. Experiments",
    "role": "heading",
    "column": -1,
-   "reading_order": 160,
+   "reading_order": 158,
    "font_size": 11.96,
    "n_chars": 14,
    "flags": []
@@ -2818,15 +2788,17 @@
     52.73,
     506.89,
     67.37,
-    511.81
+    517.66
    ],
-   "text": "output",
+   "text": "output\nsize: 7",
    "role": "body",
    "column": 0,
-   "reading_order": 161,
+   "reading_order": 159,
    "font_size": 4.92,
-   "n_chars": 6,
-   "flags": []
+   "n_chars": 14,
+   "flags": [
+    "merged:p4_b68"
+   ]
   },
   {
    "id": "p4_b57",
@@ -2840,7 +2812,7 @@
    "text": "pool, /2",
    "role": "body",
    "column": 0,
-   "reading_order": 162,
+   "reading_order": 160,
    "font_size": 4.92,
    "n_chars": 8,
    "flags": []
@@ -2857,7 +2829,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 163,
+   "reading_order": 161,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2874,7 +2846,7 @@
    "text": "3x3 conv, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 164,
+   "reading_order": 162,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -2891,7 +2863,7 @@
    "text": "3x3 conv, 512, /2",
    "role": "body",
    "column": 1,
-   "reading_order": 165,
+   "reading_order": 163,
    "font_size": 4.92,
    "n_chars": 17,
    "flags": []
@@ -2908,7 +2880,7 @@
    "text": "3x3 conv, 512, /2",
    "role": "body",
    "column": 1,
-   "reading_order": 166,
+   "reading_order": 164,
    "font_size": 4.92,
    "n_chars": 17,
    "flags": []
@@ -2925,26 +2897,9 @@
    "text": "4.1. ImageNet Classiﬁcation",
    "role": "heading",
    "column": -1,
-   "reading_order": 167,
+   "reading_order": 165,
    "font_size": 10.96,
    "n_chars": 27,
-   "flags": []
-  },
-  {
-   "id": "p4_b68",
-   "page": 4,
-   "bbox": [
-    53.31,
-    512.74,
-    65.6,
-    517.66
-   ],
-   "text": "size: 7",
-   "role": "body",
-   "column": 0,
-   "reading_order": 168,
-   "font_size": 4.92,
-   "n_chars": 7,
    "flags": []
   },
   {
@@ -2954,15 +2909,17 @@
     52.73,
     582.92,
     67.37,
-    587.84
+    593.69
    ],
-   "text": "output",
+   "text": "output\nsize: 1",
    "role": "body",
    "column": 0,
-   "reading_order": 169,
+   "reading_order": 166,
    "font_size": 4.92,
-   "n_chars": 6,
-   "flags": []
+   "n_chars": 14,
+   "flags": [
+    "merged:p4_b70"
+   ]
   },
   {
    "id": "p4_b58",
@@ -2976,24 +2933,7 @@
    "text": "fc 4096",
    "role": "body",
    "column": 0,
-   "reading_order": 170,
-   "font_size": 4.92,
-   "n_chars": 7,
-   "flags": []
-  },
-  {
-   "id": "p4_b70",
-   "page": 4,
-   "bbox": [
-    53.31,
-    588.77,
-    65.6,
-    593.69
-   ],
-   "text": "size: 1",
-   "role": "body",
-   "column": 0,
-   "reading_order": 171,
+   "reading_order": 167,
    "font_size": 4.92,
    "n_chars": 7,
    "flags": []
@@ -3010,7 +2950,7 @@
    "text": "fc 4096",
    "role": "body",
    "column": 0,
-   "reading_order": 172,
+   "reading_order": 168,
    "font_size": 4.92,
    "n_chars": 7,
    "flags": []
@@ -3027,7 +2967,7 @@
    "text": "fc 1000",
    "role": "body",
    "column": 0,
-   "reading_order": 173,
+   "reading_order": 169,
    "font_size": 4.92,
    "n_chars": 7,
    "flags": []
@@ -3044,7 +2984,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 174,
+   "reading_order": 170,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -3061,7 +3001,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 175,
+   "reading_order": 171,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -3078,7 +3018,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 176,
+   "reading_order": 172,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -3095,7 +3035,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 177,
+   "reading_order": 173,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -3112,7 +3052,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 178,
+   "reading_order": 174,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -3129,7 +3069,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 179,
+   "reading_order": 175,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -3146,7 +3086,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 180,
+   "reading_order": 176,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -3163,7 +3103,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 181,
+   "reading_order": 177,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -3180,7 +3120,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 182,
+   "reading_order": 178,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -3197,7 +3137,7 @@
    "text": "3x3 conv, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 183,
+   "reading_order": 179,
    "font_size": 4.92,
    "n_chars": 13,
    "flags": []
@@ -3214,7 +3154,7 @@
    "text": "avg pool",
    "role": "body",
    "column": 1,
-   "reading_order": 184,
+   "reading_order": 180,
    "font_size": 4.92,
    "n_chars": 8,
    "flags": []
@@ -3231,7 +3171,7 @@
    "text": "avg pool",
    "role": "body",
    "column": 1,
-   "reading_order": 185,
+   "reading_order": 181,
    "font_size": 4.92,
    "n_chars": 8,
    "flags": []
@@ -3248,7 +3188,7 @@
    "text": "fc 1000",
    "role": "body",
    "column": 1,
-   "reading_order": 186,
+   "reading_order": 182,
    "font_size": 4.92,
    "n_chars": 7,
    "flags": []
@@ -3265,7 +3205,7 @@
    "text": "fc 1000",
    "role": "body",
    "column": 1,
-   "reading_order": 187,
+   "reading_order": 183,
    "font_size": 4.92,
    "n_chars": 7,
    "flags": []
@@ -3282,7 +3222,7 @@
    "text": "We evaluate our method on the ImageNet 2012 classiﬁ-\ncation dataset [36] that consists of 1000 classes. The models\nare trained on the 1.28 million training images, and evalu-\nated on the 50k validation images. We also obtain a ﬁnal\nresult on the 100k test images, reported by the test server.\nWe evaluate both top-1 and top-5 error rates.",
    "role": "body",
    "column": 2,
-   "reading_order": 188,
+   "reading_order": 184,
    "font_size": 9.96,
    "n_chars": 338,
    "flags": []
@@ -3294,15 +3234,17 @@
     308.86,
     607.71,
     545.12,
-    653.63
+    713.41
    ],
-   "text": "Plain Networks. We ﬁrst evaluate 18-layer and 34-layer\nplain nets. The 34-layer plain net is in Fig. 3 (middle). The\n18-layer plain net is of a similar form. See Table 1 for de-\ntailed architectures.",
+   "text": "Plain Networks. We ﬁrst evaluate 18-layer and 34-layer\nplain nets. The 34-layer plain net is in Fig. 3 (middle). The\n18-layer plain net is of a similar form. See Table 1 for de-\ntailed architectures.\nThe results in Table 2 show that the deeper 34-layer plain\nnet has higher validation error than the shallower 18-layer\nplain net. To reveal the reasons, in Fig. 4 (left) we com-\npare their training/validation errors during the training pro-\ncedure. We have observed the degradation problem - the",
    "role": "body",
    "column": 2,
-   "reading_order": 189,
+   "reading_order": 185,
    "font_size": 9.96,
-   "n_chars": 199,
-   "flags": []
+   "n_chars": 495,
+   "flags": [
+    "merged:p4_b118"
+   ]
   },
   {
    "id": "p4_b109",
@@ -3316,26 +3258,9 @@
    "text": "Figure 3. Example network architectures for ImageNet. Left: the\nVGG-19 model [41] (19.6 billion FLOPs) as a reference. Mid-\ndle: a plain network with 34 parameter layers (3.6 billion FLOPs).\nRight: a residual network with 34 parameter layers (3.6 billion\nFLOPs). The dotted shortcuts increase dimensions. Table 1 shows\nmore details and other variants.",
    "role": "caption",
    "column": -1,
-   "reading_order": 190,
+   "reading_order": 186,
    "font_size": 8.97,
    "n_chars": 351,
-   "flags": []
-  },
-  {
-   "id": "p4_b118",
-   "page": 4,
-   "bbox": [
-    308.86,
-    655.62,
-    545.12,
-    713.41
-   ],
-   "text": "The results in Table 2 show that the deeper 34-layer plain\nnet has higher validation error than the shallower 18-layer\nplain net. To reveal the reasons, in Fig. 4 (left) we com-\npare their training/validation errors during the training pro-\ncedure. We have observed the degradation problem - the",
-   "role": "body",
-   "column": 2,
-   "reading_order": 191,
-   "font_size": 9.96,
-   "n_chars": 295,
    "flags": []
   },
   {
@@ -3348,9 +3273,9 @@
     743.29
    ],
    "text": "4",
-   "role": "heading",
-   "column": -1,
-   "reading_order": 192,
+   "role": "footer",
+   "column": 1,
+   "reading_order": 187,
    "font_size": 9.96,
    "n_chars": 1,
    "flags": []
@@ -3367,7 +3292,7 @@
    "text": "layer name output size\n18-layer\n34-layer\n50-layer\n101-layer\n152-layer\nconv1\n112×112\n7×7, 64, stride 2",
    "role": "body",
    "column": 1,
-   "reading_order": 193,
+   "reading_order": 188,
    "font_size": 6.46,
    "n_chars": 101,
    "flags": []
@@ -3384,7 +3309,7 @@
    "text": "3×3 max pool, stride 2\n\u0014",
    "role": "body",
    "column": 1,
-   "reading_order": 194,
+   "reading_order": 189,
    "font_size": 6.46,
    "n_chars": 24,
    "flags": []
@@ -3401,7 +3326,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 195,
+   "reading_order": 190,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3412,16 +3337,19 @@
    "bbox": [
     333.16,
     99.39,
-    337.48,
-    105.86
+    345.73,
+    118.99
    ],
-   "text": "",
-   "role": "body",
+   "text": "\n×3",
+   "role": "equation",
    "column": 1,
-   "reading_order": 196,
+   "reading_order": 191,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 5,
+   "flags": [
+    "merged:p5_b14",
+    "math"
+   ]
   },
   {
    "id": "p5_b15",
@@ -3435,7 +3363,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 197,
+   "reading_order": 192,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3446,16 +3374,19 @@
    "bbox": [
     391.53,
     99.39,
-    395.84,
-    105.86
+    404.1,
+    118.99
    ],
-   "text": "",
-   "role": "body",
+   "text": "\n×3",
+   "role": "equation",
    "column": 1,
-   "reading_order": 198,
+   "reading_order": 193,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 5,
+   "flags": [
+    "merged:p5_b19",
+    "math"
+   ]
   },
   {
    "id": "p5_b20",
@@ -3469,7 +3400,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 199,
+   "reading_order": 194,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3480,16 +3411,19 @@
    "bbox": [
     451.51,
     99.39,
-    455.82,
-    105.86
+    464.08,
+    118.99
    ],
-   "text": "",
-   "role": "body",
+   "text": "\n×3",
+   "role": "equation",
    "column": 1,
-   "reading_order": 200,
+   "reading_order": 195,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 5,
+   "flags": [
+    "merged:p5_b24",
+    "math"
+   ]
   },
   {
    "id": "p5_b12",
@@ -3503,7 +3437,7 @@
    "text": "1×1, 64\n3×3, 64\n1×1, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 201,
+   "reading_order": 196,
    "font_size": 6.46,
    "n_chars": 24,
    "flags": []
@@ -3520,7 +3454,7 @@
    "text": "1×1, 64\n3×3, 64\n1×1, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 202,
+   "reading_order": 197,
    "font_size": 6.46,
    "n_chars": 24,
    "flags": []
@@ -3537,7 +3471,7 @@
    "text": "1×1, 64\n3×3, 64\n1×1, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 203,
+   "reading_order": 198,
    "font_size": 6.46,
    "n_chars": 24,
    "flags": []
@@ -3554,7 +3488,7 @@
    "text": "\u0015",
    "role": "body",
    "column": 1,
-   "reading_order": 204,
+   "reading_order": 199,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3571,7 +3505,7 @@
    "text": "\u0014",
    "role": "body",
    "column": 1,
-   "reading_order": 205,
+   "reading_order": 200,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3588,7 +3522,7 @@
    "text": "\u0015",
    "role": "body",
    "column": 1,
-   "reading_order": 206,
+   "reading_order": 201,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3605,7 +3539,7 @@
    "text": "conv2 x\n56×56",
    "role": "body",
    "column": 1,
-   "reading_order": 207,
+   "reading_order": 202,
    "font_size": 6.46,
    "n_chars": 13,
    "flags": []
@@ -3622,7 +3556,7 @@
    "text": "3×3, 64\n3×3, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 208,
+   "reading_order": 203,
    "font_size": 6.46,
    "n_chars": 15,
    "flags": []
@@ -3639,7 +3573,7 @@
    "text": "3×3, 64\n3×3, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 209,
+   "reading_order": 204,
    "font_size": 6.46,
    "n_chars": 15,
    "flags": []
@@ -3656,7 +3590,7 @@
    "text": "×2",
    "role": "equation",
    "column": 1,
-   "reading_order": 210,
+   "reading_order": 205,
    "font_size": 6.46,
    "n_chars": 2,
    "flags": [
@@ -3675,66 +3609,9 @@
    "text": "×3",
    "role": "equation",
    "column": 1,
-   "reading_order": 211,
+   "reading_order": 206,
    "font_size": 6.46,
    "n_chars": 2,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b14",
-   "page": 5,
-   "bbox": [
-    333.16,
-    107.78,
-    345.73,
-    118.99
-   ],
-   "text": "×3",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 212,
-   "font_size": 6.46,
-   "n_chars": 3,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b19",
-   "page": 5,
-   "bbox": [
-    391.53,
-    107.78,
-    404.1,
-    118.99
-   ],
-   "text": "×3",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 213,
-   "font_size": 6.46,
-   "n_chars": 3,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b24",
-   "page": 5,
-   "bbox": [
-    451.51,
-    107.78,
-    464.08,
-    118.99
-   ],
-   "text": "×3",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 214,
-   "font_size": 6.46,
-   "n_chars": 3,
    "flags": [
     "math"
    ]
@@ -3751,7 +3628,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 215,
+   "reading_order": 207,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3768,7 +3645,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 216,
+   "reading_order": 208,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3785,7 +3662,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 217,
+   "reading_order": 209,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3802,7 +3679,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 218,
+   "reading_order": 210,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3813,16 +3690,19 @@
    "bbox": [
     333.16,
     125.25,
-    337.48,
-    131.71
+    345.73,
+    144.85
    ],
-   "text": "",
-   "role": "body",
+   "text": "\n×4",
+   "role": "equation",
    "column": 1,
-   "reading_order": 219,
+   "reading_order": 211,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 5,
+   "flags": [
+    "merged:p5_b37",
+    "math"
+   ]
   },
   {
    "id": "p5_b38",
@@ -3836,7 +3716,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 220,
+   "reading_order": 212,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3847,16 +3727,19 @@
    "bbox": [
     391.53,
     125.25,
-    395.84,
-    131.71
+    404.1,
+    144.85
    ],
-   "text": "",
-   "role": "body",
+   "text": "\n×4",
+   "role": "equation",
    "column": 1,
-   "reading_order": 221,
+   "reading_order": 213,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 5,
+   "flags": [
+    "merged:p5_b42",
+    "math"
+   ]
   },
   {
    "id": "p5_b43",
@@ -3870,7 +3753,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 222,
+   "reading_order": 214,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3881,16 +3764,19 @@
    "bbox": [
     451.51,
     125.25,
-    455.82,
-    131.71
+    464.08,
+    144.85
    ],
-   "text": "",
-   "role": "body",
+   "text": "\n×8",
+   "role": "equation",
    "column": 1,
-   "reading_order": 223,
+   "reading_order": 215,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 5,
+   "flags": [
+    "merged:p5_b47",
+    "math"
+   ]
   },
   {
    "id": "p5_b35",
@@ -3904,7 +3790,7 @@
    "text": "1×1, 128\n3×3, 128\n1×1, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 224,
+   "reading_order": 216,
    "font_size": 6.46,
    "n_chars": 26,
    "flags": []
@@ -3921,7 +3807,7 @@
    "text": "1×1, 128\n3×3, 128\n1×1, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 225,
+   "reading_order": 217,
    "font_size": 6.46,
    "n_chars": 26,
    "flags": []
@@ -3938,7 +3824,7 @@
    "text": "1×1, 128\n3×3, 128\n1×1, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 226,
+   "reading_order": 218,
    "font_size": 6.46,
    "n_chars": 26,
    "flags": []
@@ -3955,7 +3841,7 @@
    "text": "conv3 x\n28×28\n\u0014",
    "role": "body",
    "column": 1,
-   "reading_order": 227,
+   "reading_order": 219,
    "font_size": 6.46,
    "n_chars": 15,
    "flags": []
@@ -3972,7 +3858,7 @@
    "text": "\u0015",
    "role": "body",
    "column": 1,
-   "reading_order": 228,
+   "reading_order": 220,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -3989,7 +3875,7 @@
    "text": "\u0014",
    "role": "body",
    "column": 1,
-   "reading_order": 229,
+   "reading_order": 221,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4006,7 +3892,7 @@
    "text": "\u0015",
    "role": "body",
    "column": 1,
-   "reading_order": 230,
+   "reading_order": 222,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4023,7 +3909,7 @@
    "text": "3×3, 128\n3×3, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 231,
+   "reading_order": 223,
    "font_size": 6.46,
    "n_chars": 17,
    "flags": []
@@ -4040,7 +3926,7 @@
    "text": "3×3, 128\n3×3, 128",
    "role": "body",
    "column": 1,
-   "reading_order": 232,
+   "reading_order": 224,
    "font_size": 6.46,
    "n_chars": 17,
    "flags": []
@@ -4057,7 +3943,7 @@
    "text": "×2",
    "role": "equation",
    "column": 1,
-   "reading_order": 233,
+   "reading_order": 225,
    "font_size": 6.46,
    "n_chars": 2,
    "flags": [
@@ -4076,66 +3962,9 @@
    "text": "×4",
    "role": "equation",
    "column": 1,
-   "reading_order": 234,
+   "reading_order": 226,
    "font_size": 6.46,
    "n_chars": 2,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b37",
-   "page": 5,
-   "bbox": [
-    333.16,
-    133.64,
-    345.73,
-    144.85
-   ],
-   "text": "×4",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 235,
-   "font_size": 6.46,
-   "n_chars": 3,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b42",
-   "page": 5,
-   "bbox": [
-    391.53,
-    133.64,
-    404.1,
-    144.85
-   ],
-   "text": "×4",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 236,
-   "font_size": 6.46,
-   "n_chars": 3,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b47",
-   "page": 5,
-   "bbox": [
-    451.51,
-    133.64,
-    464.08,
-    144.85
-   ],
-   "text": "×8",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 237,
-   "font_size": 6.46,
-   "n_chars": 3,
    "flags": [
     "math"
    ]
@@ -4152,7 +3981,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 238,
+   "reading_order": 227,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4169,7 +3998,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 239,
+   "reading_order": 228,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4186,7 +4015,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 240,
+   "reading_order": 229,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4203,7 +4032,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 241,
+   "reading_order": 230,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4214,16 +4043,19 @@
    "bbox": [
     334.78,
     151.1,
-    339.09,
-    157.57
+    347.35,
+    170.71
    ],
-   "text": "",
-   "role": "body",
+   "text": "\n×6",
+   "role": "equation",
    "column": 1,
-   "reading_order": 242,
+   "reading_order": 231,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 5,
+   "flags": [
+    "merged:p5_b60",
+    "math"
+   ]
   },
   {
    "id": "p5_b61",
@@ -4237,7 +4069,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 243,
+   "reading_order": 232,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4248,16 +4080,18 @@
    "bbox": [
     391.53,
     151.1,
-    395.84,
-    157.57
+    407.33,
+    170.71
    ],
-   "text": "",
+   "text": "\n×23",
    "role": "body",
    "column": 1,
-   "reading_order": 244,
+   "reading_order": 233,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 6,
+   "flags": [
+    "merged:p5_b65"
+   ]
   },
   {
    "id": "p5_b66",
@@ -4271,7 +4105,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 245,
+   "reading_order": 234,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4282,16 +4116,18 @@
    "bbox": [
     451.51,
     151.1,
-    455.82,
-    157.57
+    467.31,
+    170.71
    ],
-   "text": "",
+   "text": "\n×36",
    "role": "body",
    "column": 1,
-   "reading_order": 246,
+   "reading_order": 235,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 6,
+   "flags": [
+    "merged:p5_b70"
+   ]
   },
   {
    "id": "p5_b58",
@@ -4305,7 +4141,7 @@
    "text": "1×1, 256\n3×3, 256\n1×1, 1024",
    "role": "body",
    "column": 1,
-   "reading_order": 247,
+   "reading_order": 236,
    "font_size": 6.46,
    "n_chars": 27,
    "flags": []
@@ -4322,7 +4158,7 @@
    "text": "1×1, 256\n3×3, 256\n1×1, 1024",
    "role": "body",
    "column": 1,
-   "reading_order": 248,
+   "reading_order": 237,
    "font_size": 6.46,
    "n_chars": 27,
    "flags": []
@@ -4339,7 +4175,7 @@
    "text": "1×1, 256\n3×3, 256\n1×1, 1024",
    "role": "body",
    "column": 1,
-   "reading_order": 249,
+   "reading_order": 238,
    "font_size": 6.46,
    "n_chars": 27,
    "flags": []
@@ -4356,7 +4192,7 @@
    "text": "conv4 x\n14×14\n\u0014",
    "role": "body",
    "column": 1,
-   "reading_order": 250,
+   "reading_order": 239,
    "font_size": 6.46,
    "n_chars": 15,
    "flags": []
@@ -4373,7 +4209,7 @@
    "text": "\u0015",
    "role": "body",
    "column": 1,
-   "reading_order": 251,
+   "reading_order": 240,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4390,7 +4226,7 @@
    "text": "\u0014",
    "role": "body",
    "column": 1,
-   "reading_order": 252,
+   "reading_order": 241,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4407,7 +4243,7 @@
    "text": "\u0015",
    "role": "body",
    "column": 1,
-   "reading_order": 253,
+   "reading_order": 242,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4424,7 +4260,7 @@
    "text": "3×3, 256\n3×3, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 254,
+   "reading_order": 243,
    "font_size": 6.46,
    "n_chars": 17,
    "flags": []
@@ -4441,7 +4277,7 @@
    "text": "3×3, 256\n3×3, 256",
    "role": "body",
    "column": 1,
-   "reading_order": 255,
+   "reading_order": 244,
    "font_size": 6.46,
    "n_chars": 17,
    "flags": []
@@ -4458,7 +4294,7 @@
    "text": "×2",
    "role": "equation",
    "column": 1,
-   "reading_order": 256,
+   "reading_order": 245,
    "font_size": 6.46,
    "n_chars": 2,
    "flags": [
@@ -4477,66 +4313,9 @@
    "text": "×6",
    "role": "equation",
    "column": 1,
-   "reading_order": 257,
+   "reading_order": 246,
    "font_size": 6.46,
    "n_chars": 2,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b60",
-   "page": 5,
-   "bbox": [
-    334.78,
-    159.49,
-    347.35,
-    170.71
-   ],
-   "text": "×6",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 258,
-   "font_size": 6.46,
-   "n_chars": 3,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b65",
-   "page": 5,
-   "bbox": [
-    391.53,
-    159.49,
-    407.33,
-    170.71
-   ],
-   "text": "×23",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 259,
-   "font_size": 6.46,
-   "n_chars": 4,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b70",
-   "page": 5,
-   "bbox": [
-    451.51,
-    159.49,
-    467.31,
-    170.71
-   ],
-   "text": "×36",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 260,
-   "font_size": 6.46,
-   "n_chars": 4,
    "flags": [
     "math"
    ]
@@ -4553,7 +4332,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 261,
+   "reading_order": 247,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4570,7 +4349,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 262,
+   "reading_order": 248,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4587,7 +4366,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 263,
+   "reading_order": 249,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4604,7 +4383,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 264,
+   "reading_order": 250,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4615,16 +4394,19 @@
    "bbox": [
     334.78,
     176.96,
-    339.09,
-    183.42
+    347.35,
+    196.56
    ],
-   "text": "",
-   "role": "body",
+   "text": "\n×3",
+   "role": "equation",
    "column": 1,
-   "reading_order": 265,
+   "reading_order": 251,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 5,
+   "flags": [
+    "merged:p5_b83",
+    "math"
+   ]
   },
   {
    "id": "p5_b84",
@@ -4638,7 +4420,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 266,
+   "reading_order": 252,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4649,16 +4431,19 @@
    "bbox": [
     393.14,
     176.96,
-    397.46,
-    183.42
+    405.71,
+    196.56
    ],
-   "text": "",
-   "role": "body",
+   "text": "\n×3",
+   "role": "equation",
    "column": 1,
-   "reading_order": 267,
+   "reading_order": 253,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 5,
+   "flags": [
+    "merged:p5_b88",
+    "math"
+   ]
   },
   {
    "id": "p5_b89",
@@ -4672,7 +4457,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 268,
+   "reading_order": 254,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4683,16 +4468,19 @@
    "bbox": [
     453.12,
     176.96,
-    457.43,
-    183.42
+    465.69,
+    196.56
    ],
-   "text": "",
-   "role": "body",
+   "text": "\n×3",
+   "role": "equation",
    "column": 1,
-   "reading_order": 269,
+   "reading_order": 255,
    "font_size": 6.46,
-   "n_chars": 1,
-   "flags": []
+   "n_chars": 5,
+   "flags": [
+    "merged:p5_b93",
+    "math"
+   ]
   },
   {
    "id": "p5_b81",
@@ -4706,7 +4494,7 @@
    "text": "1×1, 512\n3×3, 512\n1×1, 2048",
    "role": "body",
    "column": 1,
-   "reading_order": 270,
+   "reading_order": 256,
    "font_size": 6.46,
    "n_chars": 27,
    "flags": []
@@ -4723,7 +4511,7 @@
    "text": "1×1, 512\n3×3, 512\n1×1, 2048",
    "role": "body",
    "column": 1,
-   "reading_order": 271,
+   "reading_order": 257,
    "font_size": 6.46,
    "n_chars": 27,
    "flags": []
@@ -4740,7 +4528,7 @@
    "text": "1×1, 512\n3×3, 512\n1×1, 2048",
    "role": "body",
    "column": 1,
-   "reading_order": 272,
+   "reading_order": 258,
    "font_size": 6.46,
    "n_chars": 27,
    "flags": []
@@ -4757,7 +4545,7 @@
    "text": "conv5 x\n7×7\n\u0014",
    "role": "body",
    "column": 1,
-   "reading_order": 273,
+   "reading_order": 259,
    "font_size": 6.46,
    "n_chars": 13,
    "flags": []
@@ -4774,7 +4562,7 @@
    "text": "\u0015",
    "role": "body",
    "column": 1,
-   "reading_order": 274,
+   "reading_order": 260,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4791,7 +4579,7 @@
    "text": "\u0014",
    "role": "body",
    "column": 1,
-   "reading_order": 275,
+   "reading_order": 261,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4808,7 +4596,7 @@
    "text": "\u0015",
    "role": "body",
    "column": 1,
-   "reading_order": 276,
+   "reading_order": 262,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4825,7 +4613,7 @@
    "text": "3×3, 512\n3×3, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 277,
+   "reading_order": 263,
    "font_size": 6.46,
    "n_chars": 17,
    "flags": []
@@ -4842,7 +4630,7 @@
    "text": "3×3, 512\n3×3, 512",
    "role": "body",
    "column": 1,
-   "reading_order": 278,
+   "reading_order": 264,
    "font_size": 6.46,
    "n_chars": 17,
    "flags": []
@@ -4859,7 +4647,7 @@
    "text": "×2",
    "role": "equation",
    "column": 1,
-   "reading_order": 279,
+   "reading_order": 265,
    "font_size": 6.46,
    "n_chars": 2,
    "flags": [
@@ -4878,66 +4666,9 @@
    "text": "×3",
    "role": "equation",
    "column": 1,
-   "reading_order": 280,
+   "reading_order": 266,
    "font_size": 6.46,
    "n_chars": 2,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b83",
-   "page": 5,
-   "bbox": [
-    334.78,
-    185.35,
-    347.35,
-    196.56
-   ],
-   "text": "×3",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 281,
-   "font_size": 6.46,
-   "n_chars": 3,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b88",
-   "page": 5,
-   "bbox": [
-    393.14,
-    185.35,
-    405.71,
-    196.56
-   ],
-   "text": "×3",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 282,
-   "font_size": 6.46,
-   "n_chars": 3,
-   "flags": [
-    "math"
-   ]
-  },
-  {
-   "id": "p5_b93",
-   "page": 5,
-   "bbox": [
-    453.12,
-    185.35,
-    465.69,
-    196.56
-   ],
-   "text": "×3",
-   "role": "equation",
-   "column": 1,
-   "reading_order": 283,
-   "font_size": 6.46,
-   "n_chars": 3,
    "flags": [
     "math"
    ]
@@ -4954,7 +4685,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 284,
+   "reading_order": 267,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4971,7 +4702,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 285,
+   "reading_order": 268,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -4988,7 +4719,7 @@
    "text": "",
    "role": "body",
    "column": 1,
-   "reading_order": 286,
+   "reading_order": 269,
    "font_size": 6.46,
    "n_chars": 1,
    "flags": []
@@ -5005,7 +4736,7 @@
    "text": "1×1\naverage pool, 1000-d fc, softmax\nFLOPs\n1.8×109\n3.6×109\n3.8×109\n7.6×109\n11.3×109",
    "role": "body",
    "column": 1,
-   "reading_order": 287,
+   "reading_order": 270,
    "font_size": 6.08,
    "n_chars": 83,
    "flags": []
@@ -5022,7 +4753,7 @@
    "text": "Table 1. Architectures for ImageNet. Building blocks are shown in brackets (see also Fig. 5), with the numbers of blocks stacked. Down-\nsampling is performed by conv3 1, conv4 1, and conv5 1 with a stride of 2.",
    "role": "caption",
    "column": -1,
-   "reading_order": 288,
+   "reading_order": 271,
    "font_size": 8.97,
    "n_chars": 210,
    "flags": []
@@ -5039,7 +4770,7 @@
    "text": "60",
    "role": "body",
    "column": 0,
-   "reading_order": 289,
+   "reading_order": 272,
    "font_size": 6.9,
    "n_chars": 2,
    "flags": []
@@ -5056,7 +4787,7 @@
    "text": "50",
    "role": "body",
    "column": 0,
-   "reading_order": 290,
+   "reading_order": 273,
    "font_size": 6.9,
    "n_chars": 2,
    "flags": []
@@ -5073,7 +4804,7 @@
    "text": "error (%)",
    "role": "body",
    "column": 0,
-   "reading_order": 291,
+   "reading_order": 274,
    "font_size": 6.9,
    "n_chars": 9,
    "flags": []
@@ -5090,7 +4821,7 @@
    "text": "40",
    "role": "body",
    "column": 0,
-   "reading_order": 292,
+   "reading_order": 275,
    "font_size": 6.9,
    "n_chars": 2,
    "flags": []
@@ -5107,7 +4838,7 @@
    "text": "60",
    "role": "body",
    "column": 1,
-   "reading_order": 293,
+   "reading_order": 276,
    "font_size": 6.9,
    "n_chars": 2,
    "flags": []
@@ -5124,7 +4855,7 @@
    "text": "50",
    "role": "body",
    "column": 1,
-   "reading_order": 294,
+   "reading_order": 277,
    "font_size": 6.9,
    "n_chars": 2,
    "flags": []
@@ -5141,7 +4872,7 @@
    "text": "error (%)",
    "role": "body",
    "column": 1,
-   "reading_order": 295,
+   "reading_order": 278,
    "font_size": 6.9,
    "n_chars": 9,
    "flags": []
@@ -5158,7 +4889,7 @@
    "text": "40",
    "role": "body",
    "column": 1,
-   "reading_order": 296,
+   "reading_order": 279,
    "font_size": 6.9,
    "n_chars": 2,
    "flags": []
@@ -5175,7 +4906,7 @@
    "text": "34-layer\n18-layer",
    "role": "heading",
    "column": -1,
-   "reading_order": 297,
+   "reading_order": 280,
    "font_size": 7.86,
    "n_chars": 17,
    "flags": []
@@ -5192,7 +4923,7 @@
    "text": "30",
    "role": "body",
    "column": 0,
-   "reading_order": 298,
+   "reading_order": 281,
    "font_size": 6.9,
    "n_chars": 2,
    "flags": []
@@ -5209,7 +4940,7 @@
    "text": "30",
    "role": "body",
    "column": 1,
-   "reading_order": 299,
+   "reading_order": 282,
    "font_size": 6.9,
    "n_chars": 2,
    "flags": []
@@ -5226,7 +4957,7 @@
    "text": "18-layer",
    "role": "heading",
    "column": -1,
-   "reading_order": 300,
+   "reading_order": 283,
    "font_size": 7.86,
    "n_chars": 8,
    "flags": []
@@ -5243,7 +4974,7 @@
    "text": "plain-18\nplain-34",
    "role": "heading",
    "column": -1,
-   "reading_order": 301,
+   "reading_order": 284,
    "font_size": 8.05,
    "n_chars": 17,
    "flags": []
@@ -5260,7 +4991,7 @@
    "text": "ResNet-18\nResNet-34",
    "role": "heading",
    "column": -1,
-   "reading_order": 302,
+   "reading_order": 285,
    "font_size": 8.05,
    "n_chars": 19,
    "flags": []
@@ -5277,7 +5008,7 @@
    "text": "34-layer",
    "role": "heading",
    "column": -1,
-   "reading_order": 303,
+   "reading_order": 286,
    "font_size": 7.86,
    "n_chars": 8,
    "flags": []
@@ -5294,7 +5025,7 @@
    "text": "0\n10\n20\n30\n40\n50\n20",
    "role": "body",
    "column": 1,
-   "reading_order": 304,
+   "reading_order": 287,
    "font_size": 6.9,
    "n_chars": 19,
    "flags": []
@@ -5311,7 +5042,7 @@
    "text": "0\n10\n20\n30\n40\n50\n20",
    "role": "body",
    "column": 1,
-   "reading_order": 305,
+   "reading_order": 288,
    "font_size": 6.9,
    "n_chars": 19,
    "flags": []
@@ -5328,7 +5059,7 @@
    "text": "iter. (1e4)",
    "role": "body",
    "column": 1,
-   "reading_order": 306,
+   "reading_order": 289,
    "font_size": 6.9,
    "n_chars": 11,
    "flags": []
@@ -5345,7 +5076,7 @@
    "text": "iter. (1e4)",
    "role": "body",
    "column": 1,
-   "reading_order": 307,
+   "reading_order": 290,
    "font_size": 6.9,
    "n_chars": 11,
    "flags": []
@@ -5362,7 +5093,7 @@
    "text": "Figure 4. Training on ImageNet. Thin curves denote training error, and bold curves denote validation error of the center crops. Left: plain\nnetworks of 18 and 34 layers. Right: ResNets of 18 and 34 layers. In this plot, the residual networks have no extra parameter compared to\ntheir plain counterparts.",
    "role": "caption",
    "column": -1,
-   "reading_order": 308,
+   "reading_order": 291,
    "font_size": 8.97,
    "n_chars": 303,
    "flags": []
@@ -5379,7 +5110,7 @@
    "text": "reducing of the training error3. The reason for such opti-\nmization difﬁculties will be studied in the future.",
    "role": "heading",
    "column": -1,
-   "reading_order": 309,
+   "reading_order": 292,
    "font_size": 9.83,
    "n_chars": 110,
    "flags": []
@@ -5396,7 +5127,7 @@
    "text": "plain\nResNet\n18 layers\n27.94\n27.88\n34 layers\n28.54\n25.03",
    "role": "heading",
    "column": -1,
-   "reading_order": 310,
+   "reading_order": 293,
    "font_size": 8.97,
    "n_chars": 56,
    "flags": []
@@ -5408,15 +5139,18 @@
     308.86,
     475.16,
     545.12,
-    568.9
+    676.5
    ],
-   "text": "Residual Networks. Next we evaluate 18-layer and 34-\nlayer residual nets (ResNets). The baseline architectures\nare the same as the above plain nets, expect that a shortcut\nconnection is added to each pair of 3×3 ﬁlters as in Fig. 3\n(right). In the ﬁrst comparison (Table 2 and Fig. 4 right),\nwe use identity mapping for all shortcuts and zero-padding\nfor increasing dimensions (option A). So they have no extra\nparameter compared to the plain counterparts.",
+   "text": "Residual Networks. Next we evaluate 18-layer and 34-\nlayer residual nets (ResNets). The baseline architectures\nare the same as the above plain nets, expect that a shortcut\nconnection is added to each pair of 3×3 ﬁlters as in Fig. 3\n(right). In the ﬁrst comparison (Table 2 and Fig. 4 right),\nwe use identity mapping for all shortcuts and zero-padding\nfor increasing dimensions (option A). So they have no extra\nparameter compared to the plain counterparts.\nWe have three major observations from Table 2 and\nFig. 4. First, the situation is reversed with residual learn-\ning – the 34-layer ResNet is better than the 18-layer ResNet\n(by 2.8%). More importantly, the 34-layer ResNet exhibits\nconsiderably lower training error and is generalizable to the\nvalidation data. This indicates that the degradation problem\nis well addressed in this setting and we manage to obtain\naccuracy gains from increased depth.\nSecond, compared to its plain counterpart, the 34-layer",
    "role": "body",
    "column": 1,
-   "reading_order": 311,
+   "reading_order": 294,
    "font_size": 9.96,
-   "n_chars": 456,
-   "flags": []
+   "n_chars": 961,
+   "flags": [
+    "merged:p5_b126",
+    "merged:p5_b127"
+   ]
   },
   {
    "id": "p5_b121",
@@ -5430,7 +5164,7 @@
    "text": "Table 2. Top-1 error (%, 10-crop testing) on ImageNet validation.\nHere the ResNets have no extra parameter compared to their plain\ncounterparts. Fig. 4 shows the training procedures.",
    "role": "caption",
    "column": -1,
-   "reading_order": 312,
+   "reading_order": 295,
    "font_size": 8.97,
    "n_chars": 182,
    "flags": []
@@ -5447,26 +5181,9 @@
    "text": "34-layer plain net has higher training error throughout the\nwhole training procedure, even though the solution space\nof the 18-layer plain network is a subspace of that of the\n34-layer one.",
    "role": "body",
    "column": 1,
-   "reading_order": 313,
+   "reading_order": 296,
    "font_size": 9.96,
    "n_chars": 189,
-   "flags": []
-  },
-  {
-   "id": "p5_b126",
-   "page": 5,
-   "bbox": [
-    308.86,
-    570.89,
-    545.12,
-    664.54
-   ],
-   "text": "We have three major observations from Table 2 and\nFig. 4. First, the situation is reversed with residual learn-\ning – the 34-layer ResNet is better than the 18-layer ResNet\n(by 2.8%). More importantly, the 34-layer ResNet exhibits\nconsiderably lower training error and is generalizable to the\nvalidation data. This indicates that the degradation problem\nis well addressed in this setting and we manage to obtain\naccuracy gains from increased depth.",
-   "role": "body",
-   "column": 1,
-   "reading_order": 314,
-   "font_size": 9.96,
-   "n_chars": 448,
    "flags": []
   },
   {
@@ -5481,26 +5198,9 @@
    "text": "We argue that this optimization difﬁculty is unlikely to\nbe caused by vanishing gradients. These plain networks are\ntrained with BN [16], which ensures forward propagated\nsignals to have non-zero variances. We also verify that the\nbackward propagated gradients exhibit healthy norms with\nBN. So neither forward nor backward signals vanish. In\nfact, the 34-layer plain net is still able to achieve compet-\nitive accuracy (Table 3), suggesting that the solver works\nto some extent. We conjecture that the deep plain nets may\nhave exponentially low convergence rates, which impact the",
    "role": "body",
    "column": 1,
-   "reading_order": 315,
+   "reading_order": 297,
    "font_size": 9.96,
    "n_chars": 581,
-   "flags": []
-  },
-  {
-   "id": "p5_b127",
-   "page": 5,
-   "bbox": [
-    320.82,
-    666.53,
-    545.12,
-    676.5
-   ],
-   "text": "Second, compared to its plain counterpart, the 34-layer",
-   "role": "heading",
-   "column": -1,
-   "reading_order": 316,
-   "font_size": 9.96,
-   "n_chars": 55,
    "flags": []
   },
   {
@@ -5515,7 +5215,7 @@
    "text": "3We have experimented with more training iterations (3×) and still ob-\nserved the degradation problem, suggesting that this problem cannot be\nfeasibly addressed by simply using more iterations.",
    "role": "body",
    "column": 1,
-   "reading_order": 317,
+   "reading_order": 298,
    "font_size": 7.89,
    "n_chars": 193,
    "flags": []
@@ -5530,9 +5230,9 @@
     743.3
    ],
    "text": "5",
-   "role": "heading",
-   "column": -1,
-   "reading_order": 318,
+   "role": "footer",
+   "column": 1,
+   "reading_order": 299,
    "font_size": 9.96,
    "n_chars": 1,
    "flags": []
@@ -5549,7 +5249,7 @@
    "text": "model\ntop-1 err.\ntop-5 err.",
    "role": "body",
    "column": 0,
-   "reading_order": 319,
+   "reading_order": 300,
    "font_size": 7.97,
    "n_chars": 27,
    "flags": []
@@ -5566,7 +5266,7 @@
    "text": "VGG-16 [41]\n28.07\n9.33",
    "role": "body",
    "column": 0,
-   "reading_order": 320,
+   "reading_order": 301,
    "font_size": 8.63,
    "n_chars": 22,
    "flags": []
@@ -5583,7 +5283,7 @@
    "text": "GoogLeNet [44]\n-\n9.15",
    "role": "body",
    "column": 0,
-   "reading_order": 321,
+   "reading_order": 302,
    "font_size": 8.63,
    "n_chars": 21,
    "flags": []
@@ -5600,7 +5300,7 @@
    "text": "PReLU-net [13]\n24.27\n7.38",
    "role": "body",
    "column": 0,
-   "reading_order": 322,
+   "reading_order": 303,
    "font_size": 8.63,
    "n_chars": 25,
    "flags": []
@@ -5617,7 +5317,7 @@
    "text": "plain-34\n28.54\n10.02",
    "role": "body",
    "column": 0,
-   "reading_order": 323,
+   "reading_order": 304,
    "font_size": 8.63,
    "n_chars": 20,
    "flags": []
@@ -5634,7 +5334,7 @@
    "text": "ResNet-34 A\n25.03\n7.76",
    "role": "body",
    "column": 0,
-   "reading_order": 324,
+   "reading_order": 305,
    "font_size": 8.63,
    "n_chars": 22,
    "flags": []
@@ -5651,7 +5351,7 @@
    "text": "ResNet-34 B\n24.52\n7.46",
    "role": "body",
    "column": 0,
-   "reading_order": 325,
+   "reading_order": 306,
    "font_size": 8.63,
    "n_chars": 22,
    "flags": []
@@ -5668,7 +5368,7 @@
    "text": "3x3, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 326,
+   "reading_order": 307,
    "font_size": 6.04,
    "n_chars": 7,
    "flags": []
@@ -5685,7 +5385,7 @@
    "text": "relu",
    "role": "body",
    "column": 1,
-   "reading_order": 327,
+   "reading_order": 308,
    "font_size": 5.46,
    "n_chars": 4,
    "flags": []
@@ -5702,7 +5402,7 @@
    "text": "3x3, 64",
    "role": "body",
    "column": 1,
-   "reading_order": 328,
+   "reading_order": 309,
    "font_size": 6.04,
    "n_chars": 7,
    "flags": []
@@ -5719,7 +5419,7 @@
    "text": "relu",
    "role": "body",
    "column": 1,
-   "reading_order": 329,
+   "reading_order": 310,
    "font_size": 5.46,
    "n_chars": 4,
    "flags": []
@@ -5736,7 +5436,7 @@
    "text": "64-d\n256-d",
    "role": "body",
    "column": 2,
-   "reading_order": 330,
+   "reading_order": 311,
    "font_size": 5.46,
    "n_chars": 10,
    "flags": []
@@ -5753,7 +5453,7 @@
    "text": "1x1, 64\nrelu",
    "role": "body",
    "column": 2,
-   "reading_order": 331,
+   "reading_order": 312,
    "font_size": 5.75,
    "n_chars": 12,
    "flags": []
@@ -5770,7 +5470,7 @@
    "text": "3x3, 64",
    "role": "body",
    "column": 2,
-   "reading_order": 332,
+   "reading_order": 313,
    "font_size": 6.04,
    "n_chars": 7,
    "flags": []
@@ -5787,7 +5487,7 @@
    "text": "1x1, 256\nrelu",
    "role": "body",
    "column": 2,
-   "reading_order": 333,
+   "reading_order": 314,
    "font_size": 5.75,
    "n_chars": 13,
    "flags": []
@@ -5804,7 +5504,7 @@
    "text": "relu",
    "role": "body",
    "column": 2,
-   "reading_order": 334,
+   "reading_order": 315,
    "font_size": 5.46,
    "n_chars": 4,
    "flags": []
@@ -5821,7 +5521,7 @@
    "text": "Figure 5. A deeper residual function F for ImageNet. Left: a\nbuilding block (on 56×56 feature maps) as in Fig. 3 for ResNet-\n34. Right: a “bottleneck” building block for ResNet-50/101/152.",
    "role": "caption",
    "column": -1,
-   "reading_order": 335,
+   "reading_order": 316,
    "font_size": 8.97,
    "n_chars": 188,
    "flags": []
@@ -5838,7 +5538,7 @@
    "text": "ResNet-34 C\n24.19\n7.40",
    "role": "body",
    "column": 0,
-   "reading_order": 336,
+   "reading_order": 317,
    "font_size": 8.63,
    "n_chars": 22,
    "flags": []
@@ -5855,7 +5555,7 @@
    "text": "ResNet-50\n22.85\n6.71",
    "role": "body",
    "column": 0,
-   "reading_order": 337,
+   "reading_order": 318,
    "font_size": 8.63,
    "n_chars": 20,
    "flags": []
@@ -5872,7 +5572,7 @@
    "text": "ResNet-101\n21.75\n6.05",
    "role": "body",
    "column": 0,
-   "reading_order": 338,
+   "reading_order": 319,
    "font_size": 8.63,
    "n_chars": 21,
    "flags": []
@@ -5889,7 +5589,7 @@
    "text": "ResNet-152\n21.43\n5.71",
    "role": "body",
    "column": 0,
-   "reading_order": 339,
+   "reading_order": 320,
    "font_size": 8.63,
    "n_chars": 21,
    "flags": []
@@ -5906,7 +5606,7 @@
    "text": "parameter-free, identity shortcuts help with training. Next\nwe investigate projection shortcuts (Eqn.(2)). In Table 3 we\ncompare three options: (A) zero-padding shortcuts are used\nfor increasing dimensions, and all shortcuts are parameter-\nfree (the same as Table 2 and Fig. 4 right); (B) projec-\ntion shortcuts are used for increasing dimensions, and other\nshortcuts are identity; and (C) all shortcuts are projections.",
    "role": "body",
    "column": 2,
-   "reading_order": 340,
+   "reading_order": 321,
    "font_size": 9.96,
    "n_chars": 420,
    "flags": []
@@ -5923,7 +5623,7 @@
    "text": "Table 3. Error rates (%, 10-crop testing) on ImageNet validation.\nVGG-16 is based on our test. ResNet-50/101/152 are of option B\nthat only uses projections for increasing dimensions.",
    "role": "caption",
    "column": -1,
-   "reading_order": 341,
+   "reading_order": 322,
    "font_size": 8.97,
    "n_chars": 182,
    "flags": []
@@ -5940,7 +5640,7 @@
    "text": "method\ntop-1 err.\ntop-5 err.\nVGG [41] (ILSVRC’14)\n-\n8.43†",
    "role": "body",
    "column": 0,
-   "reading_order": 342,
+   "reading_order": 323,
    "font_size": 8.11,
    "n_chars": 57,
    "flags": []
@@ -5957,7 +5657,7 @@
    "text": "GoogLeNet [44] (ILSVRC’14)\n-\n7.89\nVGG [41] (v5)\n24.4\n7.1\nPReLU-net [13]\n21.59\n5.71\nBN-inception [16]\n21.99\n5.81\nResNet-34 B\n21.84\n5.71\nResNet-34 C\n21.53\n5.60\nResNet-50\n20.74\n5.25\nResNet-101\n19.87\n4.60\nResNet-152\n19.38\n4.49",
    "role": "body",
    "column": 0,
-   "reading_order": 343,
+   "reading_order": 324,
    "font_size": 8.93,
    "n_chars": 222,
    "flags": []
@@ -5974,7 +5674,7 @@
    "text": "Table 3 shows that all three options are considerably bet-\nter than the plain counterpart. B is slightly better than A. We\nargue that this is because the zero-padded dimensions in A\nindeed have no residual learning. C is marginally better than\nB, and we attribute this to the extra parameters introduced\nby many (thirteen) projection shortcuts. But the small dif-\nferences among A/B/C indicate that projection shortcuts are\nnot essential for addressing the degradation problem. So we\ndo not use option C in the rest of this paper, to reduce mem-\nory/time complexity and model sizes. Identity shortcuts are\nparticularly important for not increasing the complexity of\nthe bottleneck architectures that are introduced below.",
    "role": "caption",
    "column": -1,
-   "reading_order": 344,
+   "reading_order": 325,
    "font_size": 9.96,
    "n_chars": 721,
    "flags": []
@@ -5991,7 +5691,7 @@
    "text": "Table 4. Error rates (%) of single-model results on the ImageNet\nvalidation set (except † reported on the test set).",
    "role": "caption",
    "column": -1,
-   "reading_order": 345,
+   "reading_order": 326,
    "font_size": 8.22,
    "n_chars": 116,
    "flags": []
@@ -6008,7 +5708,7 @@
    "text": "method\ntop-5 err. (test)\nVGG [41] (ILSVRC’14)\n7.32\nGoogLeNet [44] (ILSVRC’14)\n6.66\nVGG [41] (v5)\n6.8\nPReLU-net [13]\n4.94\nBN-inception [16]\n4.82\nResNet (ILSVRC’15)\n3.57",
    "role": "body",
    "column": 0,
-   "reading_order": 346,
+   "reading_order": 327,
    "font_size": 8.86,
    "n_chars": 167,
    "flags": []
@@ -6025,7 +5725,7 @@
    "text": "Deeper Bottleneck Architectures. Next we describe our\ndeeper nets for ImageNet. Because of concerns on the train-\ning time that we can afford, we modify the building block\nas a bottleneck design4. For each residual function F, we\nuse a stack of 3 layers instead of 2 (Fig. 5). The three layers\nare 1×1, 3×3, and 1×1 convolutions, where the 1×1 layers\nare responsible for reducing and then increasing (restoring)\ndimensions, leaving the 3×3 layer a bottleneck with smaller\ninput/output dimensions. Fig. 5 shows an example, where\nboth designs have similar time complexity.",
    "role": "body",
    "column": 2,
-   "reading_order": 347,
+   "reading_order": 328,
    "font_size": 9.93,
    "n_chars": 570,
    "flags": []
@@ -6042,7 +5742,7 @@
    "text": "Table 5. Error rates (%) of ensembles. The top-5 error is on the\ntest set of ImageNet and reported by the test server.",
    "role": "caption",
    "column": -1,
-   "reading_order": 348,
+   "reading_order": 329,
    "font_size": 8.97,
    "n_chars": 118,
    "flags": []
@@ -6059,7 +5759,7 @@
    "text": "ResNet reduces the top-1 error by 3.5% (Table 2), resulting\nfrom the successfully reduced training error (Fig. 4 right vs.\nleft). This comparison veriﬁes the effectiveness of residual\nlearning on extremely deep systems.",
    "role": "body",
    "column": 0,
-   "reading_order": 349,
+   "reading_order": 330,
    "font_size": 9.96,
    "n_chars": 219,
    "flags": []
@@ -6076,7 +5776,7 @@
    "text": "Last, we also note that the 18-layer plain/residual nets\nare comparably accurate (Table 2), but the 18-layer ResNet\nconverges faster (Fig. 4 right vs. left). When the net is “not\noverly deep” (18 layers here), the current SGD solver is still\nable to ﬁnd good solutions to the plain net. In this case, the\nResNet eases the optimization by providing faster conver-\ngence at the early stage.",
    "role": "body",
    "column": 0,
-   "reading_order": 350,
+   "reading_order": 331,
    "font_size": 9.96,
    "n_chars": 388,
    "flags": []
@@ -6093,7 +5793,7 @@
    "text": "The parameter-free identity shortcuts are particularly im-\nportant for the bottleneck architectures. If the identity short-\ncut in Fig. 5 (right) is replaced with projection, one can\nshow that the time complexity and model size are doubled,\nas the shortcut is connected to the two high-dimensional\nends. So identity shortcuts lead to more efﬁcient models\nfor the bottleneck designs.",
    "role": "body",
    "column": 2,
-   "reading_order": 351,
+   "reading_order": 332,
    "font_size": 9.96,
    "n_chars": 382,
    "flags": []
@@ -6110,7 +5810,7 @@
    "text": "50-layer ResNet: We replace each 2-layer block in the",
    "role": "heading",
    "column": -1,
-   "reading_order": 352,
+   "reading_order": 333,
    "font_size": 9.96,
    "n_chars": 53,
    "flags": []
@@ -6127,7 +5827,7 @@
    "text": "4Deeper non-bottleneck ResNets (e.g., Fig. 5 left) also gain accuracy\nfrom increased depth (as shown on CIFAR-10), but are not as economical\nas the bottleneck ResNets. So the usage of bottleneck designs is mainly due\nto practical considerations. We further note that the degradation problem\nof plain nets is also witnessed for the bottleneck designs.",
    "role": "body",
    "column": 2,
-   "reading_order": 353,
+   "reading_order": 334,
    "font_size": 7.93,
    "n_chars": 350,
    "flags": []
@@ -6144,7 +5844,7 @@
    "text": "Identity vs. Projection Shortcuts. We have shown that",
    "role": "heading",
    "column": -1,
-   "reading_order": 354,
+   "reading_order": 335,
    "font_size": 9.96,
    "n_chars": 53,
    "flags": []
@@ -6159,9 +5859,9 @@
     743.3
    ],
    "text": "6",
-   "role": "heading",
-   "column": -1,
-   "reading_order": 355,
+   "role": "footer",
+   "column": 1,
+   "reading_order": 336,
    "font_size": 9.96,
    "n_chars": 1,
    "flags": []
@@ -6698,15 +6398,16 @@
  ],
  "stats": {
   "n_pages": 6,
-  "n_blocks": 356,
+  "n_blocks": 337,
   "n_tables": 7,
-  "n_body_chars": 24213,
-  "n_total_chars": 27766,
+  "n_body_chars": 24273,
+  "n_total_chars": 27785,
   "roles": {
+   "body": 278,
+   "heading": 22,
    "caption": 11,
-   "equation": 22,
-   "body": 296,
-   "heading": 27
+   "equation": 20,
+   "footer": 6
   }
  }
 }

@@ -18,15 +18,15 @@ Goal (the four checks in the topic):
 Design: deterministic, single-pass, no network, no model call. The calling Agent does
 the reasoning / answering; this script only produces faithful, located structure.
 
-Output (written next to --out):
+Output (written under --out):
   parsed.json   machine-readable structure with per-block evidence anchors
   reading.md    layout-ordered markdown rendering
-  verify.json   self-check coverage / order diagnostics (also via verify.py)
+  verify.json   separate internal diagnostic produced by scripts/verify.py
 
 Usage:
   python parse_pdf.py INPUT.pdf --out OUTDIR [--case-id ID] [--max-pages N]
 
-Dependencies: pymupdf >= 1.24 (import pymupdf). Standard library otherwise.
+Dependencies: pymupdf >= 1.24 and pdfplumber >= 0.11 for structured tables.
 """
 from __future__ import annotations
 
@@ -116,7 +116,49 @@ def extract_blocks(page, page_no: int):
             font_size=fs,
             n_chars=len(text),
         ))
-    return out, pw, ph
+    return merge_continuation_blocks(out), pw, ph
+
+
+def merge_continuation_blocks(blocks):
+    """Merge adjacent physical blocks that are continuations of one text flow.
+
+    PDF generators may split a centered abstract into separate blocks. Without
+    this pass, a short centered continuation can look like a spurious middle
+    column. The conservative geometric rule does not merge side-by-side columns:
+    it requires equal font size, vertical contact and substantial x-overlap.
+    """
+    if not blocks:
+        return blocks
+    merged = []
+    for block in blocks:
+        if not merged:
+            merged.append(block)
+            continue
+        previous = merged[-1]
+        previous_width = max(0.0, previous.bbox[2] - previous.bbox[0])
+        block_width = max(0.0, block.bbox[2] - block.bbox[0])
+        overlap = max(0.0, min(previous.bbox[2], block.bbox[2]) - max(previous.bbox[0], block.bbox[0]))
+        overlap_ratio = overlap / max(1.0, min(previous_width, block_width))
+        vertical_gap = block.bbox[1] - previous.bbox[3]
+        same_font = abs(previous.font_size - block.font_size) <= 0.25
+        if same_font and -1.5 <= vertical_gap <= 2.0 and overlap_ratio >= 0.6:
+            weight_previous = max(1, previous.n_chars)
+            weight_block = max(1, block.n_chars)
+            previous.font_size = round(
+                (previous.font_size * weight_previous + block.font_size * weight_block)
+                / (weight_previous + weight_block), 2)
+            previous.text = previous.text + "\n" + block.text
+            previous.bbox = [
+                round(min(previous.bbox[0], block.bbox[0]), 2),
+                round(min(previous.bbox[1], block.bbox[1]), 2),
+                round(max(previous.bbox[2], block.bbox[2]), 2),
+                round(max(previous.bbox[3], block.bbox[3]), 2),
+            ]
+            previous.n_chars = len(previous.text)
+            previous.flags = list(previous.flags) + list(block.flags) + [f"merged:{block.id}"]
+        else:
+            merged.append(block)
+    return merged
 
 
 def detect_repeating_marginalia(pages_blocks, pw_ph):
@@ -151,10 +193,10 @@ def classify_roles(blocks, pw, ph, headers, footers, body_font):
         # sitting in the extreme top/bottom margin band (works even on single pages).
         small = b.font_size > 0 and b.font_size < body_font * 0.9
         pnum = re.fullmatch(r"[\divxlc]+|\d+", key)
-        if y1 < ph * 0.07 and (key in headers or pnum or small):
+        if y1 < ph * 0.08 and (key in headers or pnum or small):
             b.role = "header"
             continue
-        if y0 > ph * 0.93 and (key in footers or pnum or small):
+        if y0 > ph * 0.92 and (key in footers or pnum or small):
             b.role = "footer"
             continue
         low = b.text.lower()
@@ -263,10 +305,14 @@ def order_blocks(blocks, assign):
 
 
 def extract_tables(plumber_page, page_no: int):
-    """Structured tables. Prefer pdfplumber cell reconstruction: PyMuPDF's
-    find_tables().extract() can reorder glyphs inside a cell (e.g. '0.99' -> '099.'),
-    while pdfplumber preserves the verbatim cell text. Falls back to PyMuPDF if
-    pdfplumber is unavailable. Cells keep row/col + the table bbox for anchoring."""
+    """Structured tables using pdfplumber cell reconstruction.
+
+    PyMuPDF's find_tables().extract() can reorder glyphs inside a cell (for
+    example '0.99' -> '099.'), while pdfplumber preserves the tested cell text.
+    If pdfplumber is unavailable or detection fails, no structured table is
+    emitted; callers must report that limitation rather than guessing cells.
+    Cells keep row/col and the table bbox for anchoring.
+    """
     tables = []
     if pdfplumber is not None and plumber_page is not None:
         try:
@@ -309,9 +355,12 @@ def parse(pdf_path: str, case_id: str = "", max_pages: int | None = None):
     doc = pymupdf.open(pdf_path)
     if doc.is_encrypted:
         try:
-            doc.authenticate("")
+            authenticated = doc.authenticate("")
         except Exception:
-            pass
+            authenticated = 0
+        if not authenticated:
+            doc.close()
+            raise ValueError("encrypted PDF: empty-password authentication failed; a password is required")
     n = len(doc)
     if max_pages:
         n = min(n, max_pages)
@@ -410,7 +459,12 @@ def main(argv=None):
     ap.add_argument("--max-pages", type=int, default=None)
     a = ap.parse_args(argv)
     os.makedirs(a.out, exist_ok=True)
-    parsed, body_text = parse(a.pdf, a.case_id, a.max_pages)
+    try:
+        parsed, body_text = parse(a.pdf, a.case_id, a.max_pages)
+    except ValueError as exc:
+        print(json.dumps({"status": "failed", "source": os.path.basename(a.pdf),
+                          "error": str(exc)}, ensure_ascii=False))
+        return 2
     with open(os.path.join(a.out, "parsed.json"), "w", encoding="utf-8") as f:
         json.dump(parsed, f, ensure_ascii=False, indent=1)
     with open(os.path.join(a.out, "reading.md"), "w", encoding="utf-8") as f:

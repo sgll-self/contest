@@ -1,16 +1,29 @@
 === sci-pdf-reading-parse demonstration run ===
-[A] built controlled ground-truth PDF: D:\²£¶û¿ÆÑ§¿Õ¼ä\bohrium_workplace\product-arena-08-3027d350\submission\execution\work\gt.pdf
-[A] skill metrics: {"text_recall": 1.0, "reading_order_concordance": 1.0, "gt_pairs_checked": 28, "gt_blocks_located": 8, "header_leaked_into_body": false, "footer_classified_roles": ["footer"], "table_cell_match": 1.0, "n_tables_detected": 1}
+[A] built controlled ground-truth PDF: D:\çŽ»å°”ç§‘å­¦ç©ºé—´\bohrium_workplace\product-arena-08-3027d350\submission\execution\work\gt.pdf
+[A] skill metrics: {"text_recall": 1.0, "text_recall_definition": "lowercased whitespace-stripped ground-truth 4-gram recall", "exact_gt_string_recovery": 1.0, "reading_order_concordance": 1.0, "gt_pairs_checked": 28, "gt_blocks_located": 8, "header_leaked_into_body": false, "footer_classified_roles": ["footer"], "table_cell_match": 1.0, "n_tables_detected": 1}
 [A] naive baseline reading-order concordance: 0.8929
-[A] column continuity: {"skill_column_continuity": 0.6667, "naive_column_continuity": 0.0769, "n_body_lines": 14}
-[B] real paper source: downloaded:arxiv-1512.03385
-[B] real paper stats: {"n_pages": 6, "n_blocks": 356, "n_tables": 7, "n_body_chars": 24213, "n_total_chars": 27766, "roles": {"caption": 11, "equation": 22, "body": 296, "heading": 27}}
-[fig] wrote fig_order.png, fig_recall.png, fig_layout.png
+[A] naive PyMuPDF table-cell match: 0.5556
+[A] column continuity: {"metric_scope": "identical raw text lines in the controlled two-column body region", "skill_column_continuity": 0.8462, "naive_column_continuity": 0.0769, "n_body_lines": 14, "n_skill_lines": 14, "n_naive_lines": 14}
+[A] internal verification: {"schema": "sci-pdf-reading-parse/verify/v2", "source": "gt.pdf", "n_pages": 1, "raw_nonws_chars": 1138, "content_nonws_chars": 1102, "recovered_nonws_chars": 1102, "char_recall": 1.0, "char_recall_raw": 1.0, "raw_marginalia_chars": 36, "leaked_marginalia_chars": 0, "marginalia_leak": 0.0, "order_monotonic": 1.0, "order_pairs_checked": 9, "unreadable_pages": [], "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score", "notes": []}
+[real-paper] using validated local cache; network download skipped
+[B] real paper source: local-cache:arxiv-1512.03385
+[B] real paper scope: first 6 of 12 pages
+[B] real paper stats: {"n_pages": 6, "n_blocks": 337, "n_tables": 7, "n_body_chars": 24273, "n_total_chars": 27785, "roles": {"body": 278, "heading": 22, "caption": 11, "equation": 20, "footer": 6}}
+[B] internal verification: {"schema": "sci-pdf-reading-parse/verify/v2", "source": "real_paper.pdf", "n_pages": 6, "raw_nonws_chars": 23456, "content_nonws_chars": 23450, "recovered_nonws_chars": 23450, "char_recall": 1.0, "char_recall_raw": 1.0, "raw_marginalia_chars": 6, "leaked_marginalia_chars": 0, "marginalia_leak": 0.0, "order_monotonic": 1.0, "order_pairs_checked": 308, "unreadable_pages": [], "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score", "notes": []}
+[C] edge cases: {"image_only_scan": {"n_blocks": 0, "unreadable_pages": [1], "passed": true}, "encrypted_without_password": {"error": "encrypted PDF: empty-password authentication failed; a password is required", "passed": true}}
+[fig] wrote runtime-only fig_order.png, fig_recall.png, fig_layout.png
 === metrics.json ===
 {
- "schema": "sci-pdf-reading-parse/demo-metrics/v1",
+ "schema": "sci-pdf-reading-parse/demo-metrics/v2",
+ "evaluation_scope": {
+  "controlled_document": "one self-generated two-column page with known order and a ruled 3x3 table",
+  "real_document": "first six pages of arXiv 1512.03385; execution and internal diagnostics only, no external accuracy ground truth",
+  "continuity_metric": "naive and Skill sequences contain the identical raw text-line set"
+ },
  "controlled_ground_truth": {
   "text_recall": 1.0,
+  "text_recall_definition": "lowercased whitespace-stripped ground-truth 4-gram recall",
+  "exact_gt_string_recovery": 1.0,
   "reading_order_concordance": 1.0,
   "gt_pairs_checked": 28,
   "gt_blocks_located": 8,
@@ -22,30 +35,101 @@
   "n_tables_detected": 1
  },
  "naive_baseline_order_concordance": 0.8929,
+ "naive_pymupdf_table_cell_match": 0.5556,
+ "table_cell_match_gain": 0.4444,
  "order_gain_vs_baseline": 0.1071,
  "column_continuity": {
-  "skill_column_continuity": 0.6667,
+  "metric_scope": "identical raw text lines in the controlled two-column body region",
+  "skill_column_continuity": 0.8462,
   "naive_column_continuity": 0.0769,
-  "n_body_lines": 14
+  "n_body_lines": 14,
+  "n_skill_lines": 14,
+  "n_naive_lines": 14
  },
- "column_continuity_gain": 0.5898,
+ "column_continuity_gain": 0.7693,
  "real_demo": {
-  "source": "downloaded:arxiv-1512.03385",
+  "source": "local-cache:arxiv-1512.03385",
+  "source_url": "https://arxiv.org/pdf/1512.03385",
   "sha256": "1e0651b6810ecba34a3dbc5b5b0209226f889004607c1f203540a48d64e5a93a",
+  "source_pages": 12,
+  "pages_parsed": 6,
+  "accuracy_assessed": false,
   "stats": {
    "n_pages": 6,
-   "n_blocks": 356,
+   "n_blocks": 337,
    "n_tables": 7,
-   "n_body_chars": 24213,
-   "n_total_chars": 27766,
+   "n_body_chars": 24273,
+   "n_total_chars": 27785,
    "roles": {
+    "body": 278,
+    "heading": 22,
     "caption": 11,
-    "equation": 22,
-    "body": 296,
-    "heading": 27
+    "equation": 20,
+    "footer": 6
    }
   }
  },
- "wall_time_s": 3.68
+ "verification": {
+  "controlled": {
+   "schema": "sci-pdf-reading-parse/verify/v2",
+   "source": "gt.pdf",
+   "n_pages": 1,
+   "raw_nonws_chars": 1138,
+   "content_nonws_chars": 1102,
+   "recovered_nonws_chars": 1102,
+   "char_recall": 1.0,
+   "char_recall_raw": 1.0,
+   "raw_marginalia_chars": 36,
+   "leaked_marginalia_chars": 0,
+   "marginalia_leak": 0.0,
+   "order_monotonic": 1.0,
+   "order_pairs_checked": 9,
+   "unreadable_pages": [],
+   "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score",
+   "notes": []
+  },
+  "real_demo": {
+   "schema": "sci-pdf-reading-parse/verify/v2",
+   "source": "real_paper.pdf",
+   "n_pages": 6,
+   "raw_nonws_chars": 23456,
+   "content_nonws_chars": 23450,
+   "recovered_nonws_chars": 23450,
+   "char_recall": 1.0,
+   "char_recall_raw": 1.0,
+   "raw_marginalia_chars": 6,
+   "leaked_marginalia_chars": 0,
+   "marginalia_leak": 0.0,
+   "order_monotonic": 1.0,
+   "order_pairs_checked": 308,
+   "unreadable_pages": [],
+   "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score",
+   "notes": []
+  },
+  "artifacts": [
+   "execution/results/gt_verify.json",
+   "execution/results/real_verify.json"
+  ]
+ },
+ "robustness": {
+  "image_only_scan": {
+   "n_blocks": 0,
+   "unreadable_pages": [
+    1
+   ],
+   "passed": true
+  },
+  "encrypted_without_password": {
+   "error": "encrypted PDF: empty-password authentication failed; a password is required",
+   "passed": true
+  }
+ },
+ "performance": {
+  "controlled_parse_s": 0.0429,
+  "real_first_6_pages_parse_s": 1.0258,
+  "figures_generated": true,
+  "duplicate_controlled_parse_removed": true
+ },
+ "wall_time_s": 4.64
 }
-DONE wall_time_s=3.68
+DONE wall_time_s=4.64

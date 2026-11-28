@@ -43,7 +43,7 @@ description: "Evidence-anchored scientific PDF reading-order parser. Use when a 
 - `verify.json`：`char_recall`、`marginalia_leak`、`order_monotonic`、`unreadable_pages`、`notes`。
 
 ## 关键方法（为什么排得对、拆得清）
-- **分栏检测**：按块水平中心聚类，最大间隙切分 2/3 栏；宽度 > 0.62×页宽的块视为跨栏带分隔符。
+- **分栏检测**：先保守联合同字号、垂直相接且水平重叠的连续块，避免居中摘要续行形成伪列；再按块水平中心聚类，最大间隙切分 2/3 栏；宽度 > 0.62×页宽的块视为跨栏带分隔符。
 - **阅读顺序**：跨栏块按 y 作为「带」分隔；带内各栏**从左到右**、每栏**从上到下**；跨页按页序。
   这避免双栏「串栏/错行」，也不把相邻段落拼成一句。
 - **页眉页脚**：跨页重复字符串 + 页码样式 + 极窄边距带内小字号块 → 标 header/footer，**不混入正文**。
@@ -52,15 +52,14 @@ description: "Evidence-anchored scientific PDF reading-order parser. Use when a 
 - **公式/特殊字符**：逐字保留 unicode（希腊字母、上下标）；按数学符号密度与尾部编号 `(n)` 标 equation。
 
 ## 异常处理（可靠体验）
-- **加密 PDF**：尝试空口令认证；失败则在 result.json `status="failed"`、`uncertainty` 注明加密。
+- **加密 PDF**：尝试空口令认证；失败时脚本输出明确的 `status="failed"` 错误并以退出码 2 结束，Agent 应在 result.json 中记录加密原因，不得继续猜补正文。
 - **无文字层扫描件**：`verify.json.unreadable_pages` 列出；result.json 标 `status="partial"`，
   说明需 OCR（超出本文字层解析器范围），**不伪造文本**。
 - **图片型表格 / 乱码字体**：表格检测尽力而为；检不出则 `tables` 为空并在 notes 说明，不猜补单元格。
 - **材料冲突 / 未报告**：在答案与 `uncertainty` 中如实区分「原文未报告」「无法判断」「材料相互冲突」。
 
 ## 自查方法
-运行 `verify.py`：`char_recall` 应接近 1（漏行/丢段会拉低）；`marginalia_leak` 应≈0；
-`order_monotonic` 反映栏内顺序合理性。任何低分都作为**限制**上报，而不是掩盖。
+运行 `verify.py`：`char_recall` 是相对于几何页眉页脚带之外原始文本层字符的内部覆盖诊断，应接近 1；`marginalia_leak` 是几何边距带字符被作为正文输出的比例，应为 0；`order_monotonic` 仅检查栏内纵向顺序一致性，不等于外部真值阅读顺序准确率。任何低分都作为**限制**上报，而不是掩盖。
 
 ## 最小调用示例（示意，非正式案例结果）
 见 `examples/` 目录：输入 `examples/sample_input.json`，调用上述脚本，示意输出 `examples/sample_output.json`
@@ -69,3 +68,4 @@ description: "Evidence-anchored scientific PDF reading-order parser. Use when a 
 ## 依赖与版本
 `pymupdf>=1.24`、`pdfplumber>=0.11`（表格保真）；标准库其余。见 `scripts/requirements.txt`。
 解析器本体 `scripts/parse_pdf.py`、自检 `scripts/verify.py` 可被他人直接复用。
+Skill 资源仅使用 UTF-8 文本文件；复现生成的 PDF/PNG 必须写入工作目录或运行期产物目录，不作为 Skill 资源加载。

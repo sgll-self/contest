@@ -1,0 +1,22 @@
+{
+ "schema": "sci-pdf-reading-parse/verify/v2",
+ "source": "image_only.pdf",
+ "n_pages": 1,
+ "raw_nonws_chars": 0,
+ "content_nonws_chars": 0,
+ "recovered_nonws_chars": 0,
+ "char_recall": 1.0,
+ "char_recall_raw": 1.0,
+ "raw_marginalia_chars": 0,
+ "leaked_marginalia_chars": 0,
+ "marginalia_leak": 0.0,
+ "order_monotonic": 1.0,
+ "order_pairs_checked": 0,
+ "unreadable_pages": [
+  1
+ ],
+ "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score",
+ "notes": [
+  "image-only/empty pages detected; OCR needed (out of scope for text-layer parser)"
+ ]
+}

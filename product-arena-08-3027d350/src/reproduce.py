@@ -12,18 +12,23 @@ reproducible evidence that the skill's parser works, on two inputs:
      we can compute exact numerical metrics: text recall, reading-order concordance,
      table-cell match, marginalia exclusion. This is the primary fidelity signal.
 
-  B. A REAL open-access two-column paper (downloaded if network allows; otherwise a
-     realistic multi-section synthetic paper). We compare the skill against a naive
-     baseline (PyMuPDF get_text(sort=True)) to demonstrate the reading-order gain.
+  B. A REAL open-access two-column paper (local validated cache, downloaded if
+     absent; otherwise a clearly labelled synthetic fallback). Only its first six
+     pages are parsed. Counts and internal text-layer diagnostics demonstrate
+     execution and coverage; they are not external accuracy scores.
+
+  C. Runtime-generated image-only and password-encrypted fixtures verify explicit
+     failure handling. Their binary inputs are not included as Skill resources.
 
 Outputs (under --out, default execution/results):
-  metrics.json            all numerical results
+  metrics.json            numerical results, scope, diagnostics and timings
   gt_parsed.json          parse of the controlled document
-  real_parsed.json        parse of the real/synthetic paper (if produced)
-  fig_order.png           reading-order concordance: skill vs naive baseline
-  fig_recall.png          text recall / marginalia leak bars
-  fig_layout.png          page render with detected columns + numbered reading order
-  run.log                 (written by the caller via tee; this script also prints)
+  real_parsed.json        first-six-page parse of the real/synthetic paper
+  gt_verify.json          internal controlled-document diagnostics
+  real_verify.json        internal real-document diagnostics
+  edge_cases.json         scan/encryption robustness assertions
+  fig_*.png               optional runtime-only figures (excluded from Skill resources)
+  run.log                 written by the caller via redirection; this script prints
 
 Everything here is computed from actual runs; no benchmark scores are invented.
 """
@@ -34,6 +39,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SCRIPTS = os.path.join(os.path.dirname(HERE), "scripts")
 sys.path.insert(0, SCRIPTS)
 import parse_pdf as P  # noqa: E402
+import verify as V  # noqa: E402
 
 try:
     import pymupdf
@@ -157,16 +163,22 @@ def eval_gt(parsed):
     blocks = [b for b in parsed["blocks"] if b["role"] not in ("header", "footer")]
     reading = "\n".join(b["text"] for b in sorted(blocks, key=lambda x: x["reading_order"]))
     nread = re.sub(r"\s+", "", reading).lower()
-    # text recall over GT body strings
-    rec_chars = tot_chars = 0
+    # Position-weighted 4-gram recall over normalized GT strings. This is a
+    # coverage metric, not a claim of independent semantic correctness.
+    hit_grams = total_grams = 0
+    exact_strings = 0
     for g in GT_ORDER:
         ng = re.sub(r"\s+", "", g).lower()
-        tot_chars += len(ng)
-        # count how many GT 4-grams appear in reading text
+        if ng in nread:
+            exact_strings += 1
         grams = [ng[i:i+4] for i in range(len(ng)-3)]
-        hit = sum(1 for gr in grams if gr in nread)
-        rec_chars += hit * 4 if grams else (len(ng) if ng in nread else 0)
-    text_recall = min(1.0, rec_chars / max(1, tot_chars))
+        if grams:
+            total_grams += len(grams)
+            hit_grams += sum(1 for gram in grams if gram in nread)
+        elif ng in nread:
+            hit_grams += 1
+            total_grams += 1
+    text_recall = hit_grams / max(1, total_grams)
 
     # map each GT string to a parsed reading_order index
     gt_index = {}
@@ -201,12 +213,14 @@ def eval_gt(parsed):
     tab = parsed["tables"][0] if parsed["tables"] else None
     cell_match = None
     if tab and tab.get("cells"):
-        got = {(c["row"], c["col"]): re.sub(r"\s+", "", c["text"]).lower() for c in tab["cells"]}
-        want = {(r, c): re.sub(r"\s+", "", v).lower() for r, row in enumerate(GT_TABLE) for c, v in enumerate(row)}
+        got = {(c["row"], c["col"]): re.sub(r"\s+", "", c["text"]) for c in tab["cells"]}
+        want = {(r, c): re.sub(r"\s+", "", v) for r, row in enumerate(GT_TABLE) for c, v in enumerate(row)}
         ok = sum(1 for k, v in want.items() if got.get(k) == v)
         cell_match = ok / len(want)
     return {
         "text_recall": round(text_recall, 4),
+        "text_recall_definition": "lowercased whitespace-stripped ground-truth 4-gram recall",
+        "exact_gt_string_recovery": round(exact_strings / len(GT_ORDER), 4),
         "reading_order_concordance": round(order_concordance, 4),
         "gt_pairs_checked": tot,
         "gt_blocks_located": len(located),
@@ -251,6 +265,28 @@ def naive_order_concordance(pdf_path):
 
 
 # --------------------------------------------------------------------------- #
+# A2. PyMuPDF table baseline on the same controlled cells
+# --------------------------------------------------------------------------- #
+def naive_table_cell_match(pdf_path):
+    """Measure the PyMuPDF table extractor on the same nine GT cells."""
+    import re
+    doc = pymupdf.open(pdf_path)
+    try:
+        tables = list(doc[0].find_tables())
+        if not tables:
+            return None
+        rows = tables[0].extract()
+    finally:
+        doc.close()
+    got = {(row_index, col_index): re.sub(r"\s+", "", value or "")
+           for row_index, row in enumerate(rows) for col_index, value in enumerate(row)}
+    want = {(row_index, col_index): re.sub(r"\s+", "", value)
+            for row_index, row in enumerate(GT_TABLE) for col_index, value in enumerate(row)}
+    matched = sum(1 for key, value in want.items() if got.get(key) == value)
+    return round(matched / len(want), 4)
+
+
+# --------------------------------------------------------------------------- #
 # B. Real paper (download) with graceful synthetic fallback
 # --------------------------------------------------------------------------- #
 REAL_URL = "https://arxiv.org/pdf/1512.03385"  # He et al., Deep Residual Learning (two-column CVPR)
@@ -258,6 +294,12 @@ REAL_URL = "https://arxiv.org/pdf/1512.03385"  # He et al., Deep Residual Learni
 
 def get_real_paper(workdir):
     path = os.path.join(workdir, "real_paper.pdf")
+    if os.path.isfile(path):
+        with open(path, "rb") as handle:
+            data = handle.read()
+        if data[:4] == b"%PDF" and len(data) > 20000:
+            print("[real-paper] using validated local cache; network download skipped", flush=True)
+            return path, "local-cache:arxiv-1512.03385", hashlib.sha256(data).hexdigest()
     try:
         req = urllib.request.Request(REAL_URL, headers={"User-Agent": "Mozilla/5.0 (research)"})
         with urllib.request.urlopen(req, timeout=40) as r:
@@ -303,57 +345,128 @@ def build_synthetic_paper(path):
 
 
 def column_continuity(pdf_path, parsed):
-    """Line-level '串栏' metric: fraction of consecutive body-line pairs that stay in
-    the SAME column. A correct column-major reader switches column only at the column
-    boundary (high continuity); a naive pure-y reader alternates columns every line
-    (low continuity). Computed on the two-column body region of the controlled page."""
-    import re
+    """Compare naive and Skill ordering over the identical raw text-line set.
+
+    Each raw line receives its column from its own horizontal centre. The naive
+    sequence is pure (y, x) sorting. The Skill sequence uses the reading_order
+    of the line's source block, then (y, x) within that block. Using the same
+    lines for both sequences prevents block-versus-line counting bias.
+    """
     doc = pymupdf.open(pdf_path)
-    page = doc[0]
-    pw = page.rect.width
-    mid = pw / 2
-    d = page.get_text("dict")
-    lines = []
-    for b in d.get("blocks", []):
-        if b.get("type") != 0:
-            continue
-        for ln in b.get("lines", []):
-            txt = "".join(sp.get("text", "") for sp in ln.get("spans", []))
-            x0, y0, x1, y1 = ln["bbox"]
-            # body region: below abstract, above table; narrow lines only
-            if y0 < 200 or y0 > 400 or (x1 - x0) > 0.6 * pw:
+    try:
+        page = doc[0]
+        page_width = page.rect.width
+        middle = page_width / 2
+        parsed_by_id = {block["id"]: block for block in parsed["blocks"]}
+        lines = []
+        for block_index, block in enumerate(page.get_text("dict").get("blocks", [])):
+            if block.get("type") != 0:
                 continue
-            if not txt.strip():
-                continue
-            cx = (x0 + x1) / 2
-            lines.append({"y": y0, "x": x0, "cx": cx, "col": 0 if cx < mid else 1})
-    doc.close()
+            block_id = f"p1_b{block_index}"
+            parsed_block = parsed_by_id.get(block_id)
+            block_order = parsed_block["reading_order"] if parsed_block is not None else 10**9
+            for line_index, line in enumerate(block.get("lines", [])):
+                text = "".join(span.get("text", "") for span in line.get("spans", []))
+                x0, y0, x1, y1 = line["bbox"]
+                if y0 < 200 or y0 > 400 or (x1 - x0) > 0.6 * page_width or not text.strip():
+                    continue
+                centre_x = (x0 + x1) / 2
+                lines.append({
+                    "y": y0,
+                    "x": x0,
+                    "col": 0 if centre_x < middle else 1,
+                    "block_order": block_order,
+                    "line_index": line_index,
+                })
+    finally:
+        doc.close()
 
-    def continuity(seq):
-        if len(seq) < 2:
+    def continuity(sequence):
+        if len(sequence) < 2:
             return 1.0
-        same = sum(1 for i in range(len(seq) - 1) if seq[i]["col"] == seq[i + 1]["col"])
-        return same / (len(seq) - 1)
+        same = sum(1 for index in range(len(sequence) - 1)
+                   if sequence[index]["col"] == sequence[index + 1]["col"])
+        return same / (len(sequence) - 1)
 
-    naive = continuity(sorted(lines, key=lambda l: l["y"]))
-    # skill: order body blocks by reading_order, expand to their lines' column
-    skill_lines = []
-    for b in sorted(parsed["blocks"], key=lambda x: x["reading_order"]):
-        if b["role"] != "body" or b["column"] < 0:
-            continue
-        if b["bbox"][1] < 200 or b["bbox"][1] > 400:
-            continue
-        skill_lines.append({"col": b["column"]})
-    skill = continuity(skill_lines)
-    return {"skill_column_continuity": round(skill, 4),
-            "naive_column_continuity": round(naive, 4),
-            "n_body_lines": len(lines)}
+    naive_lines = sorted(lines, key=lambda line: (line["y"], line["x"]))
+    skill_lines = sorted(lines, key=lambda line: (line["block_order"], line["y"], line["x"]))
+    return {
+        "metric_scope": "identical raw text lines in the controlled two-column body region",
+        "skill_column_continuity": round(continuity(skill_lines), 4),
+        "naive_column_continuity": round(continuity(naive_lines), 4),
+        "n_body_lines": len(lines),
+        "n_skill_lines": len(skill_lines),
+        "n_naive_lines": len(naive_lines),
+    }
+
+
+# --------------------------------------------------------------------------- #
+# C. Robustness fixtures (runtime-generated, not Skill resources)
+# --------------------------------------------------------------------------- #
+def build_image_only_pdf(source_pdf, path):
+    source = pymupdf.open(source_pdf)
+    target = pymupdf.open()
+    try:
+        source_page = source[0]
+        pixmap = source_page.get_pixmap(dpi=100, alpha=False)
+        page = target.new_page(width=source_page.rect.width, height=source_page.rect.height)
+        page.insert_image(page.rect, stream=pixmap.tobytes("png"))
+        if os.path.exists(path):
+            os.remove(path)
+        target.save(path)
+    finally:
+        target.close()
+        source.close()
+    return path
+
+
+def build_encrypted_pdf(source_pdf, path):
+    source = pymupdf.open(source_pdf)
+    try:
+        if os.path.exists(path):
+            os.remove(path)
+        source.save(path, encryption=pymupdf.PDF_ENCRYPT_AES_256,
+                    user_pw="controlled-test-password", owner_pw="controlled-test-owner")
+    finally:
+        source.close()
+    return path
+
+
+def check_edge_cases(gt_pdf, outdir, workdir):
+    image_pdf = build_image_only_pdf(gt_pdf, os.path.join(workdir, "image_only.pdf"))
+    image_parsed, _ = P.parse(image_pdf, case_id="edge-image-only")
+    image_json = os.path.join(outdir, "scanned_parsed.json")
+    with open(image_json, "w", encoding="utf-8") as handle:
+        json.dump(image_parsed, handle, ensure_ascii=False, indent=1)
+    image_verify = V.verify(image_pdf, image_json)
+    with open(os.path.join(outdir, "scanned_verify.json"), "w", encoding="utf-8") as handle:
+        json.dump(image_verify, handle, ensure_ascii=False, indent=1)
+
+    encrypted_pdf = build_encrypted_pdf(gt_pdf, os.path.join(workdir, "encrypted.pdf"))
+    encrypted_error = ""
+    try:
+        P.parse(encrypted_pdf, case_id="edge-encrypted")
+    except ValueError as exc:
+        encrypted_error = str(exc)
+
+    result = {
+        "image_only_scan": {
+            "n_blocks": image_parsed["stats"]["n_blocks"],
+            "unreadable_pages": image_verify["unreadable_pages"],
+            "passed": image_parsed["stats"]["n_blocks"] == 0 and image_verify["unreadable_pages"] == [1],
+        },
+        "encrypted_without_password": {
+            "error": encrypted_error,
+            "passed": "empty-password authentication failed" in encrypted_error,
+        },
+    }
+    return result
 
 
 # --------------------------------------------------------------------------- #
 # Figures
 # --------------------------------------------------------------------------- #
-def make_figures(outdir, gt_metrics, naive_conc, real_stats, layout_pdf):
+def make_figures(outdir, gt_metrics, naive_conc, layout_pdf, layout_parsed):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -388,7 +501,7 @@ def make_figures(outdir, gt_metrics, naive_conc, real_stats, layout_pdf):
         fig, ax = plt.subplots(figsize=(7, 9))
         ax.imshow(mpimg.imread(img_path))
         sx = pix.width / page.rect.width; sy = pix.height / page.rect.height
-        parsed, _ = P.parse(layout_pdf, max_pages=1)
+        parsed = layout_parsed
         for b in parsed["blocks"]:
             if b["role"] in ("header", "footer"):
                 continue
@@ -413,50 +526,106 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=os.path.join(os.path.dirname(HERE), "execution", "results"))
     ap.add_argument("--work", default=os.path.join(os.path.dirname(HERE), "execution", "work"))
+    ap.add_argument("--skip-figures", action="store_true", help="skip optional PNG rendering for a faster text-only run")
     a = ap.parse_args(argv)
-    os.makedirs(a.out, exist_ok=True); os.makedirs(a.work, exist_ok=True)
-    t0 = time.time()
+    os.makedirs(a.out, exist_ok=True)
+    os.makedirs(a.work, exist_ok=True)
+    started = time.perf_counter()
     print("=== sci-pdf-reading-parse demonstration run ===", flush=True)
+
+    def save_json(path, value):
+        with open(path, "w", encoding="utf-8") as handle:
+            json.dump(value, handle, ensure_ascii=False, indent=1)
 
     # A. controlled ground truth
     gt_pdf = os.path.join(a.work, "gt.pdf")
     build_gt_pdf(gt_pdf)
     print(f"[A] built controlled ground-truth PDF: {gt_pdf}", flush=True)
+    parse_started = time.perf_counter()
     gt_parsed, _ = P.parse(gt_pdf, case_id="controlled-gt")
-    json.dump(gt_parsed, open(os.path.join(a.out, "gt_parsed.json"), "w", encoding="utf-8"),
-              ensure_ascii=False, indent=1)
+    gt_parse_seconds = time.perf_counter() - parse_started
+    gt_json = os.path.join(a.out, "gt_parsed.json")
+    save_json(gt_json, gt_parsed)
+    gt_verify = V.verify(gt_pdf, gt_json)
+    save_json(os.path.join(a.out, "gt_verify.json"), gt_verify)
     gt_metrics = eval_gt(gt_parsed)
     naive_conc = naive_order_concordance(gt_pdf)
+    naive_table_match = naive_table_cell_match(gt_pdf)
     colcont = column_continuity(gt_pdf, gt_parsed)
     print(f"[A] skill metrics: {json.dumps(gt_metrics, ensure_ascii=False)}", flush=True)
     print(f"[A] naive baseline reading-order concordance: {naive_conc}", flush=True)
+    print(f"[A] naive PyMuPDF table-cell match: {naive_table_match}", flush=True)
     print(f"[A] column continuity: {json.dumps(colcont, ensure_ascii=False)}", flush=True)
+    print(f"[A] internal verification: {json.dumps(gt_verify, ensure_ascii=False)}", flush=True)
 
-    # B. real paper
+    # B. real paper: first six pages only; counts demonstrate execution, not accuracy.
     real_pdf, real_src, real_sha = get_real_paper(a.work)
     print(f"[B] real paper source: {real_src}", flush=True)
+    real_doc = pymupdf.open(real_pdf)
+    real_source_pages = len(real_doc)
+    real_doc.close()
+    parse_started = time.perf_counter()
     real_parsed, _ = P.parse(real_pdf, case_id="real-demo", max_pages=6)
-    json.dump(real_parsed, open(os.path.join(a.out, "real_parsed.json"), "w", encoding="utf-8"),
-              ensure_ascii=False, indent=1)
+    real_parse_seconds = time.perf_counter() - parse_started
+    real_json = os.path.join(a.out, "real_parsed.json")
+    save_json(real_json, real_parsed)
+    real_verify = V.verify(real_pdf, real_json)
+    save_json(os.path.join(a.out, "real_verify.json"), real_verify)
     real_stats = real_parsed["stats"]
+    print(f"[B] real paper scope: first {real_stats['n_pages']} of {real_source_pages} pages", flush=True)
     print(f"[B] real paper stats: {json.dumps(real_stats, ensure_ascii=False)}", flush=True)
+    print(f"[B] internal verification: {json.dumps(real_verify, ensure_ascii=False)}", flush=True)
 
-    # figures
-    make_figures(a.out, gt_metrics, naive_conc, real_stats, gt_pdf)
-    print("[fig] wrote fig_order.png, fig_recall.png, fig_layout.png", flush=True)
+    # C. explicit negative/edge-case checks; only their JSON reports are packaged.
+    edge_cases = check_edge_cases(gt_pdf, a.out, a.work)
+    save_json(os.path.join(a.out, "edge_cases.json"), edge_cases)
+    print(f"[C] edge cases: {json.dumps(edge_cases, ensure_ascii=False)}", flush=True)
+
+    if a.skip_figures:
+        print("[fig] skipped by --skip-figures", flush=True)
+    else:
+        make_figures(a.out, gt_metrics, naive_conc, gt_pdf, gt_parsed)
+        print("[fig] wrote runtime-only fig_order.png, fig_recall.png, fig_layout.png", flush=True)
 
     metrics = {
-        "schema": "sci-pdf-reading-parse/demo-metrics/v1",
+        "schema": "sci-pdf-reading-parse/demo-metrics/v2",
+        "evaluation_scope": {
+            "controlled_document": "one self-generated two-column page with known order and a ruled 3x3 table",
+            "real_document": "first six pages of arXiv 1512.03385; execution and internal diagnostics only, no external accuracy ground truth",
+            "continuity_metric": "naive and Skill sequences contain the identical raw text-line set",
+        },
         "controlled_ground_truth": gt_metrics,
         "naive_baseline_order_concordance": naive_conc,
+        "naive_pymupdf_table_cell_match": naive_table_match,
+        "table_cell_match_gain": round(gt_metrics["table_cell_match"] - naive_table_match, 4),
         "order_gain_vs_baseline": round(gt_metrics["reading_order_concordance"] - naive_conc, 4),
         "column_continuity": colcont,
         "column_continuity_gain": round(colcont["skill_column_continuity"] - colcont["naive_column_continuity"], 4),
-        "real_demo": {"source": real_src, "sha256": real_sha, "stats": real_stats},
-        "wall_time_s": round(time.time() - t0, 2),
+        "real_demo": {
+            "source": real_src,
+            "source_url": REAL_URL,
+            "sha256": real_sha,
+            "source_pages": real_source_pages,
+            "pages_parsed": real_stats["n_pages"],
+            "accuracy_assessed": False,
+            "stats": real_stats,
+        },
+        "verification": {
+            "controlled": gt_verify,
+            "real_demo": real_verify,
+            "artifacts": ["execution/results/gt_verify.json", "execution/results/real_verify.json"],
+        },
+        "robustness": edge_cases,
+        "performance": {
+            "controlled_parse_s": round(gt_parse_seconds, 4),
+            "real_first_6_pages_parse_s": round(real_parse_seconds, 4),
+            "figures_generated": not a.skip_figures,
+            "duplicate_controlled_parse_removed": True,
+        },
+        "wall_time_s": round(time.perf_counter() - started, 2),
     }
-    json.dump(metrics, open(os.path.join(a.out, "metrics.json"), "w", encoding="utf-8"),
-              ensure_ascii=False, indent=1)
+    metrics_path = os.path.join(a.out, "metrics.json")
+    save_json(metrics_path, metrics)
     print("=== metrics.json ===", flush=True)
     print(json.dumps(metrics, ensure_ascii=False, indent=1), flush=True)
     print(f"DONE wall_time_s={metrics['wall_time_s']}", flush=True)

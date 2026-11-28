@@ -1,0 +1,13 @@
+{
+ "image_only_scan": {
+  "n_blocks": 0,
+  "unreadable_pages": [
+   1
+  ],
+  "passed": true
+ },
+ "encrypted_without_password": {
+  "error": "encrypted PDF: empty-password authentication failed; a password is required",
+  "passed": true
+ }
+}

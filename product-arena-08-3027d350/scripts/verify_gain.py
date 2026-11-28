@@ -3,9 +3,10 @@
 """verify_gain.py — domain-rule verifier for the 'order_gain_vs_baseline' deviation.
 
 Recomputes a binary physical_consistency score from the actual metrics artifact:
-the skill must strictly improve line-level column continuity AND reading-order
-concordance over the naive pure-y baseline on the controlled ground-truth document.
-Returns 1.0 when the rule holds, else 0.0. Reads only the produced metrics.json.
+the Skill must improve line-level column continuity over the naive pure-y baseline,
+must not reduce reading-order concordance, and must reach concordance >= 0.99 on
+the controlled ground-truth document. Both continuity sequences use the identical
+raw text-line set. Returns 1.0 when the rule holds, else 0.0. Reads only the produced metrics.json.
 """
 import json, os, sys
 

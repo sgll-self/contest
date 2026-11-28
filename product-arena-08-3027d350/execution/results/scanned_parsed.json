@@ -1,0 +1,25 @@
+{
+ "schema": "sci-pdf-reading-parse/parsed/v1",
+ "case_id": "edge-image-only",
+ "source": "image_only.pdf",
+ "pages": [
+  {
+   "page": 1,
+   "width": 612.0,
+   "height": 792.0,
+   "column_bounds": [],
+   "n_blocks": 0,
+   "n_tables": 0
+  }
+ ],
+ "blocks": [],
+ "tables": [],
+ "stats": {
+  "n_pages": 1,
+  "n_blocks": 0,
+  "n_tables": 0,
+  "n_body_chars": 0,
+  "n_total_chars": 0,
+  "roles": {}
+ }
+}

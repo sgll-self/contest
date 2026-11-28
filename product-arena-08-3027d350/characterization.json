@@ -7,7 +7,7 @@
    "reference_value": 1.0,
    "score": 1.0,
    "evidence_artifact": "metrics_json",
-   "explanation": "Fraction of controlled ground-truth body characters recovered verbatim (4-gram recall)."
+   "explanation": "Position-weighted 4-gram recall over lowercased, whitespace-stripped controlled GT strings; exact GT string recovery is also 1.0. Internal text-layer character coverage is reported separately."
   },
   {
    "target": "reading_order_concordance",
@@ -16,8 +16,8 @@
    "actual_value": 1.0,
    "reference_value": 1.0,
    "score": 1.0,
-   "evidence_artifact": "fig_order",
-   "explanation": "Pairwise concordance of emitted order vs intended column-major order over 28 GT pairs."
+   "evidence_artifact": "metrics_json",
+   "explanation": "Pairwise concordance over all 28 controlled GT pairs after conservative continuation-block merging; no figure resource is required as evidence."
   },
   {
    "target": "table_cell_match",
@@ -25,8 +25,8 @@
    "actual_value": 1.0,
    "reference_value": 1.0,
    "score": 1.0,
-   "evidence_artifact": "gt_parsed",
-   "explanation": "Fraction of 3x3 table cells matching ground truth after pdfplumber reconstruction."
+   "evidence_artifact": "metrics_json",
+   "explanation": "All nine ruled-table cells match case-sensitively after whitespace removal. The same run measures PyMuPDF at 5/9 = 0.5556 and pdfplumber at 9/9 = 1.0."
   },
   {
    "target": "marginalia_leak",
@@ -36,24 +36,25 @@
    "reference_value": 0.0,
    "score": 1.0,
    "evidence_artifact": "metrics_json",
-   "explanation": "Running header must not leak into body reading text (0 = excluded correctly)."
+   "explanation": "Fraction of geometric top/bottom-band characters emitted as non-marginal content. Both the controlled page and the first six real-paper pages report 0.0."
   },
   {
    "target": "order_gain_vs_baseline",
    "metric": "physical_consistency",
    "actual_value": {
-    "skill_column_continuity": 0.6667,
+    "skill_column_continuity": 0.8462,
     "naive_column_continuity": 0.0769,
     "skill_concordance": 1.0,
-    "naive_concordance": 0.8929
+    "naive_concordance": 0.8929,
+    "n_lines_each": 14
    },
    "reference_value": {
-    "rule": "skill strictly improves column continuity and concordance over naive"
+    "rule": "Skill continuity > naive continuity, Skill concordance >= naive concordance, and Skill concordance >= 0.99"
    },
    "score": 1.0,
    "verifier_script": "scripts/verify_gain.py",
    "evidence_artifact": "metrics_json",
-   "explanation": "Domain-rule check: skill column continuity 0.667 > naive 0.077; concordance 1.0 >= 0.893."
+   "explanation": "Both continuity sequences contain the identical 14 raw text lines; only the ordering differs. Skill continuity is 0.8462 versus 0.0769 for pure-y sorting."
   }
  ],
  "envelope": [
@@ -61,48 +62,35 @@
    "param": "n_pages",
    "min": 1,
    "max": 6,
-   "unit": "pages",
+   "unit": "pages parsed per document",
    "tested": true
   },
   {
    "param": "n_columns",
-   "min": 1,
+   "min": 2,
    "max": 2,
-   "unit": "columns",
+   "unit": "quantitatively evaluated two-column documents",
    "tested": true
   },
   {
    "param": "text_layer",
-   "min": 1,
+   "min": 0,
    "max": 1,
-   "unit": "present(1)/absent(0)",
+   "unit": "absent(0)/present(1); absence is detected as unreadable",
    "tested": true
   }
  ],
  "failure_modes": [
   {
-   "condition": "image-only scanned page (no text layer)",
-   "symptom": "page yields 0 text blocks; flagged unreadable_pages, requires OCR (out of scope)",
-   "evidence_trace": "trace/trace.jsonl"
+   "condition": "image-only scanned page without a text layer",
+   "symptom": "The parser returns zero text blocks and verify.py reports unreadable_pages=[1]; OCR remains necessary.",
+   "evidence_artifact": "edge_cases"
   },
   {
-   "condition": "image-based table or garbled embedded font",
-   "symptom": "table finder returns no/partial cells; reported in notes, not guessed",
-   "evidence_artifact": "real_parsed"
-  },
-  {
-   "condition": "encrypted PDF without empty-password access",
-   "symptom": "parse fails; result.json status=failed with encryption noted",
-   "evidence_trace": "trace/trace.jsonl"
+   "condition": "password-encrypted PDF when empty-password authentication fails",
+   "symptom": "The parser reports a clear encryption error and the CLI exits with code 2 instead of emitting fabricated text.",
+   "evidence_artifact": "edge_cases"
   }
  ],
- "sensitivity": [
-  {
-   "param": "column_split_gap_threshold",
-   "range": "0.04..0.10 of page width",
-   "outcome_metric": "reading_order_concordance",
-   "outcome_range": "1.0 on tested 2-col docs",
-   "evidence_trace": "trace/trace.jsonl"
-  }
- ]
+ "sensitivity": []
 }

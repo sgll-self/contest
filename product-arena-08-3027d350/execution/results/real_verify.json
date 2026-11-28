@@ -1,0 +1,18 @@
+{
+ "schema": "sci-pdf-reading-parse/verify/v2",
+ "source": "real_paper.pdf",
+ "n_pages": 6,
+ "raw_nonws_chars": 23456,
+ "content_nonws_chars": 23450,
+ "recovered_nonws_chars": 23450,
+ "char_recall": 1.0,
+ "char_recall_raw": 1.0,
+ "raw_marginalia_chars": 6,
+ "leaked_marginalia_chars": 0,
+ "marginalia_leak": 0.0,
+ "order_monotonic": 1.0,
+ "order_pairs_checked": 308,
+ "unreadable_pages": [],
+ "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score",
+ "notes": []
+}

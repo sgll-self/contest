@@ -8,10 +8,9 @@
    "width": 612.0,
    "height": 792.0,
    "column_bounds": [
-    250.75,
-    370.04
+    314.79
    ],
-   "n_blocks": 15,
+   "n_blocks": 14,
    "n_tables": 1
   }
  ],
@@ -27,7 +26,7 @@
    ],
    "text": "Journal of Reproducible Parsing · Vol. 1",
    "role": "header",
-   "column": 1,
+   "column": 0,
    "reading_order": 0,
    "font_size": 8.0,
    "n_chars": 40,
@@ -57,15 +56,17 @@
     54.51,
     79.25,
     557.49,
-    92.99
+    105.99
    ],
-   "text": "We present a deterministic parser that recovers the true reading order of two-column scientific pages and anchors",
+   "text": "We present a deterministic parser that recovers the true reading order of two-column scientific pages and anchors\nevery block to a page and bounding box.",
    "role": "body",
    "column": -1,
    "reading_order": 2,
    "font_size": 10.0,
-   "n_chars": 113,
-   "flags": []
+   "n_chars": 153,
+   "flags": [
+    "merged:p1_b4"
+   ]
   },
   {
    "id": "p1_b5",
@@ -119,23 +120,6 @@
    "flags": []
   },
   {
-   "id": "p1_b4",
-   "page": 1,
-   "bbox": [
-    215.95,
-    92.25,
-    396.05,
-    105.99
-   ],
-   "text": "every block to a page and bounding box.",
-   "role": "body",
-   "column": 1,
-   "reading_order": 6,
-   "font_size": 10.0,
-   "n_chars": 39,
-   "flags": []
-  },
-  {
    "id": "p1_b6",
    "page": 1,
    "bbox": [
@@ -146,8 +130,8 @@
    ],
    "text": "R1 Evaluation. On a controlled document with known\nground truth we measure character recall and\nreading-order concordance against the intended\nsequence.",
    "role": "body",
-   "column": 2,
-   "reading_order": 7,
+   "column": 1,
+   "reading_order": 6,
    "font_size": 10.0,
    "n_chars": 152,
    "flags": []
@@ -163,8 +147,8 @@
    ],
    "text": "R2 Results. The parser recovers essentially all body\ncharacters and preserves the column-major reading\norder, while a naive y-sort interleaves the two columns.",
    "role": "body",
-   "column": 2,
-   "reading_order": 8,
+   "column": 1,
+   "reading_order": 7,
    "font_size": 10.0,
    "n_chars": 159,
    "flags": []
@@ -180,8 +164,8 @@
    ],
    "text": "R3 Limitations. Image-only scanned pages have no\ntext layer and require OCR, which is outside the scope\nof this text-layer parser and is reported as unreadable.",
    "role": "body",
-   "column": 2,
-   "reading_order": 9,
+   "column": 1,
+   "reading_order": 8,
    "font_size": 10.0,
    "n_chars": 160,
    "flags": []
@@ -198,7 +182,7 @@
    "text": "Table 1. Parsing quality on the controlled document.",
    "role": "caption",
    "column": -1,
-   "reading_order": 10,
+   "reading_order": 9,
    "font_size": 10.0,
    "n_chars": 52,
    "flags": []
@@ -215,7 +199,7 @@
    "text": "Method\nRecall\nOrder",
    "role": "body",
    "column": 0,
-   "reading_order": 11,
+   "reading_order": 10,
    "font_size": 9.0,
    "n_chars": 19,
    "flags": []
@@ -232,7 +216,7 @@
    "text": "Naive y-sort\n0.99\n0.52",
    "role": "body",
    "column": 0,
-   "reading_order": 12,
+   "reading_order": 11,
    "font_size": 9.0,
    "n_chars": 22,
    "flags": []
@@ -249,7 +233,7 @@
    "text": "Skill parser\n1.00\n1.00",
    "role": "body",
    "column": 0,
-   "reading_order": 13,
+   "reading_order": 12,
    "font_size": 9.0,
    "n_chars": 22,
    "flags": []
@@ -265,8 +249,8 @@
    ],
    "text": "42",
    "role": "footer",
-   "column": 1,
-   "reading_order": 14,
+   "column": 0,
+   "reading_order": 13,
    "font_size": 8.0,
    "n_chars": 2,
    "flags": []
@@ -337,16 +321,16 @@
  ],
  "stats": {
   "n_pages": 1,
-  "n_blocks": 15,
+  "n_blocks": 14,
   "n_tables": 1,
-  "n_body_chars": 1164,
-  "n_total_chars": 1325,
+  "n_body_chars": 1165,
+  "n_total_chars": 1326,
   "roles": {
-   "caption": 1,
-   "footer": 1,
-   "heading": 1,
+   "body": 10,
    "header": 1,
-   "body": 11
+   "caption": 1,
+   "heading": 1,
+   "footer": 1
   }
  }
 }
