@@ -40,6 +40,8 @@ SCRIPTS = os.path.join(os.path.dirname(HERE), "scripts")
 sys.path.insert(0, SCRIPTS)
 import parse_pdf as P  # noqa: E402
 import verify as V  # noqa: E402
+import advanced_tests  # noqa: E402
+import integration_tests  # noqa: E402
 
 try:
     import pymupdf
@@ -449,6 +451,15 @@ def check_edge_cases(gt_pdf, outdir, workdir):
     except ValueError as exc:
         encrypted_error = str(exc)
 
+    malformed_pdf = os.path.join(workdir, "malformed.pdf")
+    with open(malformed_pdf, "w", encoding="utf-8") as handle:
+        handle.write("not a PDF")
+    malformed_error = ""
+    try:
+        P.parse(malformed_pdf, case_id="edge-malformed")
+    except ValueError as exc:
+        malformed_error = str(exc)
+
     result = {
         "image_only_scan": {
             "n_blocks": image_parsed["stats"]["n_blocks"],
@@ -458,6 +469,10 @@ def check_edge_cases(gt_pdf, outdir, workdir):
         "encrypted_without_password": {
             "error": encrypted_error,
             "passed": "empty-password authentication failed" in encrypted_error,
+        },
+        "malformed_pdf": {
+            "error": malformed_error,
+            "passed": "cannot open PDF" in malformed_error,
         },
     }
     return result
@@ -581,6 +596,15 @@ def main(argv=None):
     save_json(os.path.join(a.out, "edge_cases.json"), edge_cases)
     print(f"[C] edge cases: {json.dumps(edge_cases, ensure_ascii=False)}", flush=True)
 
+    # D. Adversarial structure/formula/table fixtures with negative controls.
+    advanced = advanced_tests.run_advanced_tests(a.work, a.out)
+    print(f"[D] advanced controlled checks: {json.dumps(advanced, ensure_ascii=False)}", flush=True)
+
+    # E. Persistent memory, cross-document provenance and official-case safety chain.
+    structure_pdf = os.path.join(a.work, "structure_formula.pdf")
+    integration = integration_tests.run_integration_tests(gt_pdf, structure_pdf, a.work, a.out)
+    print(f"[E] integration checks: {json.dumps(integration, ensure_ascii=False)}", flush=True)
+
     if a.skip_figures:
         print("[fig] skipped by --skip-figures", flush=True)
     else:
@@ -588,7 +612,7 @@ def main(argv=None):
         print("[fig] wrote runtime-only fig_order.png, fig_recall.png, fig_layout.png", flush=True)
 
     metrics = {
-        "schema": "sci-pdf-reading-parse/demo-metrics/v2",
+        "schema": "sci-pdf-reading-parse/demo-metrics/v3",
         "evaluation_scope": {
             "controlled_document": "one self-generated two-column page with known order and a ruled 3x3 table",
             "real_document": "first six pages of arXiv 1512.03385; execution and internal diagnostics only, no external accuracy ground truth",
@@ -597,7 +621,8 @@ def main(argv=None):
         "controlled_ground_truth": gt_metrics,
         "naive_baseline_order_concordance": naive_conc,
         "naive_pymupdf_table_cell_match": naive_table_match,
-        "table_cell_match_gain": round(gt_metrics["table_cell_match"] - naive_table_match, 4),
+        "table_cell_match_gain": (round(gt_metrics["table_cell_match"] - naive_table_match, 4)
+                                      if gt_metrics["table_cell_match"] is not None and naive_table_match is not None else None),
         "order_gain_vs_baseline": round(gt_metrics["reading_order_concordance"] - naive_conc, 4),
         "column_continuity": colcont,
         "column_continuity_gain": round(colcont["skill_column_continuity"] - colcont["naive_column_continuity"], 4),
@@ -616,11 +641,23 @@ def main(argv=None):
             "artifacts": ["execution/results/gt_verify.json", "execution/results/real_verify.json"],
         },
         "robustness": edge_cases,
+        "advanced_controlled_checks": advanced,
+        "memory_and_workflow": integration,
         "performance": {
             "controlled_parse_s": round(gt_parse_seconds, 4),
             "real_first_6_pages_parse_s": round(real_parse_seconds, 4),
             "figures_generated": not a.skip_figures,
             "duplicate_controlled_parse_removed": True,
+        },
+        "acceptance": {
+            "base_controlled_passed": (
+                gt_metrics["exact_gt_string_recovery"] == 1.0 and
+                gt_metrics["reading_order_concordance"] == 1.0 and
+                gt_metrics["table_cell_match"] == 1.0 and
+                not gt_metrics["header_leaked_into_body"]),
+            "advanced_passed": advanced["all_passed"],
+            "integration_passed": integration["all_passed"],
+            "edge_cases_passed": all(case.get("passed") for case in edge_cases.values()),
         },
         "wall_time_s": round(time.perf_counter() - started, 2),
     }
@@ -629,7 +666,7 @@ def main(argv=None):
     print("=== metrics.json ===", flush=True)
     print(json.dumps(metrics, ensure_ascii=False, indent=1), flush=True)
     print(f"DONE wall_time_s={metrics['wall_time_s']}", flush=True)
-    return 0
+    return 0 if all(metrics["acceptance"].values()) else 3
 
 
 if __name__ == "__main__":

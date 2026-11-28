@@ -1,0 +1,2536 @@
+{
+ "schema": "sci-pdf-reading-parse/document-collection/v1",
+ "merge_rule": "ordered concatenation with source-prefixed IDs; no semantic deduplication",
+ "documents": [
+  {
+   "sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source": "gt.pdf",
+   "parsed_path": "documents\\724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a.json",
+   "parser_schema": "sci-pdf-reading-parse/parsed/v3",
+   "n_pages": 1,
+   "n_blocks": 15,
+   "n_tables": 1,
+   "n_figures": 0,
+   "n_equations": 0,
+   "warnings": []
+  },
+  {
+   "sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source": "structure_formula.pdf",
+   "parsed_path": "documents\\aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1.json",
+   "parser_schema": "sci-pdf-reading-parse/parsed/v3",
+   "n_pages": 3,
+   "n_blocks": 31,
+   "n_tables": 0,
+   "n_figures": 1,
+   "n_equations": 1,
+   "warnings": []
+  }
+ ],
+ "blocks": [
+  {
+   "id": "724abd49fe36:p1_b0",
+   "page": 1,
+   "bbox": [
+    235.52,
+    20.2,
+    376.48,
+    31.19
+   ],
+   "text": "Journal of Reproducible Parsing · Vol. 1",
+   "raw_text": "Journal of Reproducible Parsing · Vol. 1",
+   "role": "header",
+   "column": -1,
+   "reading_order": -1,
+   "font_size": 8.0,
+   "n_chars": 40,
+   "flags": [],
+   "source_ids": [
+    "p1_b0"
+   ],
+   "source_line_ids": [
+    "p1_b0_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b0",
+   "global_id": "724abd49fe36:p1_b0"
+  },
+  {
+   "id": "724abd49fe36:p1_b1",
+   "page": 1,
+   "bbox": [
+    301.55,
+    758.2,
+    310.45,
+    769.19
+   ],
+   "text": "42",
+   "raw_text": "42",
+   "role": "footer",
+   "column": -1,
+   "reading_order": -1,
+   "font_size": 8.0,
+   "n_chars": 2,
+   "flags": [],
+   "source_ids": [
+    "p1_b1"
+   ],
+   "source_line_ids": [
+    "p1_b1_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b1",
+   "global_id": "724abd49fe36:p1_b1"
+  },
+  {
+   "id": "724abd49fe36:p1_b2",
+   "page": 1,
+   "bbox": [
+    43.46,
+    48.75,
+    568.55,
+    69.4
+   ],
+   "text": "Evidence-Anchored Reading Order for Two-Column Scientific Documents",
+   "raw_text": "Evidence-Anchored Reading Order for Two-Column Scientific Documents",
+   "role": "title",
+   "column": -1,
+   "reading_order": 2,
+   "font_size": 15.0,
+   "n_chars": 67,
+   "flags": [
+    "front_matter"
+   ],
+   "source_ids": [
+    "p1_b2"
+   ],
+   "source_line_ids": [
+    "p1_b2_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 1.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "Evidence-Anchored Reading Order for Two-Column Scientific Documents",
+     "bbox": [
+      43.46,
+      48.75,
+      568.55,
+      69.4
+     ],
+     "font": "Helvetica-Bold",
+     "size": 15.0,
+     "flags": 16,
+     "origin": [
+      43.46,
+      64.8
+     ]
+    }
+   ],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b2",
+   "global_id": "724abd49fe36:p1_b2"
+  },
+  {
+   "id": "724abd49fe36:p1_b3",
+   "page": 1,
+   "bbox": [
+    54.51,
+    79.25,
+    557.49,
+    92.99
+   ],
+   "text": "We present a deterministic parser that recovers the true reading order of two-column scientific pages and anchors",
+   "raw_text": "We present a deterministic parser that recovers the true reading order of two-column scientific pages and anchors",
+   "role": "body",
+   "column": -1,
+   "reading_order": 3,
+   "font_size": 10.0,
+   "n_chars": 113,
+   "flags": [
+    "continues_to:p1_b4"
+   ],
+   "source_ids": [
+    "p1_b3"
+   ],
+   "source_line_ids": [
+    "p1_b3_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b3",
+   "global_id": "724abd49fe36:p1_b3"
+  },
+  {
+   "id": "724abd49fe36:p1_b4",
+   "page": 1,
+   "bbox": [
+    215.95,
+    92.25,
+    396.05,
+    105.99
+   ],
+   "text": "every block to a page and bounding box.",
+   "raw_text": "every block to a page and bounding box.",
+   "role": "body",
+   "column": -1,
+   "reading_order": 4,
+   "font_size": 10.0,
+   "n_chars": 39,
+   "flags": [],
+   "source_ids": [
+    "p1_b4"
+   ],
+   "source_line_ids": [
+    "p1_b4_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": "p1_b3",
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b4",
+   "global_id": "724abd49fe36:p1_b4"
+  },
+  {
+   "id": "724abd49fe36:p1_b5",
+   "page": 1,
+   "bbox": [
+    50.4,
+    130.45,
+    287.74,
+    180.19
+   ],
+   "text": "L1 Introduction. Scientific documents frequently use a\ntwo-column layout. A naive top-to-bottom text\nextraction interleaves the columns and produces\nbroken sentences.",
+   "raw_text": "L1 Introduction. Scientific documents frequently use a\ntwo-column layout. A naive top-to-bottom text\nextraction interleaves the columns and produces\nbroken sentences.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 5,
+   "font_size": 10.0,
+   "n_chars": 166,
+   "flags": [],
+   "source_ids": [
+    "p1_b5"
+   ],
+   "source_line_ids": [
+    "p1_b5_l0",
+    "p1_b5_l1",
+    "p1_b5_l2",
+    "p1_b5_l3"
+   ],
+   "line_count": 4,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b5",
+   "global_id": "724abd49fe36:p1_b5"
+  },
+  {
+   "id": "724abd49fe36:p1_b7",
+   "page": 1,
+   "bbox": [
+    50.4,
+    213.25,
+    294.4,
+    262.99
+   ],
+   "text": "L2 Method. We cluster text blocks by horizontal\nposition, treat full-width blocks as band separators, and\norder each column from top to bottom before moving\nright.",
+   "raw_text": "L2 Method. We cluster text blocks by horizontal\nposition, treat full-width blocks as band separators, and\norder each column from top to bottom before moving\nright.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 6,
+   "font_size": 10.0,
+   "n_chars": 163,
+   "flags": [],
+   "source_ids": [
+    "p1_b7"
+   ],
+   "source_line_ids": [
+    "p1_b7_l0",
+    "p1_b7_l1",
+    "p1_b7_l2",
+    "p1_b7_l3"
+   ],
+   "line_count": 4,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b7",
+   "global_id": "724abd49fe36:p1_b7"
+  },
+  {
+   "id": "724abd49fe36:p1_b9",
+   "page": 1,
+   "bbox": [
+    50.4,
+    296.05,
+    290.52,
+    333.79
+   ],
+   "text": "L3 Anchoring. Every emitted block keeps its page\nnumber and bounding box so that any downstream\nanswer can be traced back to the exact source region.",
+   "raw_text": "L3 Anchoring. Every emitted block keeps its page\nnumber and bounding box so that any downstream\nanswer can be traced back to the exact source region.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 7,
+   "font_size": 10.0,
+   "n_chars": 149,
+   "flags": [],
+   "source_ids": [
+    "p1_b9"
+   ],
+   "source_line_ids": [
+    "p1_b9_l0",
+    "p1_b9_l1",
+    "p1_b9_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b9",
+   "global_id": "724abd49fe36:p1_b9"
+  },
+  {
+   "id": "724abd49fe36:p1_b11",
+   "page": 1,
+   "bbox": [
+    50.4,
+    389.7,
+    299.35,
+    403.47
+   ],
+   "text": "Table 1. Parsing quality on the controlled document.",
+   "raw_text": "Table 1. Parsing quality on the controlled document.",
+   "role": "caption",
+   "column": 0,
+   "reading_order": 8,
+   "font_size": 10.0,
+   "n_chars": 52,
+   "flags": [],
+   "source_ids": [
+    "p1_b11"
+   ],
+   "source_line_ids": [
+    "p1_b11_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 1.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b11",
+   "global_id": "724abd49fe36:p1_b11"
+  },
+  {
+   "id": "724abd49fe36:p1_b6",
+   "page": 1,
+   "bbox": [
+    316.8,
+    130.45,
+    551.35,
+    180.19
+   ],
+   "text": "R1 Evaluation. On a controlled document with known\nground truth we measure character recall and\nreading-order concordance against the intended\nsequence.",
+   "raw_text": "R1 Evaluation. On a controlled document with known\nground truth we measure character recall and\nreading-order concordance against the intended\nsequence.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 9,
+   "font_size": 10.0,
+   "n_chars": 152,
+   "flags": [],
+   "source_ids": [
+    "p1_b6"
+   ],
+   "source_line_ids": [
+    "p1_b6_l0",
+    "p1_b6_l1",
+    "p1_b6_l2",
+    "p1_b6_l3"
+   ],
+   "line_count": 4,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b6",
+   "global_id": "724abd49fe36:p1_b6"
+  },
+  {
+   "id": "724abd49fe36:p1_b8",
+   "page": 1,
+   "bbox": [
+    316.8,
+    213.25,
+    560.22,
+    250.99
+   ],
+   "text": "R2 Results. The parser recovers essentially all body\ncharacters and preserves the column-major reading\norder, while a naive y-sort interleaves the two columns.",
+   "raw_text": "R2 Results. The parser recovers essentially all body\ncharacters and preserves the column-major reading\norder, while a naive y-sort interleaves the two columns.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 10,
+   "font_size": 10.0,
+   "n_chars": 159,
+   "flags": [],
+   "source_ids": [
+    "p1_b8"
+   ],
+   "source_line_ids": [
+    "p1_b8_l0",
+    "p1_b8_l1",
+    "p1_b8_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b8",
+   "global_id": "724abd49fe36:p1_b8"
+  },
+  {
+   "id": "724abd49fe36:p1_b10",
+   "page": 1,
+   "bbox": [
+    316.8,
+    296.05,
+    558.01,
+    333.79
+   ],
+   "text": "R3 Limitations. Image-only scanned pages have no\ntext layer and require OCR, which is outside the scope\nof this text-layer parser and is reported as unreadable.",
+   "raw_text": "R3 Limitations. Image-only scanned pages have no\ntext layer and require OCR, which is outside the scope\nof this text-layer parser and is reported as unreadable.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 11,
+   "font_size": 10.0,
+   "n_chars": 160,
+   "flags": [],
+   "source_ids": [
+    "p1_b10"
+   ],
+   "source_line_ids": [
+    "p1_b10_l0",
+    "p1_b10_l1",
+    "p1_b10_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b10",
+   "global_id": "724abd49fe36:p1_b10"
+  },
+  {
+   "id": "724abd49fe36:p1_b12",
+   "page": 1,
+   "bbox": [
+    54.4,
+    413.73,
+    336.6,
+    426.09
+   ],
+   "text": "Method\nRecall\nOrder",
+   "raw_text": "Method\nRecall\nOrder",
+   "role": "table_text",
+   "column": -1,
+   "reading_order": 12,
+   "font_size": 9.0,
+   "n_chars": 19,
+   "flags": [],
+   "source_ids": [
+    "p1_b12"
+   ],
+   "source_line_ids": [
+    "p1_b12_l0",
+    "p1_b12_l1",
+    "p1_b12_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": "p1_t0",
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b12",
+   "global_id": "724abd49fe36:p1_b12"
+  },
+  {
+   "id": "724abd49fe36:p1_b13",
+   "page": 1,
+   "bbox": [
+    54.4,
+    429.73,
+    331.11,
+    442.09
+   ],
+   "text": "Naive y-sort\n0.99\n0.52",
+   "raw_text": "Naive y-sort\n0.99\n0.52",
+   "role": "table_text",
+   "column": -1,
+   "reading_order": 13,
+   "font_size": 9.0,
+   "n_chars": 22,
+   "flags": [],
+   "source_ids": [
+    "p1_b13"
+   ],
+   "source_line_ids": [
+    "p1_b13_l0",
+    "p1_b13_l1",
+    "p1_b13_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": "p1_t0",
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b13",
+   "global_id": "724abd49fe36:p1_b13"
+  },
+  {
+   "id": "724abd49fe36:p1_b14",
+   "page": 1,
+   "bbox": [
+    54.4,
+    445.73,
+    331.11,
+    458.09
+   ],
+   "text": "Skill parser\n1.00\n1.00",
+   "raw_text": "Skill parser\n1.00\n1.00",
+   "role": "table_text",
+   "column": -1,
+   "reading_order": 14,
+   "font_size": 9.0,
+   "n_chars": 22,
+   "flags": [],
+   "source_ids": [
+    "p1_b14"
+   ],
+   "source_line_ids": [
+    "p1_b14_l0",
+    "p1_b14_l1",
+    "p1_b14_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": "p1_t0",
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_b14",
+   "global_id": "724abd49fe36:p1_b14"
+  },
+  {
+   "id": "aa941726ec64:p1_b0_s0",
+   "page": 1,
+   "bbox": [
+    255.54,
+    19.4,
+    356.46,
+    30.39
+   ],
+   "text": "Advanced Controlled Fixture",
+   "raw_text": "Advanced Controlled Fixture",
+   "role": "header",
+   "column": -1,
+   "reading_order": -1,
+   "font_size": 8.0,
+   "n_chars": 27,
+   "flags": [],
+   "source_ids": [
+    "p1_b0"
+   ],
+   "source_line_ids": [
+    "p1_b0_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b0_s0",
+   "global_id": "aa941726ec64:p1_b0_s0"
+  },
+  {
+   "id": "aa941726ec64:p1_b18",
+   "page": 1,
+   "bbox": [
+    303.78,
+    758.4,
+    308.22,
+    769.39
+   ],
+   "text": "7",
+   "raw_text": "7",
+   "role": "footer",
+   "column": -1,
+   "reading_order": -1,
+   "font_size": 8.0,
+   "n_chars": 1,
+   "flags": [],
+   "source_ids": [
+    "p1_b18"
+   ],
+   "source_line_ids": [
+    "p1_b18_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b18",
+   "global_id": "aa941726ec64:p1_b18"
+  },
+  {
+   "id": "aa941726ec64:p1_b0_s1",
+   "page": 1,
+   "bbox": [
+    50.0,
+    34.88,
+    457.25,
+    56.91
+   ],
+   "text": "Structured Scientific Parsing with Verifiable Evidence",
+   "raw_text": "Structured Scientific Parsing with Verifiable Evidence",
+   "role": "title",
+   "column": -1,
+   "reading_order": 2,
+   "font_size": 16.0,
+   "n_chars": 54,
+   "flags": [
+    "front_matter"
+   ],
+   "source_ids": [
+    "p1_b0"
+   ],
+   "source_line_ids": [
+    "p1_b0_l1"
+   ],
+   "line_count": 1,
+   "bold_ratio": 1.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "Structured Scientific Parsing with Verifiable Evidence",
+     "bbox": [
+      50.0,
+      34.88,
+      457.25,
+      56.91
+     ],
+     "font": "Helvetica-Bold",
+     "size": 16.0,
+     "flags": 16,
+     "origin": [
+      50.0,
+      52.0
+     ]
+    }
+   ],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b0_s1",
+   "global_id": "aa941726ec64:p1_b0_s1"
+  },
+  {
+   "id": "aa941726ec64:p1_b1",
+   "page": 1,
+   "bbox": [
+    50.0,
+    69.4,
+    219.3,
+    79.4
+   ],
+   "text": "Alice A. Example, Bob B. Example",
+   "raw_text": "Alice A. Example, Bob B. Example",
+   "role": "authors",
+   "column": -1,
+   "reading_order": 3,
+   "font_size": 10.0,
+   "n_chars": 32,
+   "flags": [
+    "front_matter"
+   ],
+   "source_ids": [
+    "p1_b1"
+   ],
+   "source_line_ids": [
+    "p1_b1_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "Alice A. Example, Bob B. Example",
+     "bbox": [
+      50.0,
+      69.4,
+      219.3,
+      79.4
+     ],
+     "font": "DejaVuSans",
+     "size": 10.0,
+     "flags": 4,
+     "origin": [
+      50.0,
+      77.0
+     ]
+    }
+   ],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b1",
+   "global_id": "aa941726ec64:p1_b1"
+  },
+  {
+   "id": "aa941726ec64:p1_b2",
+   "page": 1,
+   "bbox": [
+    50.0,
+    84.32,
+    221.05,
+    96.69
+   ],
+   "text": "Department of Testing, Example University",
+   "raw_text": "Department of Testing, Example University",
+   "role": "affiliation",
+   "column": -1,
+   "reading_order": 4,
+   "font_size": 9.0,
+   "n_chars": 41,
+   "flags": [
+    "front_matter"
+   ],
+   "source_ids": [
+    "p1_b2"
+   ],
+   "source_line_ids": [
+    "p1_b2_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "Department of Testing, Example University",
+     "bbox": [
+      50.0,
+      84.32,
+      221.05,
+      96.69
+     ],
+     "font": "Helvetica",
+     "size": 9.0,
+     "flags": 0,
+     "origin": [
+      50.0,
+      94.0
+     ]
+    }
+   ],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b2",
+   "global_id": "aa941726ec64:p1_b2"
+  },
+  {
+   "id": "aa941726ec64:p1_b3",
+   "page": 1,
+   "bbox": [
+    50.0,
+    110.32,
+    274.08,
+    122.69
+   ],
+   "text": "Abstract—A controlled fixture for structure and formulas.",
+   "raw_text": "Abstract—A controlled fixture for structure and formulas.",
+   "role": "abstract",
+   "column": 0,
+   "reading_order": 5,
+   "font_size": 9.0,
+   "n_chars": 57,
+   "flags": [],
+   "source_ids": [
+    "p1_b3"
+   ],
+   "source_line_ids": [
+    "p1_b3_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "Abstract—A controlled fixture for structure and formulas.",
+     "bbox": [
+      50.0,
+      110.32,
+      274.08,
+      122.69
+     ],
+     "font": "Helvetica",
+     "size": 9.0,
+     "flags": 0,
+     "origin": [
+      50.0,
+      120.0
+     ]
+    }
+   ],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b3",
+   "global_id": "aa941726ec64:p1_b3"
+  },
+  {
+   "id": "aa941726ec64:p1_b4",
+   "page": 1,
+   "bbox": [
+    50.0,
+    141.3,
+    119.45,
+    155.07
+   ],
+   "text": "1. Introduction",
+   "raw_text": "1. Introduction",
+   "role": "heading",
+   "column": 0,
+   "reading_order": 6,
+   "font_size": 10.0,
+   "n_chars": 15,
+   "flags": [
+    "section_index:0"
+   ],
+   "source_ids": [
+    "p1_b4"
+   ],
+   "source_line_ids": [
+    "p1_b4_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 1.0,
+   "level": 1,
+   "number": "1",
+   "parent_id": null,
+   "section_path": [
+    "1. Introduction"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "1. Introduction",
+     "bbox": [
+      50.0,
+      141.3,
+      119.45,
+      155.07
+     ],
+     "font": "Helvetica-Bold",
+     "size": 10.0,
+     "flags": 16,
+     "origin": [
+      50.0,
+      152.0
+     ]
+    }
+   ],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b4",
+   "global_id": "aa941726ec64:p1_b4"
+  },
+  {
+   "id": "aa941726ec64:p1_b5",
+   "page": 1,
+   "bbox": [
+    50.0,
+    158.32,
+    340.64,
+    170.69
+   ],
+   "text": "This paragraph belongs to the first-level section and remains unchanged.",
+   "raw_text": "This paragraph belongs to the first-level section and remains unchanged.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 7,
+   "font_size": 9.0,
+   "n_chars": 72,
+   "flags": [],
+   "source_ids": [
+    "p1_b5"
+   ],
+   "source_line_ids": [
+    "p1_b5_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "1. Introduction"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b5",
+   "global_id": "aa941726ec64:p1_b5"
+  },
+  {
+   "id": "aa941726ec64:p1_b6",
+   "page": 1,
+   "bbox": [
+    50.0,
+    187.3,
+    102.24,
+    201.07
+   ],
+   "text": "1.1. Layout",
+   "raw_text": "1.1. Layout",
+   "role": "heading",
+   "column": 0,
+   "reading_order": 8,
+   "font_size": 10.0,
+   "n_chars": 11,
+   "flags": [
+    "section_index:1"
+   ],
+   "source_ids": [
+    "p1_b6"
+   ],
+   "source_line_ids": [
+    "p1_b6_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 1.0,
+   "level": 2,
+   "number": "1.1",
+   "parent_id": "p1_b4",
+   "section_path": [
+    "1. Introduction",
+    "1.1. Layout"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "1.1. Layout",
+     "bbox": [
+      50.0,
+      187.3,
+      102.24,
+      201.07
+     ],
+     "font": "Helvetica-Bold",
+     "size": 10.0,
+     "flags": 16,
+     "origin": [
+      50.0,
+      198.0
+     ]
+    }
+   ],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b6",
+   "global_id": "aa941726ec64:p1_b6"
+  },
+  {
+   "id": "aa941726ec64:p1_b7",
+   "page": 1,
+   "bbox": [
+    50.0,
+    204.32,
+    256.1,
+    216.69
+   ],
+   "text": "This paragraph belongs to the second-level section.",
+   "raw_text": "This paragraph belongs to the second-level section.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 9,
+   "font_size": 9.0,
+   "n_chars": 51,
+   "flags": [],
+   "source_ids": [
+    "p1_b7"
+   ],
+   "source_line_ids": [
+    "p1_b7_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "1. Introduction",
+    "1.1. Layout"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b7",
+   "global_id": "aa941726ec64:p1_b7"
+  },
+  {
+   "id": "aa941726ec64:p1_b8",
+   "page": 1,
+   "bbox": [
+    50.0,
+    233.3,
+    120.03,
+    247.07
+   ],
+   "text": "1.1.1. Ordering",
+   "raw_text": "1.1.1. Ordering",
+   "role": "heading",
+   "column": 0,
+   "reading_order": 10,
+   "font_size": 10.0,
+   "n_chars": 15,
+   "flags": [
+    "section_index:2"
+   ],
+   "source_ids": [
+    "p1_b8"
+   ],
+   "source_line_ids": [
+    "p1_b8_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 1.0,
+   "level": 3,
+   "number": "1.1.1",
+   "parent_id": "p1_b6",
+   "section_path": [
+    "1. Introduction",
+    "1.1. Layout",
+    "1.1.1. Ordering"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "1.1.1. Ordering",
+     "bbox": [
+      50.0,
+      233.3,
+      120.03,
+      247.07
+     ],
+     "font": "Helvetica-Bold",
+     "size": 10.0,
+     "flags": 16,
+     "origin": [
+      50.0,
+      244.0
+     ]
+    }
+   ],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b8",
+   "global_id": "aa941726ec64:p1_b8"
+  },
+  {
+   "id": "aa941726ec64:p1_b9",
+   "page": 1,
+   "bbox": [
+    50.0,
+    250.32,
+    244.59,
+    262.69
+   ],
+   "text": "This paragraph belongs to the third-level section.",
+   "raw_text": "This paragraph belongs to the third-level section.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 11,
+   "font_size": 9.0,
+   "n_chars": 50,
+   "flags": [],
+   "source_ids": [
+    "p1_b9"
+   ],
+   "source_line_ids": [
+    "p1_b9_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "1. Introduction",
+    "1.1. Layout",
+    "1.1.1. Ordering"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b9",
+   "global_id": "aa941726ec64:p1_b9"
+  },
+  {
+   "id": "aa941726ec64:p1_b10",
+   "page": 1,
+   "bbox": [
+    60.0,
+    290.17,
+    519.56,
+    306.09
+   ],
+   "text": "x2 + yi = α + β = γ\n(12)",
+   "raw_text": "x2 + yi = α + β = γ\n(12)",
+   "role": "equation",
+   "column": -1,
+   "reading_order": 12,
+   "font_size": 10.27,
+   "n_chars": 24,
+   "flags": [
+    "math"
+   ],
+   "source_ids": [
+    "p1_b10"
+   ],
+   "source_line_ids": [
+    "p1_b10_l0",
+    "p1_b10_l1"
+   ],
+   "line_count": 2,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "1. Introduction",
+    "1.1. Layout",
+    "1.1.1. Ordering"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "x",
+     "bbox": [
+      60.0,
+      290.17,
+      65.5,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      60.0,
+      302.0
+     ]
+    },
+    {
+     "text": "2",
+     "bbox": [
+      65.5,
+      291.48,
+      69.39,
+      301.09
+     ],
+     "font": "Helvetica",
+     "size": 7.0,
+     "flags": 1,
+     "origin": [
+      65.5,
+      299.0
+     ]
+    },
+    {
+     "text": " + y",
+     "bbox": [
+      69.39,
+      290.17,
+      87.43,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      69.39,
+      302.0
+     ]
+    },
+    {
+     "text": "i",
+     "bbox": [
+      87.43,
+      296.48,
+      88.99,
+      306.09
+     ],
+     "font": "Helvetica",
+     "size": 7.0,
+     "flags": 0,
+     "origin": [
+      87.43,
+      304.0
+     ]
+    },
+    {
+     "text": " = ",
+     "bbox": [
+      88.99,
+      290.17,
+      101.53,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      88.99,
+      302.0
+     ]
+    },
+    {
+     "text": "α",
+     "bbox": [
+      101.53,
+      293.64,
+      108.78,
+      304.64
+     ],
+     "font": "DejaVuSans",
+     "size": 11.0,
+     "flags": 4,
+     "origin": [
+      101.53,
+      302.0
+     ]
+    },
+    {
+     "text": " + ",
+     "bbox": [
+      108.78,
+      290.17,
+      121.32,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      108.78,
+      302.0
+     ]
+    },
+    {
+     "text": "β",
+     "bbox": [
+      121.32,
+      293.64,
+      128.34,
+      304.64
+     ],
+     "font": "DejaVuSans",
+     "size": 11.0,
+     "flags": 4,
+     "origin": [
+      121.32,
+      302.0
+     ]
+    },
+    {
+     "text": " = ",
+     "bbox": [
+      128.34,
+      290.17,
+      140.88,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      128.34,
+      302.0
+     ]
+    },
+    {
+     "text": "γ",
+     "bbox": [
+      140.88,
+      293.64,
+      147.39,
+      304.64
+     ],
+     "font": "DejaVuSans",
+     "size": 11.0,
+     "flags": 4,
+     "origin": [
+      140.88,
+      302.0
+     ]
+    },
+    {
+     "text": "(12)",
+     "bbox": [
+      500.0,
+      290.17,
+      519.56,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      500.0,
+      302.0
+     ]
+    }
+   ],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b10",
+   "global_id": "aa941726ec64:p1_b10"
+  },
+  {
+   "id": "aa941726ec64:p1_b12",
+   "page": 1,
+   "bbox": [
+    60.0,
+    438.4,
+    171.15,
+    449.39
+   ],
+   "text": "Fig. S1 Controlled raster figure.",
+   "raw_text": "Fig. S1 Controlled raster figure.",
+   "role": "caption",
+   "column": 0,
+   "reading_order": 13,
+   "font_size": 8.0,
+   "n_chars": 33,
+   "flags": [
+    "figure_id:p1_f11"
+   ],
+   "source_ids": [
+    "p1_b12"
+   ],
+   "source_line_ids": [
+    "p1_b12_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "1. Introduction",
+    "1.1. Layout",
+    "1.1.1. Ordering"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b12",
+   "global_id": "aa941726ec64:p1_b12"
+  },
+  {
+   "id": "aa941726ec64:p1_b13",
+   "page": 1,
+   "bbox": [
+    50.0,
+    466.3,
+    103.91,
+    480.07
+   ],
+   "text": "References",
+   "raw_text": "References",
+   "role": "heading",
+   "column": 0,
+   "reading_order": 14,
+   "font_size": 10.0,
+   "n_chars": 10,
+   "flags": [
+    "references_heading",
+    "section_index:3"
+   ],
+   "source_ids": [
+    "p1_b13"
+   ],
+   "source_line_ids": [
+    "p1_b13_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 1.0,
+   "level": 1,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "References"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "References",
+     "bbox": [
+      50.0,
+      466.3,
+      103.91,
+      480.07
+     ],
+     "font": "Helvetica-Bold",
+     "size": 10.0,
+     "flags": 16,
+     "origin": [
+      50.0,
+      477.0
+     ]
+    }
+   ],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b13",
+   "global_id": "aa941726ec64:p1_b13"
+  },
+  {
+   "id": "aa941726ec64:p1_b14",
+   "page": 1,
+   "bbox": [
+    50.0,
+    486.4,
+    145.58,
+    497.39
+   ],
+   "text": "[1] First numeric reference.",
+   "raw_text": "[1] First numeric reference.",
+   "role": "reference",
+   "column": 0,
+   "reading_order": 15,
+   "font_size": 8.0,
+   "n_chars": 28,
+   "flags": [],
+   "source_ids": [
+    "p1_b14"
+   ],
+   "source_line_ids": [
+    "p1_b14_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "References"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b14",
+   "global_id": "aa941726ec64:p1_b14"
+  },
+  {
+   "id": "aa941726ec64:p1_b15",
+   "page": 1,
+   "bbox": [
+    50.0,
+    501.4,
+    154.94,
+    512.39
+   ],
+   "text": "2. Second numeric reference.",
+   "raw_text": "2. Second numeric reference.",
+   "role": "reference",
+   "column": 0,
+   "reading_order": 16,
+   "font_size": 8.0,
+   "n_chars": 28,
+   "flags": [],
+   "source_ids": [
+    "p1_b15"
+   ],
+   "source_line_ids": [
+    "p1_b15_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "References"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b15",
+   "global_id": "aa941726ec64:p1_b15"
+  },
+  {
+   "id": "aa941726ec64:p1_b16",
+   "page": 1,
+   "bbox": [
+    50.0,
+    516.4,
+    172.71,
+    527.39
+   ],
+   "text": "Example, A. Author-first reference.",
+   "raw_text": "Example, A. Author-first reference.",
+   "role": "reference",
+   "column": 0,
+   "reading_order": 17,
+   "font_size": 8.0,
+   "n_chars": 35,
+   "flags": [],
+   "source_ids": [
+    "p1_b16"
+   ],
+   "source_line_ids": [
+    "p1_b16_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "References"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b16",
+   "global_id": "aa941726ec64:p1_b16"
+  },
+  {
+   "id": "aa941726ec64:p1_b17",
+   "page": 1,
+   "bbox": [
+    50.0,
+    718.47,
+    262.43,
+    728.09
+   ],
+   "text": "* Controlled footnote retained verbatim with sufficient identifying text.",
+   "raw_text": "* Controlled footnote retained verbatim with sufficient identifying text.",
+   "role": "footnote",
+   "column": 0,
+   "reading_order": 18,
+   "font_size": 7.0,
+   "n_chars": 73,
+   "flags": [],
+   "source_ids": [
+    "p1_b17"
+   ],
+   "source_line_ids": [
+    "p1_b17_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "References"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_b17",
+   "global_id": "aa941726ec64:p1_b17"
+  },
+  {
+   "id": "aa941726ec64:p2_b0",
+   "page": 2,
+   "bbox": [
+    255.54,
+    19.4,
+    356.46,
+    30.39
+   ],
+   "text": "Advanced Controlled Fixture",
+   "raw_text": "Advanced Controlled Fixture",
+   "role": "header",
+   "column": -1,
+   "reading_order": -1,
+   "font_size": 8.0,
+   "n_chars": 27,
+   "flags": [],
+   "source_ids": [
+    "p2_b0"
+   ],
+   "source_line_ids": [
+    "p2_b0_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p2_b0",
+   "global_id": "aa941726ec64:p2_b0"
+  },
+  {
+   "id": "aa941726ec64:p2_b7",
+   "page": 2,
+   "bbox": [
+    303.78,
+    758.4,
+    308.22,
+    769.39
+   ],
+   "text": "8",
+   "raw_text": "8",
+   "role": "footer",
+   "column": -1,
+   "reading_order": -1,
+   "font_size": 8.0,
+   "n_chars": 1,
+   "flags": [],
+   "source_ids": [
+    "p2_b7"
+   ],
+   "source_line_ids": [
+    "p2_b7_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p2_b7",
+   "global_id": "aa941726ec64:p2_b7"
+  },
+  {
+   "id": "aa941726ec64:p2_b1",
+   "page": 2,
+   "bbox": [
+    50.0,
+    51.3,
+    130.03,
+    65.07
+   ],
+   "text": "2. Sparse Layout",
+   "raw_text": "2. Sparse Layout",
+   "role": "heading",
+   "column": 0,
+   "reading_order": 21,
+   "font_size": 10.0,
+   "n_chars": 16,
+   "flags": [
+    "section_index:4"
+   ],
+   "source_ids": [
+    "p2_b1"
+   ],
+   "source_line_ids": [
+    "p2_b1_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 1.0,
+   "level": 1,
+   "number": "2",
+   "parent_id": null,
+   "section_path": [
+    "2. Sparse Layout"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "2. Sparse Layout",
+     "bbox": [
+      50.0,
+      51.3,
+      130.03,
+      65.07
+     ],
+     "font": "Helvetica-Bold",
+     "size": 10.0,
+     "flags": 16,
+     "origin": [
+      50.0,
+      62.0
+     ]
+    }
+   ],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p2_b1",
+   "global_id": "aa941726ec64:p2_b1"
+  },
+  {
+   "id": "aa941726ec64:p2_b2",
+   "page": 2,
+   "bbox": [
+    50.0,
+    72.32,
+    243.09,
+    96.69
+   ],
+   "text": "L1 sparse left column begins here and contains\nenough words to establish the dominant column.",
+   "raw_text": "L1 sparse left column begins here and contains\nenough words to establish the dominant column.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 22,
+   "font_size": 9.0,
+   "n_chars": 93,
+   "flags": [],
+   "source_ids": [
+    "p2_b2"
+   ],
+   "source_line_ids": [
+    "p2_b2_l0",
+    "p2_b2_l1"
+   ],
+   "line_count": 2,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "2. Sparse Layout"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p2_b2",
+   "global_id": "aa941726ec64:p2_b2"
+  },
+  {
+   "id": "aa941726ec64:p2_b4",
+   "page": 2,
+   "bbox": [
+    50.0,
+    158.4,
+    144.26,
+    169.39
+   ],
+   "text": "Fig. 2 Left-column caption.",
+   "raw_text": "Fig. 2 Left-column caption.",
+   "role": "caption",
+   "column": 0,
+   "reading_order": 23,
+   "font_size": 8.0,
+   "n_chars": 27,
+   "flags": [],
+   "source_ids": [
+    "p2_b4"
+   ],
+   "source_line_ids": [
+    "p2_b4_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "2. Sparse Layout"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p2_b4",
+   "global_id": "aa941726ec64:p2_b4"
+  },
+  {
+   "id": "aa941726ec64:p2_b5",
+   "page": 2,
+   "bbox": [
+    50.0,
+    182.32,
+    262.6,
+    206.69
+   ],
+   "text": "L2 left column continues after its local caption without\nmoving to the right column.",
+   "raw_text": "L2 left column continues after its local caption without\nmoving to the right column.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 24,
+   "font_size": 9.0,
+   "n_chars": 84,
+   "flags": [],
+   "source_ids": [
+    "p2_b5"
+   ],
+   "source_line_ids": [
+    "p2_b5_l0",
+    "p2_b5_l1"
+   ],
+   "line_count": 2,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "2. Sparse Layout"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p2_b5",
+   "global_id": "aa941726ec64:p2_b5"
+  },
+  {
+   "id": "aa941726ec64:p2_b3",
+   "page": 2,
+   "bbox": [
+    330.0,
+    52.33,
+    527.57,
+    76.69
+   ],
+   "text": "R1 sparse right column starts at the same vertical\nband but must follow all left content.",
+   "raw_text": "R1 sparse right column starts at the same vertical\nband but must follow all left content.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 25,
+   "font_size": 9.0,
+   "n_chars": 89,
+   "flags": [],
+   "source_ids": [
+    "p2_b3"
+   ],
+   "source_line_ids": [
+    "p2_b3_l0",
+    "p2_b3_l1"
+   ],
+   "line_count": 2,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "2. Sparse Layout"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p2_b3",
+   "global_id": "aa941726ec64:p2_b3"
+  },
+  {
+   "id": "aa941726ec64:p2_b6",
+   "page": 2,
+   "bbox": [
+    330.0,
+    132.32,
+    547.08,
+    156.69
+   ],
+   "text": "R2 right column finishes after the complete left-column\nsequence.",
+   "raw_text": "R2 right column finishes after the complete left-column\nsequence.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 26,
+   "font_size": 9.0,
+   "n_chars": 65,
+   "flags": [],
+   "source_ids": [
+    "p2_b6"
+   ],
+   "source_line_ids": [
+    "p2_b6_l0",
+    "p2_b6_l1"
+   ],
+   "line_count": 2,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "2. Sparse Layout"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p2_b6",
+   "global_id": "aa941726ec64:p2_b6"
+  },
+  {
+   "id": "aa941726ec64:p3_b0",
+   "page": 3,
+   "bbox": [
+    255.54,
+    19.4,
+    356.46,
+    30.39
+   ],
+   "text": "Advanced Controlled Fixture",
+   "raw_text": "Advanced Controlled Fixture",
+   "role": "header",
+   "column": -1,
+   "reading_order": -1,
+   "font_size": 8.0,
+   "n_chars": 27,
+   "flags": [],
+   "source_ids": [
+    "p3_b0"
+   ],
+   "source_line_ids": [
+    "p3_b0_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p3_b0",
+   "global_id": "aa941726ec64:p3_b0"
+  },
+  {
+   "id": "aa941726ec64:p3_b3",
+   "page": 3,
+   "bbox": [
+    303.78,
+    758.4,
+    308.22,
+    769.39
+   ],
+   "text": "9",
+   "raw_text": "9",
+   "role": "footer",
+   "column": -1,
+   "reading_order": -1,
+   "font_size": 8.0,
+   "n_chars": 1,
+   "flags": [],
+   "source_ids": [
+    "p3_b3"
+   ],
+   "source_line_ids": [
+    "p3_b3_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p3_b3",
+   "global_id": "aa941726ec64:p3_b3"
+  },
+  {
+   "id": "aa941726ec64:p3_b1",
+   "page": 3,
+   "bbox": [
+    50.0,
+    53.73,
+    270.0,
+    64.98
+   ],
+   "text": "中文段落：逐字提取、阅读顺序与证据定位。",
+   "raw_text": "中文段落：逐字提取、阅读顺序与证据定位。",
+   "role": "body",
+   "column": 0,
+   "reading_order": 29,
+   "font_size": 11.0,
+   "n_chars": 20,
+   "flags": [],
+   "source_ids": [
+    "p3_b1"
+   ],
+   "source_line_ids": [
+    "p3_b1_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "2. Sparse Layout"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p3_b1",
+   "global_id": "aa941726ec64:p3_b1"
+  },
+  {
+   "id": "aa941726ec64:p3_b2",
+   "page": 3,
+   "bbox": [
+    50.0,
+    80.18,
+    254.8,
+    95.29
+   ],
+   "text": "Résumé : précision, intégrité et traçabilité.",
+   "raw_text": "Résumé : précision, intégrité et traçabilité.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 30,
+   "font_size": 11.0,
+   "n_chars": 45,
+   "flags": [],
+   "source_ids": [
+    "p3_b2"
+   ],
+   "source_line_ids": [
+    "p3_b2_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [
+    "2. Sparse Layout"
+   ],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [],
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p3_b2",
+   "global_id": "aa941726ec64:p3_b2"
+  }
+ ],
+ "tables": [
+  {
+   "id": "724abd49fe36:p1_t0",
+   "page": 1,
+   "pages": [
+    1
+   ],
+   "bbox": [
+    50.4,
+    412.4,
+    381.6,
+    460.4
+   ],
+   "n_rows": 3,
+   "n_cols": 3,
+   "cells": [
+    {
+     "row": 0,
+     "col": 0,
+     "text": "Method",
+     "bbox": [
+      50.4,
+      412.4,
+      208.8,
+      428.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
+    },
+    {
+     "row": 0,
+     "col": 1,
+     "text": "Recall",
+     "bbox": [
+      208.8,
+      412.4,
+      309.6,
+      428.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
+    },
+    {
+     "row": 0,
+     "col": 2,
+     "text": "Order",
+     "bbox": [
+      309.6,
+      412.4,
+      381.6,
+      428.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
+    },
+    {
+     "row": 1,
+     "col": 0,
+     "text": "Naive y-sort",
+     "bbox": [
+      50.4,
+      428.4,
+      208.8,
+      444.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
+    },
+    {
+     "row": 1,
+     "col": 1,
+     "text": "0.99",
+     "bbox": [
+      208.8,
+      428.4,
+      309.6,
+      444.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
+    },
+    {
+     "row": 1,
+     "col": 2,
+     "text": "0.52",
+     "bbox": [
+      309.6,
+      428.4,
+      381.6,
+      444.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
+    },
+    {
+     "row": 2,
+     "col": 0,
+     "text": "Skill parser",
+     "bbox": [
+      50.4,
+      444.4,
+      208.8,
+      460.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
+    },
+    {
+     "row": 2,
+     "col": 1,
+     "text": "1.00",
+     "bbox": [
+      208.8,
+      444.4,
+      309.6,
+      460.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
+    },
+    {
+     "row": 2,
+     "col": 2,
+     "text": "1.00",
+     "bbox": [
+      309.6,
+      444.4,
+      381.6,
+      460.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
+    }
+   ],
+   "markdown": "| Method | Recall | Order |\n| --- | --- | --- |\n| Naive y-sort | 0.99 | 0.52 |\n| Skill parser | 1.00 | 1.00 |",
+   "extractor": "pdfplumber",
+   "needs_review": false,
+   "segments": [],
+   "merged_into": null,
+   "reading_order": 12,
+   "document_sha256": "724abd49fe36943efbbdd72f3ede647eba7d06561725b500dfe8d4f504ddc11a",
+   "source_id": "p1_t0",
+   "global_id": "724abd49fe36:p1_t0"
+  }
+ ],
+ "equations": [
+  {
+   "id": "aa941726ec64:p1_e10",
+   "source_block_id": "p1_b10",
+   "page": 1,
+   "bbox": [
+    60.0,
+    290.17,
+    519.56,
+    306.09
+   ],
+   "number": "12",
+   "unicode_text": "x2 + yi = α + β = γ\n(12)",
+   "raw_text": "x2 + yi = α + β = γ\n(12)",
+   "linear_text": "x^{2} + y_{i} = α + β = γ(12)",
+   "scripts": [
+    {
+     "text": "2",
+     "role": "superscript",
+     "bbox": [
+      65.5,
+      291.48,
+      69.39,
+      301.09
+     ],
+     "font": "Helvetica"
+    },
+    {
+     "text": "i",
+     "role": "subscript",
+     "bbox": [
+      87.43,
+      296.48,
+      88.99,
+      306.09
+     ],
+     "font": "Helvetica"
+    }
+   ],
+   "spans": [
+    {
+     "text": "x",
+     "bbox": [
+      60.0,
+      290.17,
+      65.5,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      60.0,
+      302.0
+     ]
+    },
+    {
+     "text": "2",
+     "bbox": [
+      65.5,
+      291.48,
+      69.39,
+      301.09
+     ],
+     "font": "Helvetica",
+     "size": 7.0,
+     "flags": 1,
+     "origin": [
+      65.5,
+      299.0
+     ]
+    },
+    {
+     "text": " + y",
+     "bbox": [
+      69.39,
+      290.17,
+      87.43,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      69.39,
+      302.0
+     ]
+    },
+    {
+     "text": "i",
+     "bbox": [
+      87.43,
+      296.48,
+      88.99,
+      306.09
+     ],
+     "font": "Helvetica",
+     "size": 7.0,
+     "flags": 0,
+     "origin": [
+      87.43,
+      304.0
+     ]
+    },
+    {
+     "text": " = ",
+     "bbox": [
+      88.99,
+      290.17,
+      101.53,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      88.99,
+      302.0
+     ]
+    },
+    {
+     "text": "α",
+     "bbox": [
+      101.53,
+      293.64,
+      108.78,
+      304.64
+     ],
+     "font": "DejaVuSans",
+     "size": 11.0,
+     "flags": 4,
+     "origin": [
+      101.53,
+      302.0
+     ]
+    },
+    {
+     "text": " + ",
+     "bbox": [
+      108.78,
+      290.17,
+      121.32,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      108.78,
+      302.0
+     ]
+    },
+    {
+     "text": "β",
+     "bbox": [
+      121.32,
+      293.64,
+      128.34,
+      304.64
+     ],
+     "font": "DejaVuSans",
+     "size": 11.0,
+     "flags": 4,
+     "origin": [
+      121.32,
+      302.0
+     ]
+    },
+    {
+     "text": " = ",
+     "bbox": [
+      128.34,
+      290.17,
+      140.88,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      128.34,
+      302.0
+     ]
+    },
+    {
+     "text": "γ",
+     "bbox": [
+      140.88,
+      293.64,
+      147.39,
+      304.64
+     ],
+     "font": "DejaVuSans",
+     "size": 11.0,
+     "flags": 4,
+     "origin": [
+      140.88,
+      302.0
+     ]
+    },
+    {
+     "text": "(12)",
+     "bbox": [
+      500.0,
+      290.17,
+      519.56,
+      305.29
+     ],
+     "font": "Helvetica",
+     "size": 11.0,
+     "flags": 0,
+     "origin": [
+      500.0,
+      302.0
+     ]
+    }
+   ],
+   "needs_review": false,
+   "review_reason": null,
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_e10",
+   "global_id": "aa941726ec64:p1_e10"
+  }
+ ],
+ "figures": [
+  {
+   "id": "aa941726ec64:p1_f11",
+   "page": 1,
+   "bbox": [
+    60.0,
+    357.0,
+    210.0,
+    432.0
+   ],
+   "kind": "raster_image",
+   "pixel_width": 102,
+   "pixel_height": 52,
+   "caption_id": "p1_b12",
+   "source_block_id": "p1_b11",
+   "document_sha256": "aa941726ec64cf2eb114199fc7e27f48f3480aabca2e957261f33b065f9ab3e1",
+   "source_id": "p1_f11",
+   "global_id": "aa941726ec64:p1_f11"
+  }
+ ]
+}

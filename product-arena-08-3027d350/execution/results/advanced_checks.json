@@ -1,0 +1,33 @@
+{
+ "schema": "sci-pdf-reading-parse/advanced-checks/v1",
+ "reference": "runtime-generated controlled fixtures with known text, order, cells and formula scripts",
+ "checks": {
+  "title_authors_affiliation_abstract": true,
+  "section_levels_and_parents": true,
+  "formula_unicode_scripts_number": true,
+  "raster_figure_caption_link": true,
+  "footnote_preserved_and_footer_separated": true,
+  "all_reference_styles_preserved": true,
+  "sparse_columns_and_local_headings": true,
+  "multilingual_chinese_and_french": true,
+  "ambiguous_symbol_font_requires_review": true,
+  "one_logical_cross_page_table": true,
+  "shape_and_repeated_two_row_header": true,
+  "exact_cells_pipe_and_multiline": true,
+  "merged_cell_span_and_cell_bboxes": true,
+  "table_inline_exactly_once": true,
+  "markdown_escaping": true,
+  "missing_pdfplumber_is_explicit": true
+ },
+ "negative_controls": {
+  "column_swap_is_detected": true,
+  "greek_substitution_is_detected": true,
+  "wrong_shape_is_detected": true,
+  "wrong_cell_is_detected": true
+ },
+ "passed": 16,
+ "total": 16,
+ "negative_passed": 4,
+ "negative_total": 4,
+ "all_passed": true
+}

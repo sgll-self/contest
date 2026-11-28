@@ -9,5 +9,9 @@
  "encrypted_without_password": {
   "error": "encrypted PDF: empty-password authentication failed; a password is required",
   "passed": true
+ },
+ "malformed_pdf": {
+  "error": "cannot open PDF: Failed to open file 'D:\\\\玻尔科学空间\\\\bohrium_workplace\\\\product-arena-08-3027d350\\\\submission\\\\execution\\\\work\\\\malformed.pdf' as type pdf.",
+  "passed": true
  }
 }

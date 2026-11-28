@@ -1,5 +1,5 @@
 {
- "schema": "sci-pdf-reading-parse/parsed/v1",
+ "schema": "sci-pdf-reading-parse/parsed/v3",
  "case_id": "controlled-gt",
  "source": "gt.pdf",
  "pages": [
@@ -8,12 +8,33 @@
    "width": 612.0,
    "height": 792.0,
    "column_bounds": [
-    314.79
+    308.08
    ],
-   "n_blocks": 14,
-   "n_tables": 1
+   "n_blocks": 15,
+   "n_tables": 1,
+   "n_figures": 0,
+   "status": "ok"
   }
  ],
+ "document": {
+  "title_block_id": "p1_b2",
+  "title": "Evidence-Anchored Reading Order for Two-Column Scientific Documents",
+  "author_block_ids": [],
+  "authors": [],
+  "affiliation_block_ids": [],
+  "affiliations": [],
+  "abstract_block_ids": [],
+  "abstract": "",
+  "sections": [],
+  "counts": {
+   "references": 0,
+   "footnotes": 0,
+   "captions": 1,
+   "figures": 0,
+   "tables": 1,
+   "equations": 0
+  }
+ },
  "blocks": [
   {
    "id": "p1_b0",
@@ -25,218 +46,28 @@
     31.19
    ],
    "text": "Journal of Reproducible Parsing · Vol. 1",
+   "raw_text": "Journal of Reproducible Parsing · Vol. 1",
    "role": "header",
-   "column": 0,
-   "reading_order": 0,
+   "column": -1,
+   "reading_order": -1,
    "font_size": 8.0,
    "n_chars": 40,
-   "flags": []
-  },
-  {
-   "id": "p1_b2",
-   "page": 1,
-   "bbox": [
-    43.46,
-    48.75,
-    568.55,
-    69.4
+   "flags": [],
+   "source_ids": [
+    "p1_b0"
    ],
-   "text": "Evidence-Anchored Reading Order for Two-Column Scientific Documents",
-   "role": "heading",
-   "column": -1,
-   "reading_order": 1,
-   "font_size": 15.0,
-   "n_chars": 67,
-   "flags": []
-  },
-  {
-   "id": "p1_b3",
-   "page": 1,
-   "bbox": [
-    54.51,
-    79.25,
-    557.49,
-    105.99
+   "source_line_ids": [
+    "p1_b0_l0"
    ],
-   "text": "We present a deterministic parser that recovers the true reading order of two-column scientific pages and anchors\nevery block to a page and bounding box.",
-   "role": "body",
-   "column": -1,
-   "reading_order": 2,
-   "font_size": 10.0,
-   "n_chars": 153,
-   "flags": [
-    "merged:p1_b4"
-   ]
-  },
-  {
-   "id": "p1_b5",
-   "page": 1,
-   "bbox": [
-    50.4,
-    130.45,
-    287.74,
-    180.19
-   ],
-   "text": "L1 Introduction. Scientific documents frequently use a\ntwo-column layout. A naive top-to-bottom text\nextraction interleaves the columns and produces\nbroken sentences.",
-   "role": "body",
-   "column": 0,
-   "reading_order": 3,
-   "font_size": 10.0,
-   "n_chars": 166,
-   "flags": []
-  },
-  {
-   "id": "p1_b7",
-   "page": 1,
-   "bbox": [
-    50.4,
-    213.25,
-    294.4,
-    262.99
-   ],
-   "text": "L2 Method. We cluster text blocks by horizontal\nposition, treat full-width blocks as band separators, and\norder each column from top to bottom before moving\nright.",
-   "role": "body",
-   "column": 0,
-   "reading_order": 4,
-   "font_size": 10.0,
-   "n_chars": 163,
-   "flags": []
-  },
-  {
-   "id": "p1_b9",
-   "page": 1,
-   "bbox": [
-    50.4,
-    296.05,
-    290.52,
-    333.79
-   ],
-   "text": "L3 Anchoring. Every emitted block keeps its page\nnumber and bounding box so that any downstream\nanswer can be traced back to the exact source region.",
-   "role": "body",
-   "column": 0,
-   "reading_order": 5,
-   "font_size": 10.0,
-   "n_chars": 149,
-   "flags": []
-  },
-  {
-   "id": "p1_b6",
-   "page": 1,
-   "bbox": [
-    316.8,
-    130.45,
-    551.35,
-    180.19
-   ],
-   "text": "R1 Evaluation. On a controlled document with known\nground truth we measure character recall and\nreading-order concordance against the intended\nsequence.",
-   "role": "body",
-   "column": 1,
-   "reading_order": 6,
-   "font_size": 10.0,
-   "n_chars": 152,
-   "flags": []
-  },
-  {
-   "id": "p1_b8",
-   "page": 1,
-   "bbox": [
-    316.8,
-    213.25,
-    560.22,
-    250.99
-   ],
-   "text": "R2 Results. The parser recovers essentially all body\ncharacters and preserves the column-major reading\norder, while a naive y-sort interleaves the two columns.",
-   "role": "body",
-   "column": 1,
-   "reading_order": 7,
-   "font_size": 10.0,
-   "n_chars": 159,
-   "flags": []
-  },
-  {
-   "id": "p1_b10",
-   "page": 1,
-   "bbox": [
-    316.8,
-    296.05,
-    558.01,
-    333.79
-   ],
-   "text": "R3 Limitations. Image-only scanned pages have no\ntext layer and require OCR, which is outside the scope\nof this text-layer parser and is reported as unreadable.",
-   "role": "body",
-   "column": 1,
-   "reading_order": 8,
-   "font_size": 10.0,
-   "n_chars": 160,
-   "flags": []
-  },
-  {
-   "id": "p1_b11",
-   "page": 1,
-   "bbox": [
-    50.4,
-    389.7,
-    299.35,
-    403.47
-   ],
-   "text": "Table 1. Parsing quality on the controlled document.",
-   "role": "caption",
-   "column": -1,
-   "reading_order": 9,
-   "font_size": 10.0,
-   "n_chars": 52,
-   "flags": []
-  },
-  {
-   "id": "p1_b12",
-   "page": 1,
-   "bbox": [
-    54.4,
-    413.73,
-    336.6,
-    426.09
-   ],
-   "text": "Method\nRecall\nOrder",
-   "role": "body",
-   "column": 0,
-   "reading_order": 10,
-   "font_size": 9.0,
-   "n_chars": 19,
-   "flags": []
-  },
-  {
-   "id": "p1_b13",
-   "page": 1,
-   "bbox": [
-    54.4,
-    429.73,
-    331.11,
-    442.09
-   ],
-   "text": "Naive y-sort\n0.99\n0.52",
-   "role": "body",
-   "column": 0,
-   "reading_order": 11,
-   "font_size": 9.0,
-   "n_chars": 22,
-   "flags": []
-  },
-  {
-   "id": "p1_b14",
-   "page": 1,
-   "bbox": [
-    54.4,
-    445.73,
-    331.11,
-    458.09
-   ],
-   "text": "Skill parser\n1.00\n1.00",
-   "role": "body",
-   "column": 0,
-   "reading_order": 12,
-   "font_size": 9.0,
-   "n_chars": 22,
-   "flags": []
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": []
   },
   {
    "id": "p1_b1",
@@ -248,18 +79,508 @@
     769.19
    ],
    "text": "42",
+   "raw_text": "42",
    "role": "footer",
-   "column": 0,
-   "reading_order": 13,
+   "column": -1,
+   "reading_order": -1,
    "font_size": 8.0,
    "n_chars": 2,
-   "flags": []
+   "flags": [],
+   "source_ids": [
+    "p1_b1"
+   ],
+   "source_line_ids": [
+    "p1_b1_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": []
+  },
+  {
+   "id": "p1_b2",
+   "page": 1,
+   "bbox": [
+    43.46,
+    48.75,
+    568.55,
+    69.4
+   ],
+   "text": "Evidence-Anchored Reading Order for Two-Column Scientific Documents",
+   "raw_text": "Evidence-Anchored Reading Order for Two-Column Scientific Documents",
+   "role": "title",
+   "column": -1,
+   "reading_order": 2,
+   "font_size": 15.0,
+   "n_chars": 67,
+   "flags": [
+    "front_matter"
+   ],
+   "source_ids": [
+    "p1_b2"
+   ],
+   "source_line_ids": [
+    "p1_b2_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 1.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": [
+    {
+     "text": "Evidence-Anchored Reading Order for Two-Column Scientific Documents",
+     "bbox": [
+      43.46,
+      48.75,
+      568.55,
+      69.4
+     ],
+     "font": "Helvetica-Bold",
+     "size": 15.0,
+     "flags": 16,
+     "origin": [
+      43.46,
+      64.8
+     ]
+    }
+   ]
+  },
+  {
+   "id": "p1_b3",
+   "page": 1,
+   "bbox": [
+    54.51,
+    79.25,
+    557.49,
+    92.99
+   ],
+   "text": "We present a deterministic parser that recovers the true reading order of two-column scientific pages and anchors",
+   "raw_text": "We present a deterministic parser that recovers the true reading order of two-column scientific pages and anchors",
+   "role": "body",
+   "column": -1,
+   "reading_order": 3,
+   "font_size": 10.0,
+   "n_chars": 113,
+   "flags": [
+    "continues_to:p1_b4"
+   ],
+   "source_ids": [
+    "p1_b3"
+   ],
+   "source_line_ids": [
+    "p1_b3_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": []
+  },
+  {
+   "id": "p1_b4",
+   "page": 1,
+   "bbox": [
+    215.95,
+    92.25,
+    396.05,
+    105.99
+   ],
+   "text": "every block to a page and bounding box.",
+   "raw_text": "every block to a page and bounding box.",
+   "role": "body",
+   "column": -1,
+   "reading_order": 4,
+   "font_size": 10.0,
+   "n_chars": 39,
+   "flags": [],
+   "source_ids": [
+    "p1_b4"
+   ],
+   "source_line_ids": [
+    "p1_b4_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": "p1_b3",
+   "spans": []
+  },
+  {
+   "id": "p1_b5",
+   "page": 1,
+   "bbox": [
+    50.4,
+    130.45,
+    287.74,
+    180.19
+   ],
+   "text": "L1 Introduction. Scientific documents frequently use a\ntwo-column layout. A naive top-to-bottom text\nextraction interleaves the columns and produces\nbroken sentences.",
+   "raw_text": "L1 Introduction. Scientific documents frequently use a\ntwo-column layout. A naive top-to-bottom text\nextraction interleaves the columns and produces\nbroken sentences.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 5,
+   "font_size": 10.0,
+   "n_chars": 166,
+   "flags": [],
+   "source_ids": [
+    "p1_b5"
+   ],
+   "source_line_ids": [
+    "p1_b5_l0",
+    "p1_b5_l1",
+    "p1_b5_l2",
+    "p1_b5_l3"
+   ],
+   "line_count": 4,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": []
+  },
+  {
+   "id": "p1_b7",
+   "page": 1,
+   "bbox": [
+    50.4,
+    213.25,
+    294.4,
+    262.99
+   ],
+   "text": "L2 Method. We cluster text blocks by horizontal\nposition, treat full-width blocks as band separators, and\norder each column from top to bottom before moving\nright.",
+   "raw_text": "L2 Method. We cluster text blocks by horizontal\nposition, treat full-width blocks as band separators, and\norder each column from top to bottom before moving\nright.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 6,
+   "font_size": 10.0,
+   "n_chars": 163,
+   "flags": [],
+   "source_ids": [
+    "p1_b7"
+   ],
+   "source_line_ids": [
+    "p1_b7_l0",
+    "p1_b7_l1",
+    "p1_b7_l2",
+    "p1_b7_l3"
+   ],
+   "line_count": 4,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": []
+  },
+  {
+   "id": "p1_b9",
+   "page": 1,
+   "bbox": [
+    50.4,
+    296.05,
+    290.52,
+    333.79
+   ],
+   "text": "L3 Anchoring. Every emitted block keeps its page\nnumber and bounding box so that any downstream\nanswer can be traced back to the exact source region.",
+   "raw_text": "L3 Anchoring. Every emitted block keeps its page\nnumber and bounding box so that any downstream\nanswer can be traced back to the exact source region.",
+   "role": "body",
+   "column": 0,
+   "reading_order": 7,
+   "font_size": 10.0,
+   "n_chars": 149,
+   "flags": [],
+   "source_ids": [
+    "p1_b9"
+   ],
+   "source_line_ids": [
+    "p1_b9_l0",
+    "p1_b9_l1",
+    "p1_b9_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": []
+  },
+  {
+   "id": "p1_b11",
+   "page": 1,
+   "bbox": [
+    50.4,
+    389.7,
+    299.35,
+    403.47
+   ],
+   "text": "Table 1. Parsing quality on the controlled document.",
+   "raw_text": "Table 1. Parsing quality on the controlled document.",
+   "role": "caption",
+   "column": 0,
+   "reading_order": 8,
+   "font_size": 10.0,
+   "n_chars": 52,
+   "flags": [],
+   "source_ids": [
+    "p1_b11"
+   ],
+   "source_line_ids": [
+    "p1_b11_l0"
+   ],
+   "line_count": 1,
+   "bold_ratio": 1.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": []
+  },
+  {
+   "id": "p1_b6",
+   "page": 1,
+   "bbox": [
+    316.8,
+    130.45,
+    551.35,
+    180.19
+   ],
+   "text": "R1 Evaluation. On a controlled document with known\nground truth we measure character recall and\nreading-order concordance against the intended\nsequence.",
+   "raw_text": "R1 Evaluation. On a controlled document with known\nground truth we measure character recall and\nreading-order concordance against the intended\nsequence.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 9,
+   "font_size": 10.0,
+   "n_chars": 152,
+   "flags": [],
+   "source_ids": [
+    "p1_b6"
+   ],
+   "source_line_ids": [
+    "p1_b6_l0",
+    "p1_b6_l1",
+    "p1_b6_l2",
+    "p1_b6_l3"
+   ],
+   "line_count": 4,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": []
+  },
+  {
+   "id": "p1_b8",
+   "page": 1,
+   "bbox": [
+    316.8,
+    213.25,
+    560.22,
+    250.99
+   ],
+   "text": "R2 Results. The parser recovers essentially all body\ncharacters and preserves the column-major reading\norder, while a naive y-sort interleaves the two columns.",
+   "raw_text": "R2 Results. The parser recovers essentially all body\ncharacters and preserves the column-major reading\norder, while a naive y-sort interleaves the two columns.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 10,
+   "font_size": 10.0,
+   "n_chars": 159,
+   "flags": [],
+   "source_ids": [
+    "p1_b8"
+   ],
+   "source_line_ids": [
+    "p1_b8_l0",
+    "p1_b8_l1",
+    "p1_b8_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": []
+  },
+  {
+   "id": "p1_b10",
+   "page": 1,
+   "bbox": [
+    316.8,
+    296.05,
+    558.01,
+    333.79
+   ],
+   "text": "R3 Limitations. Image-only scanned pages have no\ntext layer and require OCR, which is outside the scope\nof this text-layer parser and is reported as unreadable.",
+   "raw_text": "R3 Limitations. Image-only scanned pages have no\ntext layer and require OCR, which is outside the scope\nof this text-layer parser and is reported as unreadable.",
+   "role": "body",
+   "column": 1,
+   "reading_order": 11,
+   "font_size": 10.0,
+   "n_chars": 160,
+   "flags": [],
+   "source_ids": [
+    "p1_b10"
+   ],
+   "source_line_ids": [
+    "p1_b10_l0",
+    "p1_b10_l1",
+    "p1_b10_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": null,
+   "continuation_of": null,
+   "spans": []
+  },
+  {
+   "id": "p1_b12",
+   "page": 1,
+   "bbox": [
+    54.4,
+    413.73,
+    336.6,
+    426.09
+   ],
+   "text": "Method\nRecall\nOrder",
+   "raw_text": "Method\nRecall\nOrder",
+   "role": "table_text",
+   "column": -1,
+   "reading_order": 12,
+   "font_size": 9.0,
+   "n_chars": 19,
+   "flags": [],
+   "source_ids": [
+    "p1_b12"
+   ],
+   "source_line_ids": [
+    "p1_b12_l0",
+    "p1_b12_l1",
+    "p1_b12_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": "p1_t0",
+   "continuation_of": null,
+   "spans": []
+  },
+  {
+   "id": "p1_b13",
+   "page": 1,
+   "bbox": [
+    54.4,
+    429.73,
+    331.11,
+    442.09
+   ],
+   "text": "Naive y-sort\n0.99\n0.52",
+   "raw_text": "Naive y-sort\n0.99\n0.52",
+   "role": "table_text",
+   "column": -1,
+   "reading_order": 13,
+   "font_size": 9.0,
+   "n_chars": 22,
+   "flags": [],
+   "source_ids": [
+    "p1_b13"
+   ],
+   "source_line_ids": [
+    "p1_b13_l0",
+    "p1_b13_l1",
+    "p1_b13_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": "p1_t0",
+   "continuation_of": null,
+   "spans": []
+  },
+  {
+   "id": "p1_b14",
+   "page": 1,
+   "bbox": [
+    54.4,
+    445.73,
+    331.11,
+    458.09
+   ],
+   "text": "Skill parser\n1.00\n1.00",
+   "raw_text": "Skill parser\n1.00\n1.00",
+   "role": "table_text",
+   "column": -1,
+   "reading_order": 14,
+   "font_size": 9.0,
+   "n_chars": 22,
+   "flags": [],
+   "source_ids": [
+    "p1_b14"
+   ],
+   "source_line_ids": [
+    "p1_b14_l0",
+    "p1_b14_l1",
+    "p1_b14_l2"
+   ],
+   "line_count": 3,
+   "bold_ratio": 0.0,
+   "level": null,
+   "number": null,
+   "parent_id": null,
+   "section_path": [],
+   "container_id": "p1_t0",
+   "continuation_of": null,
+   "spans": []
   }
  ],
  "tables": [
   {
    "id": "p1_t0",
    "page": 1,
+   "pages": [
+    1
+   ],
    "bbox": [
     50.4,
     412.4,
@@ -272,65 +593,279 @@
     {
      "row": 0,
      "col": 0,
-     "text": "Method"
+     "text": "Method",
+     "bbox": [
+      50.4,
+      412.4,
+      208.8,
+      428.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
     },
     {
      "row": 0,
      "col": 1,
-     "text": "Recall"
+     "text": "Recall",
+     "bbox": [
+      208.8,
+      412.4,
+      309.6,
+      428.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
     },
     {
      "row": 0,
      "col": 2,
-     "text": "Order"
+     "text": "Order",
+     "bbox": [
+      309.6,
+      412.4,
+      381.6,
+      428.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
     },
     {
      "row": 1,
      "col": 0,
-     "text": "Naive y-sort"
+     "text": "Naive y-sort",
+     "bbox": [
+      50.4,
+      428.4,
+      208.8,
+      444.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
     },
     {
      "row": 1,
      "col": 1,
-     "text": "0.99"
+     "text": "0.99",
+     "bbox": [
+      208.8,
+      428.4,
+      309.6,
+      444.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
     },
     {
      "row": 1,
      "col": 2,
-     "text": "0.52"
+     "text": "0.52",
+     "bbox": [
+      309.6,
+      428.4,
+      381.6,
+      444.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
     },
     {
      "row": 2,
      "col": 0,
-     "text": "Skill parser"
+     "text": "Skill parser",
+     "bbox": [
+      50.4,
+      444.4,
+      208.8,
+      460.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
     },
     {
      "row": 2,
      "col": 1,
-     "text": "1.00"
+     "text": "1.00",
+     "bbox": [
+      208.8,
+      444.4,
+      309.6,
+      460.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
     },
     {
      "row": 2,
      "col": 2,
-     "text": "1.00"
+     "text": "1.00",
+     "bbox": [
+      309.6,
+      444.4,
+      381.6,
+      460.4
+     ],
+     "row_span": 1,
+     "col_span": 1,
+     "covered_by": null
     }
    ],
    "markdown": "| Method | Recall | Order |\n| --- | --- | --- |\n| Naive y-sort | 0.99 | 0.52 |\n| Skill parser | 1.00 | 1.00 |",
-   "extractor": "pdfplumber"
+   "extractor": "pdfplumber",
+   "needs_review": false,
+   "segments": [],
+   "merged_into": null,
+   "reading_order": 12
   }
  ],
+ "figures": [],
+ "equations": [],
+ "reading_items": [
+  {
+   "kind": "block",
+   "id": "p1_b2",
+   "page": 1,
+   "bbox": [
+    43.46,
+    48.75,
+    568.55,
+    69.4
+   ]
+  },
+  {
+   "kind": "block",
+   "id": "p1_b3",
+   "page": 1,
+   "bbox": [
+    54.51,
+    79.25,
+    557.49,
+    92.99
+   ]
+  },
+  {
+   "kind": "block",
+   "id": "p1_b4",
+   "page": 1,
+   "bbox": [
+    215.95,
+    92.25,
+    396.05,
+    105.99
+   ]
+  },
+  {
+   "kind": "block",
+   "id": "p1_b5",
+   "page": 1,
+   "bbox": [
+    50.4,
+    130.45,
+    287.74,
+    180.19
+   ]
+  },
+  {
+   "kind": "block",
+   "id": "p1_b7",
+   "page": 1,
+   "bbox": [
+    50.4,
+    213.25,
+    294.4,
+    262.99
+   ]
+  },
+  {
+   "kind": "block",
+   "id": "p1_b9",
+   "page": 1,
+   "bbox": [
+    50.4,
+    296.05,
+    290.52,
+    333.79
+   ]
+  },
+  {
+   "kind": "block",
+   "id": "p1_b11",
+   "page": 1,
+   "bbox": [
+    50.4,
+    389.7,
+    299.35,
+    403.47
+   ]
+  },
+  {
+   "kind": "block",
+   "id": "p1_b6",
+   "page": 1,
+   "bbox": [
+    316.8,
+    130.45,
+    551.35,
+    180.19
+   ]
+  },
+  {
+   "kind": "block",
+   "id": "p1_b8",
+   "page": 1,
+   "bbox": [
+    316.8,
+    213.25,
+    560.22,
+    250.99
+   ]
+  },
+  {
+   "kind": "block",
+   "id": "p1_b10",
+   "page": 1,
+   "bbox": [
+    316.8,
+    296.05,
+    558.01,
+    333.79
+   ]
+  },
+  {
+   "kind": "table",
+   "id": "p1_t0",
+   "page": 1,
+   "bbox": [
+    50.4,
+    412.4,
+    381.6,
+    460.4
+   ]
+  }
+ ],
+ "warnings": [],
  "stats": {
   "n_pages": 1,
-  "n_blocks": 14,
+  "n_blocks": 15,
   "n_tables": 1,
-  "n_body_chars": 1165,
-  "n_total_chars": 1326,
+  "n_figures": 0,
+  "n_equations": 0,
+  "n_body_chars": 1101,
+  "n_total_chars": 1325,
   "roles": {
-   "body": 10,
-   "header": 1,
+   "body": 8,
    "caption": 1,
-   "heading": 1,
-   "footer": 1
+   "footer": 1,
+   "header": 1,
+   "table_text": 3,
+   "title": 1
   }
  }
 }

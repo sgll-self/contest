@@ -7,8 +7,8 @@
     "case_id": "string",
     "answer": "string",
     "sources": [{"block_id": "string", "page": "int", "bbox": "[x0,y0,x1,y1]"}],
-    "status": "success|partial|failed|unjudgeable",
-    "uncertainty": "string",
-    "change_log": "string"
+    "status": "success|partial|failed",
+    "uncertainty": "list[string]",
+    "change_log": "list[string]"
   }
 }

@@ -3,18 +3,20 @@
 [A] skill metrics: {"text_recall": 1.0, "text_recall_definition": "lowercased whitespace-stripped ground-truth 4-gram recall", "exact_gt_string_recovery": 1.0, "reading_order_concordance": 1.0, "gt_pairs_checked": 28, "gt_blocks_located": 8, "header_leaked_into_body": false, "footer_classified_roles": ["footer"], "table_cell_match": 1.0, "n_tables_detected": 1}
 [A] naive baseline reading-order concordance: 0.8929
 [A] naive PyMuPDF table-cell match: 0.5556
-[A] column continuity: {"metric_scope": "identical raw text lines in the controlled two-column body region", "skill_column_continuity": 0.8462, "naive_column_continuity": 0.0769, "n_body_lines": 14, "n_skill_lines": 14, "n_naive_lines": 14}
-[A] internal verification: {"schema": "sci-pdf-reading-parse/verify/v2", "source": "gt.pdf", "n_pages": 1, "raw_nonws_chars": 1138, "content_nonws_chars": 1102, "recovered_nonws_chars": 1102, "char_recall": 1.0, "char_recall_raw": 1.0, "raw_marginalia_chars": 36, "leaked_marginalia_chars": 0, "marginalia_leak": 0.0, "order_monotonic": 1.0, "order_pairs_checked": 9, "unreadable_pages": [], "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score", "notes": []}
+[A] column continuity: {"metric_scope": "identical raw text lines in the controlled two-column body region", "skill_column_continuity": 0.9231, "naive_column_continuity": 0.0769, "n_body_lines": 14, "n_skill_lines": 14, "n_naive_lines": 14}
+[A] internal verification: {"schema": "sci-pdf-reading-parse/verify/v3", "source": "gt.pdf", "n_pages": 1, "raw_nonws_chars": 1138, "content_nonws_chars": 1102, "recovered_nonws_chars": 1102, "char_recall": 1.0, "char_recall_raw": 1.0, "raw_marginalia_chars": 36, "leaked_marginalia_chars": 0, "marginalia_leak": 0.0, "order_monotonic": 1.0, "order_pairs_checked": 10, "unreadable_pages": [], "reading_anchor_coverage": 1.0, "reading_anchor_errors": [], "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score", "notes": []}
 [real-paper] using validated local cache; network download skipped
 [B] real paper source: local-cache:arxiv-1512.03385
 [B] real paper scope: first 6 of 12 pages
-[B] real paper stats: {"n_pages": 6, "n_blocks": 337, "n_tables": 7, "n_body_chars": 24273, "n_total_chars": 27785, "roles": {"body": 278, "heading": 22, "caption": 11, "equation": 20, "footer": 6}}
-[B] internal verification: {"schema": "sci-pdf-reading-parse/verify/v2", "source": "real_paper.pdf", "n_pages": 6, "raw_nonws_chars": 23456, "content_nonws_chars": 23450, "recovered_nonws_chars": 23450, "char_recall": 1.0, "char_recall_raw": 1.0, "raw_marginalia_chars": 6, "leaked_marginalia_chars": 0, "marginalia_leak": 0.0, "order_monotonic": 1.0, "order_pairs_checked": 308, "unreadable_pages": [], "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score", "notes": []}
-[C] edge cases: {"image_only_scan": {"n_blocks": 0, "unreadable_pages": [1], "passed": true}, "encrypted_without_password": {"error": "encrypted PDF: empty-password authentication failed; a password is required", "passed": true}}
+[B] real paper stats: {"n_pages": 6, "n_blocks": 357, "n_tables": 3, "n_figures": 4, "n_equations": 7, "n_body_chars": 22171, "n_total_chars": 27765, "roles": {"abstract": 3, "authors": 1, "body": 236, "caption": 11, "equation": 7, "footer": 6, "footnote": 3, "heading": 12, "table_text": 77, "title": 1}}
+[B] internal verification: {"schema": "sci-pdf-reading-parse/verify/v3", "source": "real_paper.pdf", "n_pages": 6, "raw_nonws_chars": 23456, "content_nonws_chars": 23450, "recovered_nonws_chars": 23450, "char_recall": 1.0, "char_recall_raw": 1.0, "raw_marginalia_chars": 6, "leaked_marginalia_chars": 0, "marginalia_leak": 0.0, "order_monotonic": 1.0, "order_pairs_checked": 338, "unreadable_pages": [], "reading_anchor_coverage": 1.0, "reading_anchor_errors": [], "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score", "notes": []}
+[C] edge cases: {"image_only_scan": {"n_blocks": 0, "unreadable_pages": [1], "passed": true}, "encrypted_without_password": {"error": "encrypted PDF: empty-password authentication failed; a password is required", "passed": true}, "malformed_pdf": {"error": "cannot open PDF: Failed to open file 'D:\\\\玻尔科学空间\\\\bohrium_workplace\\\\product-arena-08-3027d350\\\\submission\\\\execution\\\\work\\\\malformed.pdf' as type pdf.", "passed": true}}
+[D] advanced controlled checks: {"schema": "sci-pdf-reading-parse/advanced-checks/v1", "reference": "runtime-generated controlled fixtures with known text, order, cells and formula scripts", "checks": {"title_authors_affiliation_abstract": true, "section_levels_and_parents": true, "formula_unicode_scripts_number": true, "raster_figure_caption_link": true, "footnote_preserved_and_footer_separated": true, "all_reference_styles_preserved": true, "sparse_columns_and_local_headings": true, "multilingual_chinese_and_french": true, "ambiguous_symbol_font_requires_review": true, "one_logical_cross_page_table": true, "shape_and_repeated_two_row_header": true, "exact_cells_pipe_and_multiline": true, "merged_cell_span_and_cell_bboxes": true, "table_inline_exactly_once": true, "markdown_escaping": true, "missing_pdfplumber_is_explicit": true}, "negative_controls": {"column_swap_is_detected": true, "greek_substitution_is_detected": true, "wrong_shape_is_detected": true, "wrong_cell_is_detected": true}, "passed": 16, "total": 16, "negative_passed": 4, "negative_total": 4, "all_passed": true}
+[E] integration checks: {"schema": "sci-pdf-reading-parse/integration-checks/v1", "checks": {"repeat_parse_deterministic": true, "memory_cache_hit": true, "memory_idempotent_two_documents": true, "exact_query_has_source_anchor": true, "greek_query_reaches_recovered_equation": true, "cross_document_merge_provenance": true, "workflow_valid_result": true, "workflow_rejects_unknown_anchor": true, "workflow_missing_material_honest": true}, "all_passed": true, "performance": {"comparison": "same controlled PDF; three direct cold parses versus three content-hash cache hits", "direct_parse_median_s": 0.045682, "memory_first_ingest_s": 0.051916, "memory_warm_hit_median_s": 0.003281, "warm_cache_speedup_x": 13.923, "scope": "repeated-document efficiency only; first ingestion still performs a full parse"}, "artifacts": ["execution/results/document_collection.json", "execution/results/document_collection.md"]}
 [fig] wrote runtime-only fig_order.png, fig_recall.png, fig_layout.png
 === metrics.json ===
 {
- "schema": "sci-pdf-reading-parse/demo-metrics/v2",
+ "schema": "sci-pdf-reading-parse/demo-metrics/v3",
  "evaluation_scope": {
   "controlled_document": "one self-generated two-column page with known order and a ruled 3x3 table",
   "real_document": "first six pages of arXiv 1512.03385; execution and internal diagnostics only, no external accuracy ground truth",
@@ -40,13 +42,13 @@
  "order_gain_vs_baseline": 0.1071,
  "column_continuity": {
   "metric_scope": "identical raw text lines in the controlled two-column body region",
-  "skill_column_continuity": 0.8462,
+  "skill_column_continuity": 0.9231,
   "naive_column_continuity": 0.0769,
   "n_body_lines": 14,
   "n_skill_lines": 14,
   "n_naive_lines": 14
  },
- "column_continuity_gain": 0.7693,
+ "column_continuity_gain": 0.8462,
  "real_demo": {
   "source": "local-cache:arxiv-1512.03385",
   "source_url": "https://arxiv.org/pdf/1512.03385",
@@ -56,22 +58,29 @@
   "accuracy_assessed": false,
   "stats": {
    "n_pages": 6,
-   "n_blocks": 337,
-   "n_tables": 7,
-   "n_body_chars": 24273,
-   "n_total_chars": 27785,
+   "n_blocks": 357,
+   "n_tables": 3,
+   "n_figures": 4,
+   "n_equations": 7,
+   "n_body_chars": 22171,
+   "n_total_chars": 27765,
    "roles": {
-    "body": 278,
-    "heading": 22,
+    "abstract": 3,
+    "authors": 1,
+    "body": 236,
     "caption": 11,
-    "equation": 20,
-    "footer": 6
+    "equation": 7,
+    "footer": 6,
+    "footnote": 3,
+    "heading": 12,
+    "table_text": 77,
+    "title": 1
    }
   }
  },
  "verification": {
   "controlled": {
-   "schema": "sci-pdf-reading-parse/verify/v2",
+   "schema": "sci-pdf-reading-parse/verify/v3",
    "source": "gt.pdf",
    "n_pages": 1,
    "raw_nonws_chars": 1138,
@@ -83,13 +92,15 @@
    "leaked_marginalia_chars": 0,
    "marginalia_leak": 0.0,
    "order_monotonic": 1.0,
-   "order_pairs_checked": 9,
+   "order_pairs_checked": 10,
    "unreadable_pages": [],
+   "reading_anchor_coverage": 1.0,
+   "reading_anchor_errors": [],
    "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score",
    "notes": []
   },
   "real_demo": {
-   "schema": "sci-pdf-reading-parse/verify/v2",
+   "schema": "sci-pdf-reading-parse/verify/v3",
    "source": "real_paper.pdf",
    "n_pages": 6,
    "raw_nonws_chars": 23456,
@@ -101,8 +112,10 @@
    "leaked_marginalia_chars": 0,
    "marginalia_leak": 0.0,
    "order_monotonic": 1.0,
-   "order_pairs_checked": 308,
+   "order_pairs_checked": 338,
    "unreadable_pages": [],
+   "reading_anchor_coverage": 1.0,
+   "reading_anchor_errors": [],
    "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score",
    "notes": []
   },
@@ -122,14 +135,84 @@
   "encrypted_without_password": {
    "error": "encrypted PDF: empty-password authentication failed; a password is required",
    "passed": true
+  },
+  "malformed_pdf": {
+   "error": "cannot open PDF: Failed to open file 'D:\\\\玻尔科学空间\\\\bohrium_workplace\\\\product-arena-08-3027d350\\\\submission\\\\execution\\\\work\\\\malformed.pdf' as type pdf.",
+   "passed": true
   }
  },
+ "advanced_controlled_checks": {
+  "schema": "sci-pdf-reading-parse/advanced-checks/v1",
+  "reference": "runtime-generated controlled fixtures with known text, order, cells and formula scripts",
+  "checks": {
+   "title_authors_affiliation_abstract": true,
+   "section_levels_and_parents": true,
+   "formula_unicode_scripts_number": true,
+   "raster_figure_caption_link": true,
+   "footnote_preserved_and_footer_separated": true,
+   "all_reference_styles_preserved": true,
+   "sparse_columns_and_local_headings": true,
+   "multilingual_chinese_and_french": true,
+   "ambiguous_symbol_font_requires_review": true,
+   "one_logical_cross_page_table": true,
+   "shape_and_repeated_two_row_header": true,
+   "exact_cells_pipe_and_multiline": true,
+   "merged_cell_span_and_cell_bboxes": true,
+   "table_inline_exactly_once": true,
+   "markdown_escaping": true,
+   "missing_pdfplumber_is_explicit": true
+  },
+  "negative_controls": {
+   "column_swap_is_detected": true,
+   "greek_substitution_is_detected": true,
+   "wrong_shape_is_detected": true,
+   "wrong_cell_is_detected": true
+  },
+  "passed": 16,
+  "total": 16,
+  "negative_passed": 4,
+  "negative_total": 4,
+  "all_passed": true
+ },
+ "memory_and_workflow": {
+  "schema": "sci-pdf-reading-parse/integration-checks/v1",
+  "checks": {
+   "repeat_parse_deterministic": true,
+   "memory_cache_hit": true,
+   "memory_idempotent_two_documents": true,
+   "exact_query_has_source_anchor": true,
+   "greek_query_reaches_recovered_equation": true,
+   "cross_document_merge_provenance": true,
+   "workflow_valid_result": true,
+   "workflow_rejects_unknown_anchor": true,
+   "workflow_missing_material_honest": true
+  },
+  "all_passed": true,
+  "performance": {
+   "comparison": "same controlled PDF; three direct cold parses versus three content-hash cache hits",
+   "direct_parse_median_s": 0.045682,
+   "memory_first_ingest_s": 0.051916,
+   "memory_warm_hit_median_s": 0.003281,
+   "warm_cache_speedup_x": 13.923,
+   "scope": "repeated-document efficiency only; first ingestion still performs a full parse"
+  },
+  "artifacts": [
+   "execution/results/document_collection.json",
+   "execution/results/document_collection.md"
+  ]
+ },
  "performance": {
-  "controlled_parse_s": 0.0429,
-  "real_first_6_pages_parse_s": 1.0258,
+  "controlled_parse_s": 0.0501,
+  "real_first_6_pages_parse_s": 1.1505,
   "figures_generated": true,
   "duplicate_controlled_parse_removed": true
  },
- "wall_time_s": 4.64
+ "acceptance": {
+  "base_controlled_passed": true,
+  "advanced_passed": true,
+  "integration_passed": true,
+  "edge_cases_passed": true
+ },
+ "wall_time_s": 6.37
 }
-DONE wall_time_s=4.64
+DONE wall_time_s=6.37

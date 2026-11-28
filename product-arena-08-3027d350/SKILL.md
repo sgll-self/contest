@@ -1,71 +1,81 @@
 ---
 name: sci-pdf-reading-parse
-description: "Evidence-anchored scientific PDF reading-order parser. Use when a task asks to read/parse a scientific PDF and answer questions WITH source evidence: extract body text verbatim, fix two/multi-column reading order (no column interleaving), recover section hierarchy, table rows/cols/cells, equation numbers and special characters, and anchor every result back to a page + bounding box. Trigger on: 'parse this paper', 'read this PDF and answer', 'extract text/tables from this PDF', '文献解析', '科研阅读', '回答问题也给出依据', 'reading order', 'two-column extraction'. Produces structured, located, self-verified output; flags unreadable parts instead of guessing."
+description: "Evidence-anchored scientific PDF parser for tasks such as 'parse this paper', 'read this PDF and answer with evidence', 'extract text/tables/equations', '文献解析', '科研阅读', 'reading order', and two-column extraction. Restores column-aware order, section hierarchy, cell-level and cross-page tables, formula scripts and Unicode glyphs, raster/vector figure anchors, footnotes and references. Includes optional content-hash document memory and cross-document evidence merge. Use only for PDF structure/extraction; do not trigger for general chat, non-PDF text, or requests to infer the scientific meaning of a figure or equation."
 ---
 
-# sci-pdf-reading-parse — 科研 PDF 阅读顺序解析与证据回锚
+# sci-pdf-reading-parse — 科研 PDF 结构解析与证据回锚
 
-把一份科研 PDF 解析成**可用、可核验、可回锚**的结构化结果，而不是「看起来像全文」的一段文本。
-聚焦题面四个检查点：**提得全 · 排得对 · 拆得清 · 核得回**。
+将科研 PDF 转为**按阅读顺序排列、结构明确、逐项可回锚**的结果。核心原则是保留原文证据、报告不确定性，不用猜测补齐扫描件、乱码或缺失材料。
 
-## 何时使用 / 适用条件
-- 输入是 PDF（含双栏/多栏会议论文、期刊论文、预印本），任务要求阅读、解析、提取、问答并给出原文依据。
-- 适用：有文字层的 PDF（原生或已 OCR）。对**无文字层的纯扫描件**，本 Skill 如实标注 `unreadable`，不猜补（见异常处理）。
-- 不适用：需要理解图表/公式科学含义的任务——本 Skill 只做**结构元素识别与保真提取**，不做科学推断。
+## 1. 适用边界
 
-## 调用方式（Agent 工作流）
-脚本相对本 SKILL.md 所在目录解析。设 `SKILL_DIR` 为本文件目录。
+适用于有文字层的单栏、双栏及多栏 PDF，以及已 OCR 的页面。无文字层扫描件仍需 OCR；本 Skill 会标出 `unreadable_pages`，不会伪造文本。公式输出保留 Unicode 原文并恢复上下标的线性结构，不声称生成完整语义 LaTeX；图片/矢量图提供位置与题注关联，不解释科学含义。
 
-1. **识别输入与边界**：读取 `/input/case.json` 与 `/input/task.md`（或用户给定的 PDF 路径与问题）。
-   从 case.json 取出 `case_id` 与 `output_contract`（输出字段契约）；**不要**凭领域标签假设内容。
-2. **运行解析器**（一次确定性调用，无网络、无模型）：
+## 2. 固定案例工作流（优先使用）
+
+脚本路径均相对于本 `SKILL.md` 所在目录，不依赖当前工作目录。
+
+1. **准备案例并尽早保存部分结果**：
    ```bash
-   python "$SKILL_DIR/scripts/parse_pdf.py" INPUT.pdf --out /app/work/parsed --case-id CASE_ID
+   python "$SKILL_DIR/scripts/case_workflow.py" prepare \
+     --case /input/case.json --task /input/task.md --out /app/output --work /app/work
    ```
-   产出 `parsed.json`（带证据锚点的结构）、`reading.md`（按版面顺序的 markdown）。
-3. **自检**（覆盖率/顺序/泄漏诊断）：
+   该步骤解析实际 PDF，而非根据文件名推断内容；写出 `/app/output/result.json`、`reading.md` 和每案例 `evidence.json`。`result.json` 已包含 `output_contract` 要求的字段、`case_id`、状态、来源、不确定性和变更记录。
+2. **阅读实际材料**：读取 `/app/output/reading.md` 与 `evidence.json` 指向的 `parsed.json`。按 `reading_items` 的顺序理解正文、章节、表格和图；关键答案必须回到真实 `id/page/bbox`。
+3. **完成问题**：依据 `task.md` 填写全部契约字段。原文未报告、无法判断、材料冲突、扫描件和加密失败分别说明，不得写成事实。
+4. **最终校验**：
    ```bash
-   python "$SKILL_DIR/scripts/verify.py" INPUT.pdf --parsed /app/work/parsed/parsed.json --out /app/work/parsed/verify.json
+   python "$SKILL_DIR/scripts/case_workflow.py" validate \
+     --case /input/case.json --result /app/output/result.json --work /app/work
    ```
-4. **作答与回锚**：基于 `reading.md` 回答问题；每个关键结论引用 `parsed.json` 中的
-   `block.id` / `page` / `bbox`（或 `table.id`）。无法从材料判断的，明确写「未报告/无法判断」。
-5. **写出结果**：在 `/app/output/result.json` 写入 case.json `output_contract` 要求的**全部字段** + `case_id`，
-   并附 `status`、`sources`（证据定位）、`uncertainty`、`change_log`。工作产物留在 `/app/work`。
+   校验器检查必填字段、状态和全部证据 ID/页码；未知锚点会使校验失败。校验通过后再结束任务。
 
-## 输入 / 输出
-- 输入：`INPUT.pdf`；可选 `--case-id`、`--max-pages N`。
-- `parsed.json` 关键字段：
-  - `pages[]`：每页宽高、检测到的分栏边界 `column_bounds`、块/表计数。
-  - `blocks[]`：`id`、`page`(1-based)、`bbox`[x0,y0,x1,y1]、`text`(逐字)、`role`
-    (body/header/footer/caption/heading/reference/equation)、`column`(-1=跨栏)、`reading_order`、`font_size`。
-  - `tables[]`：`id`、`page`、`bbox`、`n_rows`、`n_cols`、`cells[{row,col,text}]`、`markdown`、`extractor`。
-  - `stats`：块/表/字符计数与角色分布。
-- `verify.json`：`char_recall`、`marginalia_leak`、`order_monotonic`、`unreadable_pages`、`notes`。
+## 3. 单篇 PDF 直接调用
 
-## 关键方法（为什么排得对、拆得清）
-- **分栏检测**：先保守联合同字号、垂直相接且水平重叠的连续块，避免居中摘要续行形成伪列；再按块水平中心聚类，最大间隙切分 2/3 栏；宽度 > 0.62×页宽的块视为跨栏带分隔符。
-- **阅读顺序**：跨栏块按 y 作为「带」分隔；带内各栏**从左到右**、每栏**从上到下**；跨页按页序。
-  这避免双栏「串栏/错行」，也不把相邻段落拼成一句。
-- **页眉页脚**：跨页重复字符串 + 页码样式 + 极窄边距带内小字号块 → 标 header/footer，**不混入正文**。
-- **表格保真**：单元格文本用 **pdfplumber** 重建（PyMuPDF `find_tables().extract()` 会把 cell 内字形重排，
-  如 `0.99`→`099.`）；保留 row/col 归属与 bbox。这是相对常见解析器的一个实质改进点。
-- **公式/特殊字符**：逐字保留 unicode（希腊字母、上下标）；按数学符号密度与尾部编号 `(n)` 标 equation。
+```bash
+python "$SKILL_DIR/scripts/parse_pdf.py" INPUT.pdf --out parsed --case-id CASE_ID
+python "$SKILL_DIR/scripts/verify.py" INPUT.pdf --parsed parsed/parsed.json --out parsed/verify.json
+```
 
-## 异常处理（可靠体验）
-- **加密 PDF**：尝试空口令认证；失败时脚本输出明确的 `status="failed"` 错误并以退出码 2 结束，Agent 应在 result.json 中记录加密原因，不得继续猜补正文。
-- **无文字层扫描件**：`verify.json.unreadable_pages` 列出；result.json 标 `status="partial"`，
-  说明需 OCR（超出本文字层解析器范围），**不伪造文本**。
-- **图片型表格 / 乱码字体**：表格检测尽力而为；检不出则 `tables` 为空并在 notes 说明，不猜补单元格。
-- **材料冲突 / 未报告**：在答案与 `uncertainty` 中如实区分「原文未报告」「无法判断」「材料相互冲突」。
+产物为 `parsed.json` 和 `reading.md`；验证器生成 `verify.json`。`--max-pages N` 仅用于明确限定的调试或演示，正式案例默认解析全文。
 
-## 自查方法
-运行 `verify.py`：`char_recall` 是相对于几何页眉页脚带之外原始文本层字符的内部覆盖诊断，应接近 1；`marginalia_leak` 是几何边距带字符被作为正文输出的比例，应为 0；`order_monotonic` 仅检查栏内纵向顺序一致性，不等于外部真值阅读顺序准确率。任何低分都作为**限制**上报，而不是掩盖。
+## 4. 输出结构（schema v3）
 
-## 最小调用示例（示意，非正式案例结果）
-见 `examples/` 目录：输入 `examples/sample_input.json`，调用上述脚本，示意输出 `examples/sample_output.json`
-（明确标注为 EXAMPLE）。正式 3 案例由平台提供，本 Skill 不预置答案。
+- `document`：标题、作者、单位、摘要及其块 ID；`sections[]` 含编号、层级、父节点、`section_path`。
+- `blocks[]`：稳定 `id`、`page`、`bbox`、`text`、未规范化 `raw_text`、`role`、`column`、`reading_order`、`source_line_ids`；跨栏/跨页续接以 `continuation_of` 表达，不擅自合并段落。
+- `tables[]`：`pages`、`segments`、`n_rows/n_cols`；每个单元格含 `row/col/text/bbox/row_span/col_span/covered_by`。重复表头删除有记录， constituent 文本标为 `table_text`，表格在阅读流中仅出现一次。
+- `equations[]`：`unicode_text`、`linear_text`、上下标 `scripts`、公式编号、逐 span 字体/bbox、`needs_review`。
+- `figures[]`：位图或矢量候选的 `page/bbox/kind/caption_id`；`table_candidate_reclassified_figure` 警告保留判定依据。
+- `reading_items[]`：块、表格、图的统一顺序；`warnings[]` 记录降级和失败。
+- `verify.json`：文本层覆盖、行级边距泄漏、顺序内部诊断、`reading_anchor_coverage` 和锚点错误。内部诊断不是独立人工真值准确率。
 
-## 依赖与版本
-`pymupdf>=1.24`、`pdfplumber>=0.11`（表格保真）；标准库其余。见 `scripts/requirements.txt`。
-解析器本体 `scripts/parse_pdf.py`、自检 `scripts/verify.py` 可被他人直接复用。
-Skill 资源仅使用 UTF-8 文本文件；复现生成的 PDF/PNG 必须写入工作目录或运行期产物目录，不作为 Skill 资源加载。
+## 5. 关键方法
+
+- **稀疏分栏与栏内标题**：大块先建立栏组，小居中块若同时跨越两组则作为桥接碎片排除；只有实际宽块或跨越栏界的块才是全宽分隔符。标题、题注不因角色而被强制跨栏。
+- **混合块拆分**：按原始文本行的边距带和字号突变拆分页眉/标题等混合物理块，保留行级来源，避免整块边距规则误删标题。
+- **表格原位与跨页续表**：单元格 bbox 推导合并跨度；Markdown 转义 `|`、换行转为 `<br>`；相邻页、列数一致且位于页断点附近，并有重复表头或 continued 题注时才合并。
+- **公式后处理**：根据 span 字号、基线与 superscript flag 恢复 `^{...}`/`_{...}`。若 PyMuPDF 出现替换符，且本机存在 Poppler `pdftotext`，仅对相同页/bbox 的词进行恢复，并要求 ASCII 骨架一致；失败则标 `needs_review`。Symbol/Dingbats 的可疑 ASCII 映射不直接当作希腊字母。
+- **结构覆盖**：识别标题、作者/单位混合块、摘要续块、编号章节、图/表中英文题注、脚注及数字/作者开头的参考文献。
+
+## 6. 可审计文档记忆与跨文档合并（可选）
+
+```bash
+python "$SKILL_DIR/scripts/document_memory.py" ingest a.pdf --memory /app/work/memory
+python "$SKILL_DIR/scripts/document_memory.py" ingest b.pdf --memory /app/work/memory
+python "$SKILL_DIR/scripts/document_memory.py" query "exact phrase" --memory /app/work/memory
+python "$SKILL_DIR/scripts/document_memory.py" merge --memory /app/work/memory --out /app/output/collection.json
+```
+
+记忆以 PDF 的 SHA-256 和解析 schema 为键；相同字节重复载入直接复用结构，文件改变会产生新键。查询为精确/大小写折叠匹配，结果带文档哈希和原始锚点。合并采用来源前缀 ID 的有序拼接，**不做未经证实的语义去重或跨论文事实融合**。首次 ingest 仍需完整解析，缓存只改善重复文档场景。
+
+## 7. 异常与降级
+
+- 加密 PDF：空口令失败时明确报错，CLI 退出码 2；损坏或不存在文件同样返回失败状态。
+- 无文字层页面：标为不可读并保留人工接管位置；状态应为 `partial` 或 `failed`。
+- 缺少 pdfplumber：不猜表格，写 `pdfplumber_unavailable` 警告；安装 `scripts/requirements.txt` 后重跑。
+- 公式或字体无法核验：保留原文与 `needs_review`，不得编造符号。
+- 最终输出：保留 `status`、`sources`、`uncertainty`、`change_log`，并运行固定案例校验器。
+
+## 8. 依赖与复现证据
+
+核心依赖为 `pymupdf>=1.24`、`pdfplumber>=0.11`；`pdftotext` 是可选字形恢复后端。复现与测试还需 matplotlib、reportlab。运行 `python src/reproduce.py` 可重建全部受控真值、真实论文、异常、记忆与工作流证据。实测定义和结果见 `execution/results/metrics.json`、`advanced_checks.json`、`integration_checks.json`；完整日志以 `execution/run.txt` 收录。

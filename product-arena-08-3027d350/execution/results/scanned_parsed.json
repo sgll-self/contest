@@ -1,5 +1,5 @@
 {
- "schema": "sci-pdf-reading-parse/parsed/v1",
+ "schema": "sci-pdf-reading-parse/parsed/v3",
  "case_id": "edge-image-only",
  "source": "image_only.pdf",
  "pages": [
@@ -9,15 +9,70 @@
    "height": 792.0,
    "column_bounds": [],
    "n_blocks": 0,
-   "n_tables": 0
+   "n_tables": 0,
+   "n_figures": 1,
+   "status": "ok"
   }
  ],
+ "document": {
+  "title_block_id": null,
+  "title": "",
+  "author_block_ids": [],
+  "authors": [],
+  "affiliation_block_ids": [],
+  "affiliations": [],
+  "abstract_block_ids": [],
+  "abstract": "",
+  "sections": [],
+  "counts": {
+   "references": 0,
+   "footnotes": 0,
+   "captions": 0,
+   "figures": 1,
+   "tables": 0,
+   "equations": 0
+  }
+ },
  "blocks": [],
  "tables": [],
+ "figures": [
+  {
+   "id": "p1_f0",
+   "page": 1,
+   "bbox": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+   ],
+   "kind": "raster_image",
+   "pixel_width": 850,
+   "pixel_height": 1100,
+   "caption_id": null,
+   "source_block_id": "p1_b0"
+  }
+ ],
+ "equations": [],
+ "reading_items": [
+  {
+   "kind": "figure",
+   "id": "p1_f0",
+   "page": 1,
+   "bbox": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+   ]
+  }
+ ],
+ "warnings": [],
  "stats": {
   "n_pages": 1,
   "n_blocks": 0,
   "n_tables": 0,
+  "n_figures": 1,
+  "n_equations": 0,
   "n_body_chars": 0,
   "n_total_chars": 0,
   "roles": {}

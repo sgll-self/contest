@@ -1,0 +1,27 @@
+{
+ "schema": "sci-pdf-reading-parse/integration-checks/v1",
+ "checks": {
+  "repeat_parse_deterministic": true,
+  "memory_cache_hit": true,
+  "memory_idempotent_two_documents": true,
+  "exact_query_has_source_anchor": true,
+  "greek_query_reaches_recovered_equation": true,
+  "cross_document_merge_provenance": true,
+  "workflow_valid_result": true,
+  "workflow_rejects_unknown_anchor": true,
+  "workflow_missing_material_honest": true
+ },
+ "all_passed": true,
+ "performance": {
+  "comparison": "same controlled PDF; three direct cold parses versus three content-hash cache hits",
+  "direct_parse_median_s": 0.045682,
+  "memory_first_ingest_s": 0.051916,
+  "memory_warm_hit_median_s": 0.003281,
+  "warm_cache_speedup_x": 13.923,
+  "scope": "repeated-document efficiency only; first ingestion still performs a full parse"
+ },
+ "artifacts": [
+  "execution/results/document_collection.json",
+  "execution/results/document_collection.md"
+ ]
+}

@@ -52,29 +52,30 @@ def raw_page_data(pdf_path, max_pages=None):
             raw_parts = []
             raw_chars = 0
             content_chars = 0
-            marginalia_blocks = {}
+            marginalia_lines = {}
             for block_index, block in enumerate(page.get_text("dict").get("blocks", [])):
                 if block.get("type") != 0:
                     continue
-                text = _raw_block_text(block)
-                nonws_count = len(_nw(text))
-                if not nonws_count:
-                    continue
-                raw_parts.append(text)
-                raw_chars += nonws_count
-                x0, y0, x1, y1 = block.get("bbox", [0, 0, 0, 0])
-                is_margin = y1 < page_height * 0.08 or y0 > page_height * 0.92
-                block_id = f"p{index + 1}_b{block_index}"
-                if is_margin:
-                    marginalia_blocks[block_id] = nonws_count
-                else:
-                    content_chars += nonws_count
+                for line_index, line in enumerate(block.get("lines", [])):
+                    text = "".join(span.get("text", "") for span in line.get("spans", []))
+                    nonws_count = len(_nw(text))
+                    if not nonws_count:
+                        continue
+                    raw_parts.append(text)
+                    raw_chars += nonws_count
+                    x0, y0, x1, y1 = line.get("bbox", [0, 0, 0, 0])
+                    is_margin = y1 < page_height * 0.08 or y0 > page_height * 0.92
+                    line_id = f"p{index + 1}_b{block_index}_l{line_index}"
+                    if is_margin:
+                        marginalia_lines[line_id] = nonws_count
+                    else:
+                        content_chars += nonws_count
             pages.append({
                 "page": index + 1,
                 "raw_text": "\n".join(raw_parts),
                 "raw_nonws_chars": raw_chars,
                 "content_nonws_chars": content_chars,
-                "marginalia_blocks": marginalia_blocks,
+                "marginalia_lines": marginalia_lines,
             })
         return pages
     finally:
@@ -89,6 +90,13 @@ def verify(pdf_path, parsed_path, max_pages=None):
     page_data = raw_page_data(pdf_path, max_pages)
     blocks = parsed["blocks"]
     block_by_id = {block["id"]: block for block in blocks}
+    line_to_block = {}
+    for block in blocks:
+        for line_id in block.get("source_line_ids", []):
+            line_to_block[line_id] = block
+        if not block.get("source_line_ids"):
+            for source_id in block.get("source_ids", [block["id"]]):
+                line_to_block[source_id] = block
 
     recovered = {}
     for block in blocks:
@@ -99,11 +107,15 @@ def verify(pdf_path, parsed_path, max_pages=None):
     total_raw = sum(page["raw_nonws_chars"] for page in page_data)
     total_content = sum(page["content_nonws_chars"] for page in page_data)
     total_recovered = sum(recovered.values())
-    total_marginalia = sum(sum(page["marginalia_blocks"].values()) for page in page_data)
+    total_marginalia = sum(sum(page["marginalia_lines"].values()) for page in page_data)
     leaked_marginalia = 0
     for page in page_data:
-        for block_id, char_count in page["marginalia_blocks"].items():
-            parsed_block = block_by_id.get(block_id)
+        for line_id, char_count in page["marginalia_lines"].items():
+            parsed_block = line_to_block.get(line_id)
+            if parsed_block is None:
+                raw_block_id = line_id.rsplit("_l", 1)[0]
+                parsed_block = next((block for block in blocks
+                                     if raw_block_id in block.get("source_ids", [])), None)
             if parsed_block is not None and parsed_block["role"] not in ("header", "footer"):
                 leaked_marginalia += char_count
 
@@ -125,8 +137,24 @@ def verify(pdf_path, parsed_path, max_pages=None):
     order_monotonic = ok_pairs / total_pairs if total_pairs else 1.0
     unreadable = [meta["page"] for meta in parsed["pages"] if meta["n_blocks"] == 0]
 
+    expected_anchor_ids = [block["id"] for block in blocks
+                           if block["role"] not in ("header", "footer", "table_text")]
+    expected_anchor_ids += [table["id"] for table in parsed.get("tables", []) if not table.get("merged_into")]
+    expected_anchor_ids += [figure["id"] for figure in parsed.get("figures", [])]
+    reading_ids = [item["id"] for item in parsed.get("reading_items", [])]
+    known_ids = set(expected_anchor_ids)
+    anchor_errors = []
+    for anchor_id in sorted(set(expected_anchor_ids) - set(reading_ids)):
+        anchor_errors.append(f"missing_reading_item:{anchor_id}")
+    for anchor_id in sorted(set(reading_ids) - known_ids):
+        anchor_errors.append(f"unknown_reading_item:{anchor_id}")
+    for anchor_id in sorted({value for value in reading_ids if reading_ids.count(value) > 1}):
+        anchor_errors.append(f"duplicate_reading_item:{anchor_id}")
+    anchor_coverage = (len(set(expected_anchor_ids) & set(reading_ids)) / len(expected_anchor_ids)
+                       if expected_anchor_ids else 1.0)
+
     report = {
-        "schema": "sci-pdf-reading-parse/verify/v2",
+        "schema": "sci-pdf-reading-parse/verify/v3",
         "source": parsed.get("source"),
         "n_pages": len(page_data),
         "raw_nonws_chars": total_raw,
@@ -140,6 +168,8 @@ def verify(pdf_path, parsed_path, max_pages=None):
         "order_monotonic": round(order_monotonic, 4),
         "order_pairs_checked": total_pairs,
         "unreadable_pages": unreadable,
+        "reading_anchor_coverage": round(anchor_coverage, 4),
+        "reading_anchor_errors": anchor_errors,
         "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score",
         "notes": [],
     }
@@ -151,6 +181,8 @@ def verify(pdf_path, parsed_path, max_pages=None):
         report["notes"].append("geometric header/footer-band text remains in emitted content")
     if unreadable:
         report["notes"].append("image-only/empty pages detected; OCR needed (out of scope for text-layer parser)")
+    if anchor_errors:
+        report["notes"].append("reading-item anchor mismatch; inspect reading_anchor_errors")
     return report
 
 

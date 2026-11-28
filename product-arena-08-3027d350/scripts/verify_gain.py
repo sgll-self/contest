@@ -1,29 +1,37 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""verify_gain.py — domain-rule verifier for the 'order_gain_vs_baseline' deviation.
+"""Recompute the v3 acceptance rule from the actual metrics artifact."""
+import json
+import os
+import sys
 
-Recomputes a binary physical_consistency score from the actual metrics artifact:
-the Skill must improve line-level column continuity over the naive pure-y baseline,
-must not reduce reading-order concordance, and must reach concordance >= 0.99 on
-the controlled ground-truth document. Both continuity sequences use the identical
-raw text-line set. Returns 1.0 when the rule holds, else 0.0. Reads only the produced metrics.json.
-"""
-import json, os, sys
 
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
     metrics_path = os.path.join(os.path.dirname(here), "execution", "results", "metrics.json")
-    m = json.load(open(metrics_path, encoding="utf-8"))
-    cc = m["column_continuity"]
-    skill_cc = cc["skill_column_continuity"]
-    naive_cc = cc["naive_column_continuity"]
-    skill_conc = m["controlled_ground_truth"]["reading_order_concordance"]
-    naive_conc = m["naive_baseline_order_concordance"]
-    ok = (skill_cc > naive_cc) and (skill_conc >= naive_conc) and (skill_conc >= 0.99)
-    print(json.dumps({"score": 1.0 if ok else 0.0,
-                      "skill_column_continuity": skill_cc, "naive_column_continuity": naive_cc,
-                      "skill_concordance": skill_conc, "naive_concordance": naive_conc}))
-    return 0
+    with open(metrics_path, encoding="utf-8") as handle:
+        metrics = json.load(handle)
+    continuity = metrics["column_continuity"]
+    skill_continuity = continuity["skill_column_continuity"]
+    naive_continuity = continuity["naive_column_continuity"]
+    skill_concordance = metrics["controlled_ground_truth"]["reading_order_concordance"]
+    naive_concordance = metrics["naive_baseline_order_concordance"]
+    base_ok = (skill_continuity > naive_continuity and skill_concordance >= naive_concordance
+               and skill_concordance >= 0.99)
+    advanced_ok = metrics["advanced_controlled_checks"]["all_passed"]
+    integration_ok = metrics["memory_and_workflow"]["all_passed"]
+    anchors_ok = all(item["reading_anchor_coverage"] == 1.0 and not item["reading_anchor_errors"]
+                     for item in metrics["verification"].values() if isinstance(item, dict))
+    accepted = base_ok and advanced_ok and integration_ok and anchors_ok and all(metrics["acceptance"].values())
+    print(json.dumps({
+        "score": 1.0 if accepted else 0.0,
+        "base_gain_ok": base_ok, "advanced_ok": advanced_ok,
+        "integration_ok": integration_ok, "anchors_ok": anchors_ok,
+        "skill_column_continuity": skill_continuity, "naive_column_continuity": naive_continuity,
+        "skill_concordance": skill_concordance, "naive_concordance": naive_concordance,
+    }))
+    return 0 if accepted else 1
+
 
 if __name__ == "__main__":
     sys.exit(main())

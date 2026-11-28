@@ -1,5 +1,5 @@
 {
- "schema": "sci-pdf-reading-parse/verify/v2",
+ "schema": "sci-pdf-reading-parse/verify/v3",
  "source": "gt.pdf",
  "n_pages": 1,
  "raw_nonws_chars": 1138,
@@ -11,8 +11,10 @@
  "leaked_marginalia_chars": 0,
  "marginalia_leak": 0.0,
  "order_monotonic": 1.0,
- "order_pairs_checked": 9,
+ "order_pairs_checked": 10,
  "unreadable_pages": [],
+ "reading_anchor_coverage": 1.0,
+ "reading_anchor_errors": [],
  "reference_type": "internal PDF text-layer diagnostic; not an independent ground-truth score",
  "notes": []
 }

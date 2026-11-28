@@ -1,4 +1,6 @@
 {
+ "schema": "sci-pdf-reading-parse/characterization/v3",
+ "version": "3.0.0",
  "deviations_from_paper": [
   {
    "target": "text_recall",
@@ -7,17 +9,16 @@
    "reference_value": 1.0,
    "score": 1.0,
    "evidence_artifact": "metrics_json",
-   "explanation": "Position-weighted 4-gram recall over lowercased, whitespace-stripped controlled GT strings; exact GT string recovery is also 1.0. Internal text-layer character coverage is reported separately."
+   "explanation": "Controlled lowercased whitespace-stripped GT 4-gram recall and exact GT string recovery are both 1.0. Internal line-level text-layer coverage is reported separately."
   },
   {
    "target": "reading_order_concordance",
-   "metric": "relative_error",
-   "tolerance": 0.05,
+   "metric": "exact_match",
    "actual_value": 1.0,
    "reference_value": 1.0,
    "score": 1.0,
    "evidence_artifact": "metrics_json",
-   "explanation": "Pairwise concordance over all 28 controlled GT pairs after conservative continuation-block merging; no figure resource is required as evidence."
+   "explanation": "All 28 controlled pairs are concordant. The sparse two-page fixture additionally checks local headings/captions and includes a left/right swap negative control."
   },
   {
    "target": "table_cell_match",
@@ -26,7 +27,7 @@
    "reference_value": 1.0,
    "score": 1.0,
    "evidence_artifact": "metrics_json",
-   "explanation": "All nine ruled-table cells match case-sensitively after whitespace removal. The same run measures PyMuPDF at 5/9 = 0.5556 and pdfplumber at 9/9 = 1.0."
+   "explanation": "The basic ruled table matches 9/9 cells versus PyMuPDF 5/9. The advanced fixture also checks a two-page 6x3 logical table, two repeated header rows, a merged two-column header, cell bboxes, pipes and multiline text."
   },
   {
    "target": "marginalia_leak",
@@ -36,25 +37,41 @@
    "reference_value": 0.0,
    "score": 1.0,
    "evidence_artifact": "metrics_json",
-   "explanation": "Fraction of geometric top/bottom-band characters emitted as non-marginal content. Both the controlled page and the first six real-paper pages report 0.0."
+   "explanation": "Line-level geometric marginalia leakage is 0 on both controlled and real demo documents. Mixed physical blocks are split with source_line_ids."
   },
   {
-   "target": "order_gain_vs_baseline",
+   "target": "advanced_controlled_checks",
+   "metric": "exact_match",
+   "actual_value": 16,
+   "reference_value": 16,
+   "score": 1.0,
+   "evidence_artifact": "advanced_checks",
+   "explanation": "All 16 structure/formula/table/language/failure assertions and all four mutation-based negative controls pass."
+  },
+  {
+   "target": "memory_and_workflow",
+   "metric": "exact_match",
+   "actual_value": 9,
+   "reference_value": 9,
+   "score": 1.0,
+   "evidence_artifact": "integration_checks",
+   "explanation": "Determinism, cache idempotency, exact-query provenance, source-prefixed merge, valid result acceptance, unknown-anchor rejection and missing-material failure all pass."
+  },
+  {
+   "target": "repeated_document_efficiency",
    "metric": "physical_consistency",
    "actual_value": {
-    "skill_column_continuity": 0.8462,
-    "naive_column_continuity": 0.0769,
-    "skill_concordance": 1.0,
-    "naive_concordance": 0.8929,
-    "n_lines_each": 14
+    "direct_parse_median_s": 0.045682,
+    "memory_first_ingest_s": 0.051916,
+    "memory_warm_hit_median_s": 0.003281,
+    "warm_cache_speedup_x": 13.923
    },
    "reference_value": {
-    "rule": "Skill continuity > naive continuity, Skill concordance >= naive concordance, and Skill concordance >= 0.99"
+    "rule": "Median of three content-hash cache hits must be faster than median of three direct parses of the same controlled PDF."
    },
    "score": 1.0,
-   "verifier_script": "scripts/verify_gain.py",
-   "evidence_artifact": "metrics_json",
-   "explanation": "Both continuity sequences contain the identical 14 raw text lines; only the ordering differs. Skill continuity is 0.8462 versus 0.0769 for pure-y sorting."
+   "evidence_artifact": "integration_checks",
+   "explanation": "Scope is repeated-document efficiency only. First ingestion performs a full parse and is not claimed to be faster."
   }
  ],
  "envelope": [
@@ -67,9 +84,26 @@
   },
   {
    "param": "n_columns",
-   "min": 2,
+   "min": 1,
    "max": 2,
-   "unit": "quantitatively evaluated two-column documents",
+   "unit": "quantitatively tested columns; three-column logic exists but is not in the measured envelope",
+   "tested": true
+  },
+  {
+   "param": "languages",
+   "values": ["English", "Chinese", "French accented text"],
+   "tested": true
+  },
+  {
+   "param": "cross_page_table_segments",
+   "min": 1,
+   "max": 2,
+   "unit": "logical table segments with up to two repeated header rows",
+   "tested": true
+  },
+  {
+   "param": "formula_structure",
+   "values": ["Unicode Greek", "superscript", "subscript", "equation number", "suspect glyph review"],
    "tested": true
   },
   {
@@ -83,13 +117,33 @@
  "failure_modes": [
   {
    "condition": "image-only scanned page without a text layer",
-   "symptom": "The parser returns zero text blocks and verify.py reports unreadable_pages=[1]; OCR remains necessary.",
+   "symptom": "Zero text blocks and unreadable_pages=[1]; OCR remains necessary.",
    "evidence_artifact": "edge_cases"
   },
   {
    "condition": "password-encrypted PDF when empty-password authentication fails",
-   "symptom": "The parser reports a clear encryption error and the CLI exits with code 2 instead of emitting fabricated text.",
+   "symptom": "Clear encryption error and CLI exit code 2; no fabricated text.",
    "evidence_artifact": "edge_cases"
+  },
+  {
+   "condition": "malformed PDF",
+   "symptom": "Clear cannot-open error and CLI failure rather than partial fabricated content.",
+   "evidence_artifact": "edge_cases"
+  },
+  {
+   "condition": "pdfplumber unavailable",
+   "symptom": "No guessed tables; pdfplumber_unavailable warning is explicit.",
+   "evidence_artifact": "advanced_checks"
+  },
+  {
+   "condition": "Symbol/Dingbats glyph with suspect ASCII mapping",
+   "symptom": "Equation is marked needs_review; a Greek letter is not invented.",
+   "evidence_artifact": "advanced_checks"
+  },
+  {
+   "condition": "vector figure without raster image block",
+   "symptom": "A nearby Figure caption can reclassify a false table candidate as a vector-figure anchor; warning requires human review.",
+   "evidence_artifact": "real_parsed"
   }
  ],
  "sensitivity": []
